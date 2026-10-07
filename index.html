@@ -3,80 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
 <title>Kunko AI Labs — Independent AI assurance · Judge calibration audits</title>
 <meta name="description" content="Kunko AI Labs builds independent assurance for AI decision-making. Judge Audit: calibration audits for AI judges and LLM-as-a-judge systems — ECE, reliability diagrams, accuracy-coverage, signed EU AI Act evidence dossiers. Agent Assurance: guardrails for AI agents, verified on every PR.">
 <meta name="keywords" content="AI assurance, AI judge calibration, LLM-as-a-judge audit, model evaluation, confidence calibration, ECE, reliability diagrams, EU AI Act compliance, AI governance, agent guardrails">
 <style>
 :root{
-  --bg:#fbfbfd; --card:#ffffff; --ink:#101828; --muted:#5f6b7a;
-  --line:rgba(16,24,40,.09); --amber:#c08a1e; --blue:#2f6fed; --navy:#0f1b2d;
-  --shadow:0 12px 40px rgba(16,24,40,.07);
+  --bg:#070a08; --card:#0d120e; --ink:#edf3ee; --muted:#93a298;
+  --line:rgba(255,255,255,.08); --green:#35e080; --mint:#9df0c0;
+  --glow:0 12px 44px rgba(53,224,128,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
-header{background:rgba(251,251,253,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header{background:rgba(7,10,8,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
 .brand{font-weight:700;letter-spacing:.12em;font-size:14px;text-decoration:none;color:var(--ink)}
-.brand em{font-style:normal;color:var(--amber)}
+.brand em{font-style:normal;color:var(--green)}
 .nav a.link{color:var(--muted);text-decoration:none;font-size:14.5px;margin-left:30px;transition:color .2s}
 .nav a.link:hover{color:var(--ink)}
 .hero{padding:120px 0 40px;text-align:center}
-.kicker{color:var(--amber);letter-spacing:.3em;font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:28px}
+.kicker{color:var(--green);letter-spacing:.3em;font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:28px}
 h1{font-size:clamp(40px,6vw,72px);line-height:1.08;letter-spacing:-.03em;font-weight:700}
-h1 .it{font-style:italic;font-weight:600;color:var(--navy)}
+h1 .it{font-style:italic;font-weight:600;color:var(--mint)}
 .lede{color:var(--muted);font-size:clamp(17px,2.2vw,21px);max-width:660px;margin:28px auto 0;line-height:1.75}
 .lede strong{color:var(--ink);font-weight:600}
 .cta{margin-top:42px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn{display:inline-block;padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15.5px;transition:transform .15s, box-shadow .15s}
-.btn.solid{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(47,111,237,.28)}
-.btn.ghost{color:var(--ink);border:1px solid var(--line);background:#fff}
+.btn.solid{background:var(--green);color:#06130c;box-shadow:0 8px 28px rgba(53,224,128,.25)}
+.btn.ghost{color:var(--ink);border:1px solid var(--line);background:rgba(255,255,255,.02)}
 .btn:hover{transform:translateY(-1px)}
-.hero-img{margin:64px auto 0;max-width:940px;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.hero-img{margin:64px auto 0;max-width:940px;border-radius:22px;overflow:hidden;box-shadow:var(--glow);border:1px solid var(--line)}
 .hero-img img{display:block;width:100%;height:auto}
 section{padding:96px 0}
 section + section{border-top:1px solid var(--line)}
-.eyebrow{color:var(--amber);letter-spacing:.26em;font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:16px}
+.eyebrow{color:var(--green);letter-spacing:.26em;font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:16px}
 h2{font-size:clamp(28px,3.8vw,42px);letter-spacing:-.02em;font-weight:700;margin-bottom:16px;line-height:1.2}
 p.body{color:var(--muted);max-width:700px;font-size:16.5px}
 p.body strong{color:var(--ink);font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:44px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:var(--shadow)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px}
 .card h3{font-size:20px;margin-bottom:10px;letter-spacing:-.01em}
 .card p{color:var(--muted);font-size:15px}
-.card .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
-.card a.more{color:var(--blue);text-decoration:none;font-size:14.5px;font-weight:600}
+.card .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.card a.more{color:var(--mint);text-decoration:none;font-size:14.5px;font-weight:600}
 .measure{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px;align-items:start}
-.measure figure{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.measure figure{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
 .measure svg{width:100%;height:auto;display:block}
 .measure figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
 .metrics{list-style:none;display:grid;gap:14px}
-.metrics li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.metrics li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
 .metrics b{color:var(--ink);font-size:15.5px}
-.metrics b i{font-style:normal;color:var(--amber)}
+.metrics b i{font-style:normal;color:var(--green)}
 .metrics span{color:var(--muted);font-size:14px;display:block;margin-top:4px}
 .quote{font-size:clamp(21px,3vw,30px);line-height:1.5;max-width:800px;margin:0 auto;text-align:center;font-weight:600;letter-spacing:-.01em}
 .quote small{display:block;margin-top:20px;font-size:14.5px;color:var(--muted);font-weight:400}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:44px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 26px;text-align:center;box-shadow:var(--shadow)}
-.stat .n{font-size:36px;font-weight:700;color:var(--navy);letter-spacing:-.02em}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 26px;text-align:center}
+.stat .n{font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.stat .n em{font-style:normal;color:var(--green)}
 .stat .d{color:var(--muted);font-size:14px;margin-top:10px}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:44px;counter-reset:step}
-.step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow)}
-.step::before{counter-increment:step;content:"0" counter(step);color:var(--amber);font-weight:700;letter-spacing:.1em;font-size:13px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.step::before{counter-increment:step;content:"0" counter(step);color:var(--green);font-weight:700;letter-spacing:.1em;font-size:13px}
 .step h4{margin:12px 0 8px;font-size:16.5px}
 .step p{color:var(--muted);font-size:14.5px}
 .faq{margin-top:36px;display:grid;gap:14px;max-width:780px}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;box-shadow:var(--shadow)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
 .faq summary{font-weight:600;cursor:pointer;font-size:16.5px;list-style:none}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::marker{content:""}
 .faq p{color:var(--muted);font-size:15px;margin-top:12px}
 .contact{text-align:center}
-.contact a.mail{color:var(--blue);font-size:clamp(22px,3vw,30px);text-decoration:none;font-weight:700;letter-spacing:-.01em}
+.contact a.mail{color:var(--green);font-size:clamp(22px,3vw,30px);text-decoration:none;font-weight:700;letter-spacing:-.01em}
 footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:13.5px;margin-top:20px}
-code{background:rgba(47,111,237,.08);color:var(--blue);padding:3px 10px;border-radius:8px;font-size:.92em;font-weight:500}
+code{background:rgba(53,224,128,.1);color:var(--mint);padding:3px 10px;border-radius:8px;font-size:.92em;font-weight:500}
 @media(max-width:720px){.nav a.link{margin-left:18px;font-size:13.5px}.hero{padding:80px 0 30px}.measure{grid-template-columns:1fr}section{padding:64px 0}}
 </style>
 </head>
@@ -128,7 +129,7 @@ code{background:rgba(47,111,237,.08);color:var(--blue);padding:3px 10px;border-r
       <p>Signed, timestamped dossiers designed to support <strong>EU AI Act</strong> obligations for high-risk systems — logging, human oversight, accuracy and robustness.</p>
     </div>
   </div>
-  <p class="body" style="margin-top:32px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="more" style="color:var(--blue);font-weight:600;text-decoration:none" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
+  <p class="body" style="margin-top:32px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="more" style="color:var(--mint);font-weight:600;text-decoration:none" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
 </section>
 
 <section id="measure">
@@ -138,16 +139,16 @@ code{background:rgba(47,111,237,.08);color:var(--blue);padding:3px 10px;border-r
   <div class="measure">
     <figure>
     <svg viewBox="0 0 300 230" role="img" aria-label="Reliability diagram: a miscalibrated judge curve against the perfect-calibration diagonal">
-      <line x1="40" y1="190" x2="280" y2="190" stroke="rgba(16,24,40,.25)"/>
-      <line x1="40" y1="190" x2="40" y2="20" stroke="rgba(16,24,40,.25)"/>
-      <line x1="40" y1="190" x2="280" y2="20" stroke="rgba(16,24,40,.35)" stroke-dasharray="5,5"/>
-      <path d="M40,185 C110,180 170,150 215,95 S265,35 278,28" fill="none" stroke="#2f6fed" stroke-width="3.5"/>
-      <circle cx="120" cy="172" r="5" fill="#c08a1e" opacity=".9"/><circle cx="165" cy="150" r="5" fill="#c08a1e" opacity=".9"/>
-      <circle cx="205" cy="110" r="5" fill="#c08a1e" opacity=".9"/><circle cx="245" cy="55" r="5" fill="#c08a1e" opacity=".9"/>
-      <text x="150" y="215" fill="#5f6b7a" font-size="12" text-anchor="middle">stated confidence →</text>
-      <text x="14" y="110" fill="#5f6b7a" font-size="12" text-anchor="middle" transform="rotate(-90 14 110)">actual accuracy</text>
-      <text x="252" y="42" fill="#5f6b7a" font-size="11">perfect</text>
-      <text x="196" y="140" fill="#2f6fed" font-size="11">this judge</text>
+      <line x1="40" y1="190" x2="280" y2="190" stroke="rgba(255,255,255,.25)"/>
+      <line x1="40" y1="190" x2="40" y2="20" stroke="rgba(255,255,255,.25)"/>
+      <line x1="40" y1="190" x2="280" y2="20" stroke="rgba(255,255,255,.35)" stroke-dasharray="5,5"/>
+      <path d="M40,185 C110,180 170,150 215,95 S265,35 278,28" fill="none" stroke="#35e080" stroke-width="3.5"/>
+      <circle cx="120" cy="172" r="5" fill="#9df0c0" opacity=".9"/><circle cx="165" cy="150" r="5" fill="#9df0c0" opacity=".9"/>
+      <circle cx="205" cy="110" r="5" fill="#9df0c0" opacity=".9"/><circle cx="245" cy="55" r="5" fill="#9df0c0" opacity=".9"/>
+      <text x="150" y="215" fill="#93a298" font-size="12" text-anchor="middle">stated confidence →</text>
+      <text x="14" y="110" fill="#93a298" font-size="12" text-anchor="middle" transform="rotate(-90 14 110)">actual accuracy</text>
+      <text x="252" y="42" fill="#93a298" font-size="11">perfect</text>
+      <text x="196" y="140" fill="#35e080" font-size="11">this judge</text>
     </svg>
     <figcaption>A reliability diagram: the diagonal is perfect calibration — most judges aren't on it.</figcaption>
     </figure>
@@ -166,19 +167,19 @@ code{background:rgba(47,111,237,.08);color:var(--blue);padding:3px 10px;border-r
   <div class="eyebrow">Evidence, not claims</div>
   <h2>Real audits, real numbers</h2>
   <div class="stats">
-    <div class="stat"><div class="n">ECE 0.0036</div><div class="d">200/200 on a synthetic email set — our "hello world" audit</div></div>
-    <div class="stat"><div class="n">95.5%</div><div class="d">accuracy on the adversarial set — prompt injection fooled the judge 7/40 times</div></div>
-    <div class="stat"><div class="n">ECE 0.93</div><div class="d">a router judge at 66.7% accuracy reporting 98–100% confidence: confident and systematically wrong</div></div>
+    <div class="stat"><div class="n"><em>ECE 0.0036</em></div><div class="d">200/200 on a synthetic email set — our "hello world" audit</div></div>
+    <div class="stat"><div class="n"><em>95.5%</em></div><div class="d">accuracy on the adversarial set — prompt injection fooled the judge 7/40 times</div></div>
+    <div class="stat"><div class="n"><em>ECE 0.93</em></div><div class="d">a router judge at 66.7% accuracy reporting 98–100% confidence: confident and systematically wrong</div></div>
   </div>
   <p class="quote" style="margin-top:52px">"The judge sells certainty; the audit sells quantified uncertainty."
-  <small>Every finding ships with raw checkpoints — <a href="https://github.com/kunko-ai-labs/judge-audit" style="color:var(--blue)">re-run it yourself</a>.</small></p>
+  <small>Every finding ships with raw checkpoints — <a href="https://github.com/kunko-ai-labs/judge-audit" style="color:var(--mint)">re-run it yourself</a>.</small></p>
 </section>
 
 <section id="assurance">
   <div class="eyebrow">Also from the lab</div>
   <h2>Agent Assurance</h2>
   <p class="body">Declare what your AI agent may do. Verify it on every edit, PR and release. A GitHub Action that checks MCP configs, Claude Code permissions and tool definitions against your policy — deterministic, OWASP-mapped, with signed evidence.</p>
-  <p class="body" style="margin-top:24px"><a href="https://github.com/kunko-ai-labs/agent-assurance" style="color:var(--blue);font-weight:600;text-decoration:none">github.com/kunko-ai-labs/agent-assurance →</a></p>
+  <p class="body" style="margin-top:24px"><a href="https://github.com/kunko-ai-labs/agent-assurance" style="color:var(--mint);font-weight:600;text-decoration:none">github.com/kunko-ai-labs/agent-assurance →</a></p>
 </section>
 
 <section>

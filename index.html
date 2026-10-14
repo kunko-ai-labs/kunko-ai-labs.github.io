@@ -76,6 +76,18 @@ table.proof th,table.proof td{padding:16px 20px;text-align:left;border-bottom:1p
 table.proof th{color:var(--muted);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 table.proof tr:last-child td{border-bottom:none}
 table.proof td.n{font-weight:700;font-size:19px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.finding{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:38px;margin-top:44px;position:relative;overflow:hidden}
+.finding::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.85}
+.finding .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:14px}
+.finding h3{font-size:clamp(21px,2.8vw,28px);letter-spacing:-.015em;margin-bottom:14px;line-height:1.35}
+.finding p{color:var(--muted);font-size:15.5px;max-width:760px}
+.finding p strong{color:var(--ink)}
+table.compare{width:100%;border-collapse:collapse;margin-top:28px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:14.5px}
+table.compare th,table.compare td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.compare th{color:var(--muted);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+table.compare tr:last-child td{border-bottom:none}
+table.compare td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+table.compare td{color:var(--muted)}
 .caveat{color:var(--muted);font-size:13px;margin-top:14px;max-width:760px}
 .caveat a{color:var(--g1);text-decoration:none;font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:44px}
@@ -226,7 +238,7 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
 
 <section id="proof">
   <div class="eyebrow">Proof, not promises</div>
-  <h2>The same audit, <span class="grad">three different truths</span></h2>
+  <h2>What looks automatable is not<br>what you can <span class="grad">sign off.</span></h2>
   <p class="body">Our v0.5 study ran three judges over <strong>3,080 human-labelled banking decisions</strong> (BANKING77) — pre-registered before the first model call, every result published including the unflattering ones. Same data, same 5% error target:</p>
   <table class="proof">
     <tr><th>Judge</th><th>Decides alone at ≤ 5% error</th><th>Range over seeds</th></tr>
@@ -234,7 +246,29 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
     <tr><td>Gemini 3.6 Flash, verbalized</td><td class="n">14.3%</td><td>7.6 – 30.0%</td></tr>
     <tr><td>Qwen3-8B, token log-probability</td><td class="n">0%</td><td>0.0 – 4.4%</td></tr>
   </table>
-  <p class="caveat">A 95% confidence score is not a 95% guarantee — token probabilities couldn't automate a single decision at this bar. That's the point: <strong style="color:var(--ink)">confidence means different things across judges, and Kunko measures whether it can be trusted.</strong> Caveats as published: public dataset, likely seen in pretraining; label noise not measured. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Full study →</a> The v0.5 roster is the start — Judge Arena keeps score as it grows.</p>
+  <p class="caveat">A 95% confidence score is not a 95% guarantee — token probabilities couldn't automate a single decision at this bar. That's the point: <strong style="color:var(--ink)">confidence means different things across judges, and Kunko measures whether it can be trusted.</strong> We publish the range across ten other data splits, not just the headline. Caveats as published: public dataset, likely seen in pretraining; label noise not measured. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Full study →</a> The v0.5 roster is the start — Judge Arena keeps score as it grows.</p>
+
+  <div class="finding">
+    <div class="tag">FINDING</div>
+    <h3>A good calibration score is <span class="grad">not enough</span> to automate</h3>
+    <p>On 200 adversarial emails, Gemini 3 Flash was <strong>97% accurate</strong> with one of the lowest calibration errors we measured <strong>(ECE 0.015)</strong> — and still couldn't decide a single email alone without error. It was just as confident when wrong. Jev, slightly less accurate and worse calibrated on average (ECE 0.039), separated its mistakes and automated <strong>73% of the emails with zero errors</strong>. Accuracy and average calibration don't tell you what you can hand over. <strong>We measure what does.</strong></p>
+  </div>
+
+  <div class="finding">
+    <div class="tag">POSITIONING</div>
+    <h3>A leaderboard tells you which model is smart.<br>It does not tell you <span class="grad">how much to hand over.</span></h3>
+    <table class="compare">
+      <tr><th></th><th>Model leaderboard</th><th>Kunko audit</th></tr>
+      <tr><td>The question</td><td>Which model is strongest overall?</td><td>How much of my decisions can this model take alone, at the error I accept?</td></tr>
+      <tr><td>The unit</td><td>One score per model, ranked</td><td>One rate per decision type and segment, with its statistical bound</td></tr>
+      <tr><td>The scores</td><td>Averages and weighted blends</td><td>No composite: error bound, coverage and cost stay separate</td></tr>
+      <tr><td>The data</td><td>The benchmark's own sealed items</td><td>Your past decisions, replayed in shadow mode</td></tr>
+      <tr><td>The output</td><td>A rank</td><td>Automate, review or block — per segment, with receipts</td></tr>
+    </table>
+  </div>
+
+  <p class="caveat" style="margin-top:28px">Every number on this page recomputes from committed evidence. v0.6 is running now — published when its independent review closes, like everything we release.</p>
+
   <div class="prog">
     <div class="pstep"><b>Evaluation</b><span>does my model work?</span></div><div class="farrow">→</div>
     <div class="pstep"><b>Assurance</b><span>can I trust this decision?</span></div><div class="farrow">→</div>

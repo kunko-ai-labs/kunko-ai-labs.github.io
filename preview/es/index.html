@@ -225,6 +225,26 @@ html.js .reveal.in{opacity:1;transform:none}
 #oAuto{color:var(--g1)}#oSave{color:var(--g1)}#oBlock{color:var(--red)}
 @media(max-width:720px){.simgrid{grid-template-columns:1fr}}
 .loopfig .llab{fill:var(--muted);font-size:11px;letter-spacing:.22em;text-anchor:middle}
+.vdiag{display:grid;grid-template-columns:1fr 28px 1.55fr 28px 1fr;gap:14px;align-items:stretch;margin-top:44px}
+.vcol{display:grid;gap:14px;align-content:center}
+.vlink{align-self:center;text-align:center;color:var(--g2);font-weight:700;font-size:22px}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.vcard .vk{font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--g2);margin-bottom:8px}
+.vin .vcard .vk{color:var(--g1)}
+.vout .vcard .vk{color:var(--g3)}
+.vcard b{display:block;font-size:14.5px;margin-bottom:4px}
+.vcard span{color:var(--muted);font-size:12.5px;line-height:1.55;display:block}
+.vcore{border:1.5px solid transparent;border-radius:20px;padding:26px 28px;background:linear-gradient(var(--card),var(--card)) padding-box,var(--grad) border-box}
+.vcore .vk{font-size:11px;font-weight:700;letter-spacing:.24em;text-align:center;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vstep{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line)}
+.vstep i{flex:0 0 30px;width:30px;height:30px;border-radius:999px;background:var(--grad);color:#fff;font-style:normal;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.vstep b{display:block;font-size:15px;margin-bottom:2px}
+.vstep span{color:var(--muted);font-size:13px;line-height:1.55;display:block}
+.vpillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.vpillar{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.vpillar b{display:block;font-size:11px;letter-spacing:.14em;margin-bottom:5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vpillar span{color:var(--muted);font-size:12px;line-height:1.55;display:block}
+@media(max-width:900px){.vdiag{grid-template-columns:1fr}.vlink{display:none}.vpillars{grid-template-columns:1fr 1fr}}
 .loopfig text{font-family:inherit}
 .loopcap{color:var(--muted);font-size:14px;margin-top:18px;max-width:640px;margin-left:auto;margin-right:auto}
 @media(max-width:720px){.nav a.link{margin-left:16px;font-size:13px}.hero{padding:70px 0 30px}.measure,.duo,.plat,.rgrid{grid-template-columns:1fr}section{padding:64px 0}.farrow{display:none}.themetoggle{margin-left:12px}}
@@ -312,38 +332,38 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="platform">
   <div class="eyebrow">La visión</div>
   <h2>El <span class="grad">plano de control</span> del assurance de IA</h2>
-  <p class="body">No es otro panel de gobernanza. Kunko es la capa que determina de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si sigue siendo lo bastante fiable para hacerlo. Tres planos, una misma columna vertebral de evidencia:</p>
-  <div class="plat">
-    <div class="pcol"><div class="k">DISCOVER</div><ul>
-      <li><b>Inventario de IA</b> — todos tus sistemas</li>
-      <li>Modelos, agentes, jueces, prompts</li>
-      <li>Versiones, responsables, entornos</li>
-      <li>Fuentes de datos y proveedores</li>
-    </ul></div>
-    <div class="pcol"><div class="k">ASSURE</div><ul>
-      <li><b>Judge Audit</b> — evidencia de calibración</li>
-      <li><b>Agent Assurance</b> — control de capacidades</li>
-      <li>Evaluaciones, red team, pruebas de seguridad</li>
-      <li>Resultados humanos e historial de incidentes</li>
-    </ul></div>
-    <div class="pcol"><div class="k">CONTROL</div><ul>
-      <li><b>Motor de riesgo</b> — de bajo a crítico por sistema</li>
-      <li><b>Políticas</b> — qué puede hacer cada sistema</li>
-      <li>Colas de revisión humana</li>
-      <li>Controles y bloqueos en tiempo de ejecución</li>
-    </ul></div>
+  <p class="body">No es otro panel de gobernanza. Kunko es la capa que determina de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si sigue siendo lo bastante fiable para hacerlo. Todo lo que toca pasa por un solo bucle de assurance:</p>
+  <div class="vdiag">
+    <div class="vcol vin">
+      <div class="vcard"><div class="vk">ENTRADA</div><b>Modelos, agentes, jueces</b><span>los sistemas que usas</span></div>
+      <div class="vcard"><div class="vk">ENTRADA</div><b>Prompts y versiones</b><span>responsables, entornos</span></div>
+      <div class="vcard"><div class="vk">ENTRADA</div><b>Datos y proveedores</b><span>verdad fundamental, políticas</span></div>
+    </div>
+    <div class="vlink" aria-hidden="true">→</div>
+    <div class="vcore">
+      <div class="vk">EL BUCLE DE ASSURANCE</div>
+      <div class="vstep"><i>1</i><div><b>Auditar</b><span>Judge Audit mide la calibración en modo sombra</span></div></div>
+      <div class="vstep"><i>2</i><div><b>Decidir</b><span>motor de riesgo: automatizar, revisar o bloquear — por segmento</span></div></div>
+      <div class="vstep"><i>3</i><div><b>Demostrar</b><span>Trust Passport: un recibo firmado por decisión</span></div></div>
+      <div class="vstep"><i>4</i><div><b>Monitorizar</b><span>detectar el cambio → reevaluar → actuar, de forma continua</span></div></div>
+    </div>
+    <div class="vlink" aria-hidden="true">→</div>
+    <div class="vcol vout">
+      <div class="vcard"><div class="vk">PARA PERSONAS</div><b>Colas de revisión</b><span>dosieres de evidencia, informes para el consejo</span></div>
+      <div class="vcard"><div class="vk">PARA SISTEMAS</div><b>Control en ejecución</b><span>políticas aplicadas, bloqueos automáticos</span></div>
+    </div>
+  </div>
+  <div class="vpillars">
+    <div class="vpillar"><b>INVENTARIO</b><span>cada modelo, agente, juez, prompt y versión</span></div>
+    <div class="vpillar"><b>RIESGO</b><span>de bajo a crítico, por sistema y decisión</span></div>
+    <div class="vpillar"><b>EVIDENCIA</b><span>calibración, red team, resultados, historial</span></div>
+    <div class="vpillar"><b>POLÍTICA</b><span>automatizar · revisar · bloquear por decisión</span></div>
   </div>
   <div class="strip"><div class="k">ASSURANCE CONTINUO</div>
     <p><b>Monitorizar → detectar el cambio → reevaluar → actuar.</b> Cuando cambian el modelo, el prompt, los datos o la política, Kunko vuelve a generar la evidencia y puede degradar o bloquear la autonomía automáticamente. La confianza no es un certificado puntual — es un flujo continuo.</p>
   </div>
   <div class="strip"><div class="k">CAPA DE EVIDENCIA</div>
     <p>Evaluaciones · informes de calibración · trazas de auditoría · procedencia · dosieres firmados — cada decisión de la plataforma está respaldada por evidencia que un regulador, un auditor o tu consejo pueden inspeccionar.</p>
-  </div>
-  <div class="regs">
-    <div class="reg"><h4>Inventario</h4><p>¿Qué sistemas de IA tengo? Modelo, agente, juez, prompt, versión, responsable, entorno, datos, proveedor.</p></div>
-    <div class="reg"><h4>Riesgo</h4><p>¿Qué riesgo conlleva cada uno? Bajo, medio, alto, crítico — por sistema y por tipo de decisión.</p></div>
-    <div class="reg"><h4>Evidencia</h4><p>¿Por qué confiamos? Evaluaciones, calibración, resultados de red team, pruebas de seguridad, resultados humanos, incidentes, historial de auditorías.</p></div>
-    <div class="reg"><h4>Política</h4><p>¿Qué puede hacer? <strong style="color:var(--g1)">Automatizar</strong> · <strong style="color:var(--amber)">revisar</strong> · <strong style="color:var(--red)">bloquear</strong> — por decisión y por nivel de riesgo.</p></div>
   </div>
 </section>
 
@@ -697,7 +717,7 @@ html.js .reveal.in{opacity:1;transform:none}
   }
   document.documentElement.classList.add('js');
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1}):null;
-  document.querySelectorAll('.pcol,.finding,.card,.step,.seg,.reg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox,.ghead').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
+  document.querySelectorAll('.vcard,.vcore,.vpillar,.finding,.card,.step,.seg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
   var track=document.getElementById('jTrack');
   if(track){
     var dots=document.getElementById('jDots'),n=track.children.length;

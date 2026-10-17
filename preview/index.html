@@ -213,13 +213,15 @@ html.js .reveal.in{opacity:1;transform:none}
 .sbar i{display:block;height:100%;border-radius:999px}
 .seg p{color:var(--muted);font-size:14px}
 .usecase .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:14px}
-.loopfig{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:48px 30px 36px;margin-top:36px;text-align:center;position:relative;overflow:hidden}
-.loopfig::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,184,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.09) 1px,transparent 1px);background-size:34px 34px;pointer-events:none}
-.loopfig svg{max-width:620px;width:100%;height:auto;position:relative}
-.loopfig .loop,.loopfig .loopcap{position:relative}
+.loopfig{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 30px 36px;margin-top:36px;text-align:center;position:relative;overflow:hidden}
+.loopfig::before{content:"";position:absolute;inset:0;background:radial-gradient(440px 320px at 10% 108%,rgba(52,211,153,.10),transparent 70%),radial-gradient(440px 320px at 90% -10%,rgba(139,92,246,.09),transparent 70%),linear-gradient(rgba(148,163,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.06) 1px,transparent 1px);background-size:auto,auto,34px 34px,34px 34px;pointer-events:none}
+.loopfig svg{max-width:640px;width:100%;height:auto;position:relative}
+.loopfig .loop,.loopfig .loopcap,.loopfig .looplab{position:relative}
+.looplab{text-align:left;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.18em;margin-bottom:6px}
 .loopfig .ln{fill:var(--card);stroke-width:2}
+.loopfig .ltit{fill:var(--ink);font-size:13px;font-weight:700;letter-spacing:.14em;text-anchor:middle}
 .loopfig .lnum{fill:var(--ink);font-weight:700;font-size:16px;text-anchor:middle}
-.loopfig .ltit{fill:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-anchor:middle}
+.lnode svg{width:16px;height:16px;vertical-align:-3px;margin-right:8px}
 .simsub{color:var(--muted);font-size:14.5px;margin:10px 0 22px;max-width:720px}
 .simgrid{display:grid;grid-template-columns:5fr 6fr;gap:28px;align-items:start}
 .simcontrols label{display:block;color:var(--muted);font-size:14px;margin-bottom:20px}
@@ -616,42 +618,60 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="step"><h4>Enterprise Assurance</h4><p>The full control plane: inventory, risk, evidence, policy, monitoring.</p></div>
   </div>
   <figure class="loopfig">
-    <svg viewBox="0 0 640 460" role="img" aria-label="Continuous assurance loop: certified, change, impact analysis, revalidate">
+    <div class="looplab">THE CONTINUOUS ASSURANCE LOOP</div>
+    <svg viewBox="0 0 680 470" role="img" aria-label="Continuous assurance loop: certified, change, impact analysis, revalidate">
       <defs>
         <linearGradient id="loopg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/>
         </linearGradient>
         <filter id="loopglow" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation="7"/>
+          <feGaussianBlur stdDeviation="8"/>
+        </filter>
+        <filter id="loopsoft" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="3"/>
         </filter>
       </defs>
-      <circle cx="320" cy="235" r="130" fill="none" stroke="url(#loopg)" stroke-width="14" opacity=".28" filter="url(#loopglow)"/>
-      <circle cx="320" cy="235" r="130" fill="none" stroke="url(#loopg)" stroke-width="7"/>
-      <g fill="url(#loopg)">
-        <polygon points="-9,-6.5 9,0 -9,6.5" transform="translate(412 143) rotate(45)"/>
-        <polygon points="-9,-6.5 9,0 -9,6.5" transform="translate(412 327) rotate(135)"/>
-        <polygon points="-9,-6.5 9,0 -9,6.5" transform="translate(228 327) rotate(225)"/>
-        <polygon points="-9,-6.5 9,0 -9,6.5" transform="translate(228 143) rotate(-45)"/>
+      <circle cx="340" cy="250" r="135" fill="none" stroke="url(#loopg)" stroke-width="16" opacity=".22" filter="url(#loopglow)"/>
+      <circle cx="340" cy="250" r="135" fill="none" stroke="url(#loopg)" stroke-width="6"/>
+      <circle cx="340" cy="250" r="116" fill="none" stroke="rgba(148,163,184,.4)" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round"/>
+      <g fill="url(#loopg)" filter="url(#loopsoft)">
+        <polygon points="-12,-8.5 3,0 -12,8.5" transform="translate(435.5 154.5) rotate(45)"/>
+        <polygon points="-12,-8.5 3,0 -12,8.5" transform="translate(435.5 345.5) rotate(135)"/>
+        <polygon points="-12,-8.5 3,0 -12,8.5" transform="translate(244.5 345.5) rotate(225)"/>
+        <polygon points="-12,-8.5 3,0 -12,8.5" transform="translate(244.5 154.5) rotate(-45)"/>
       </g>
-      <circle class="ln" cx="320" cy="105" r="30" stroke="#34d399"/>
-      <svg x="308" y="93" width="24" height="24" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.3 12l2 2 3.6-4.2" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <text class="ltit" x="320" y="46"><tspan style="fill:#34d399;font-weight:800">1</tspan><tspan dx="7" style="fill:var(--muted);font-weight:400">|</tspan><tspan dx="7">CERTIFIED</tspan></text>
-      <circle class="ln" cx="450" cy="235" r="30" stroke="#f87171"/>
-      <svg x="438" y="223" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.5L3.5 19.5h17L12 4.5z" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4.2" stroke="#f87171" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="#f87171"/></svg>
-      <text class="ltit" x="494" y="240" style="text-anchor:start"><tspan style="fill:#f87171;font-weight:800">2</tspan><tspan dx="7" style="fill:var(--muted);font-weight:400">|</tspan><tspan dx="7">CHANGE</tspan></text>
-      <circle class="ln" cx="320" cy="365" r="30" stroke="#3b82f6"/>
-      <svg x="308" y="353" width="24" height="24" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2" fill="none" stroke="#3b82f6" stroke-width="1.8"/><path d="M10 7.5h4" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round"/><path d="M10 11.5h.9M12.55 11.5h.9M15.1 11.5h.9M10 14.8h.9M12.55 14.8h.9M15.1 14.8h.9" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <text class="ltit" x="320" y="434"><tspan style="fill:#3b82f6;font-weight:800">3</tspan><tspan dx="7" style="fill:var(--muted);font-weight:400">|</tspan><tspan dx="7">IMPACT ANALYSIS</tspan></text>
-      <circle class="ln" cx="190" cy="235" r="30" stroke="#8b5cf6"/>
-      <svg x="178" y="223" width="24" height="24" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round"/><path d="M19.8 3.8v4.4h-4.4" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <text class="ltit" x="146" y="240" style="text-anchor:end"><tspan style="fill:#8b5cf6;font-weight:800">4</tspan><tspan dx="7" style="fill:var(--muted);font-weight:400">|</tspan><tspan dx="7">REVALIDATE</tspan></text>
-      <text class="llab" x="320" y="228">CONTINUOUS</text>
-      <text class="llab" x="320" y="247">ASSURANCE LOOP</text>
+      <g opacity=".5">
+        <circle cx="482" cy="182" r="2.2" fill="#3b82f6"/><circle cx="502" cy="262" r="1.8" fill="#8b5cf6"/>
+        <circle cx="442" cy="382" r="2.4" fill="#34d399"/><circle cx="342" cy="422" r="1.8" fill="#3b82f6"/>
+        <circle cx="232" cy="392" r="2.2" fill="#8b5cf6"/><circle cx="182" cy="282" r="1.8" fill="#34d399"/>
+        <circle cx="202" cy="152" r="2.4" fill="#8b5cf6"/><circle cx="302" cy="112" r="1.8" fill="#3b82f6"/>
+        <circle cx="422" cy="202" r="1.6" fill="#34d399"/><circle cx="432" cy="302" r="2" fill="#3b82f6"/>
+        <circle cx="342" cy="352" r="1.6" fill="#8b5cf6"/><circle cx="252" cy="322" r="2" fill="#34d399"/>
+        <circle cx="247" cy="192" r="1.6" fill="#3b82f6"/><circle cx="302" cy="152" r="2" fill="#8b5cf6"/>
+      </g>
+      <circle cx="340" cy="115" r="32" fill="none" stroke="#34d399" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
+      <circle class="ln" cx="340" cy="115" r="32" stroke="#34d399"/>
+      <svg x="326" y="101" width="28" height="28" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.3 12l2 2 3.6-4.2" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <text class="ltit" x="340" y="56">CERTIFIED</text>
+      <circle cx="475" cy="250" r="32" fill="none" stroke="#f87171" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
+      <circle class="ln" cx="475" cy="250" r="32" stroke="#f87171"/>
+      <svg x="461" y="236" width="28" height="28" viewBox="0 0 24 24"><path d="M12 4.5L3.5 19.5h17L12 4.5z" fill="none" stroke="#f87171" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4.2" stroke="#f87171" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="#f87171"/></svg>
+      <text class="ltit" x="524" y="255" style="text-anchor:start">CHANGE</text>
+      <circle cx="340" cy="385" r="32" fill="none" stroke="#3b82f6" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
+      <circle class="ln" cx="340" cy="385" r="32" stroke="#3b82f6"/>
+      <svg x="326" y="371" width="28" height="28" viewBox="0 0 24 24"><path d="M5 20v-9M11 20V5M17 20v-5" fill="none" stroke="#3b82f6" stroke-width="1.9" stroke-linecap="round"/><path d="M3.5 20h17" stroke="#3b82f6" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <text class="ltit" x="340" y="442">IMPACT ANALYSIS</text>
+      <circle cx="205" cy="250" r="32" fill="none" stroke="#8b5cf6" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
+      <circle class="ln" cx="205" cy="250" r="32" stroke="#8b5cf6"/>
+      <svg x="191" y="236" width="28" height="28" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3" fill="none" stroke="#8b5cf6" stroke-width="1.7" stroke-linecap="round"/><path d="M19.8 3.8v4.4h-4.4" fill="none" stroke="#8b5cf6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <text class="ltit" x="156" y="255" style="text-anchor:end">REVALIDATE</text>
+      <text class="llab" x="340" y="243">CONTINUOUS</text>
+      <text class="llab" x="340" y="262">ASSURANCE LOOP</text>
     </svg>
-    <div class="loop" style="margin-top:4px">
-      <span class="lnode hot">CERTIFIED · stays in force</span>
-      <span class="lnode warn">DEGRADED · coverage reduced</span>
-      <span class="lnode bad">BLOCKED · back to human review</span>
+    <div class="loop" style="margin-top:26px">
+      <span class="lnode hot"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>CERTIFIED · stays in force</span>
+      <span class="lnode warn"><svg viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L3.5 19.5h17L12 4.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="#f5b544"/></svg>DEGRADED · coverage reduced</span>
+      <span class="lnode bad"><svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>BLOCKED · back to human review</span>
     </div>
     <p class="loopcap">When the model, prompt, data or policy changes, the loop re-runs the evidence out-of-sample and re-issues the verdict automatically. No change goes live unaudited.</p>
   </figure>

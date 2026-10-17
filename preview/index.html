@@ -8,7 +8,7 @@
 <title>Kunko AI Labs — The AI Decision Assurance Platform for enterprises</title>
 <meta name="description" content="Kunko is building the AI Decision Assurance Platform for enterprises. We help companies audit, control and continuously assure AI systems before allowing them to make autonomous decisions. Starting with open-source Judge Audit: we tell enterprises which AI decisions are safe to automate — measured, certified, continuously monitored.">
 <meta name="keywords" content="AI assurance, AI decision assurance platform, safe automation rate, AI judge calibration, LLM-as-a-judge audit, selective prediction, model risk management, EU AI Act compliance, AI governance, continuous assurance, trustworthy AI, agent guardrails">
-<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="icon" type="image/png" href="/assets/logo-mark.png">
 <style>
 :root{
   --bg:#0a0f1e; --card:#0f1626; --ink:#eef2f9; --muted:#9aa7bd;
@@ -141,7 +141,8 @@ table.compare td{color:var(--muted)}
 .quote{font-size:clamp(24px,3.4vw,36px);line-height:1.45;max-width:880px;margin:0 auto;text-align:center;font-weight:700;letter-spacing:-.015em}
 .quote small{display:block;margin-top:20px;font-size:14.5px;color:var(--muted);font-weight:400}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:44px;counter-reset:step}
-.step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;position:relative;overflow:hidden}
+.step::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.85}
 .step::before{counter-increment:step;content:"0" counter(step);font-weight:700;letter-spacing:.1em;font-size:13px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .step h4{margin:12px 0 8px;font-size:16.5px}
 .step p{color:var(--muted);font-size:14.5px}
@@ -213,8 +214,7 @@ html.js .reveal.in{opacity:1;transform:none}
 .sbar i{display:block;height:100%;border-radius:999px}
 .seg p{color:var(--muted);font-size:14px}
 .usecase .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:14px}
-.loopfig{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 30px 36px;margin-top:36px;text-align:center;position:relative;overflow:hidden}
-.loopfig::before{content:"";position:absolute;inset:0;background:radial-gradient(440px 320px at 10% 108%,rgba(52,211,153,.10),transparent 70%),radial-gradient(440px 320px at 90% -10%,rgba(139,92,246,.09),transparent 70%),linear-gradient(rgba(148,163,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.06) 1px,transparent 1px);background-size:auto,auto,34px 34px,34px 34px;pointer-events:none}
+.loopfig{background:transparent;border:none;padding:24px 0 8px;margin-top:36px;text-align:center;position:relative}
 .loopfig svg{max-width:640px;width:100%;height:auto;position:relative}
 .loopfig .loop,.loopfig .loopcap,.loopfig .looplab{position:relative}
 .looplab{text-align:left;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.18em;margin-bottom:6px}
@@ -282,7 +282,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <body>
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#"><img src="assets/logo-mark.png" alt="Kunko AI Labs mark">KUNKO <em>AI</em> LABS</a>
+    <a class="brand" href="#"><img src="/assets/logo-mark.png" alt="Kunko AI Labs mark">KUNKO <em>AI</em> LABS</a>
     <nav>
       <a class="link" href="#platform">Platform</a>
       <a class="link" href="#how">How it works</a>
@@ -484,7 +484,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </table>
   </div>
 
-  <p class="caveat" style="margin-top:28px">Every number on this page recomputes from committed evidence. v0.6 is published — 12 judges × 3 languages, pre-registered before the first model call. <a href="https://github.com/kunko-ai-labs/judge-audit">Results in the repo →</a></p>
+  <p class="caveat" style="margin-top:28px">Every number on this page recomputes from committed evidence. v0.6 is pre-registered — 12 judges × 3 languages, locked in before the first model call. <a href="https://github.com/kunko-ai-labs/judge-audit">Results in the repo →</a></p>
 
   <div class="prog">
     <div class="pstep"><b>Evaluation</b><span>does my model work?</span></div><div class="farrow">→</div>

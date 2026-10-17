@@ -26,7 +26,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 header{background:var(--headerbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
@@ -160,7 +160,19 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
 .measure svg text.axlab{fill:var(--muted)}
 .themetoggle{margin-left:22px;background:var(--soft);border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:999px;cursor:pointer;font-size:17px;line-height:1;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s}
 .themetoggle:hover{transform:translateY(-1px)}
-.glance{display:grid;gap:14px;margin-top:36px}
+.jcarousel{margin-top:36px}
+.jtrack{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 10px}
+.jtrack::-webkit-scrollbar{display:none}
+.jtrack .grow{flex:0 0 min(360px,86%);scroll-snap-align:start}
+.jnav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px}
+.jbtn{background:var(--soft);border:1px solid var(--line);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;font-size:16px;transition:border-color .2s,transform .15s}
+.jbtn:hover{border-color:var(--g2);transform:translateY(-1px)}
+.cdots{display:flex;gap:8px}
+.cdots i{width:8px;height:8px;border-radius:999px;background:var(--line);cursor:pointer;transition:background .2s}
+.cdots i.on{background:var(--g2)}
+html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+html.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
 .grow{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
 .ghead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap}
 .ghead b{font-size:15px}
@@ -228,6 +240,7 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
       <a class="link" href="#proof">Proof</a>
       <a class="link" href="#roadmap">Roadmap</a>
       <a class="link" href="#contact">Contact</a>
+      <a class="link" href="es/" lang="es">ES</a>
       <button class="themetoggle" id="themeToggle" aria-label="Toggle light and dark mode" aria-pressed="false" title="Light / dark mode">☾</button>
     </nav>
   </div>
@@ -248,27 +261,52 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
   <div class="eyebrow">Study v0.6 · Pre-registered</div>
   <h2>Validated automation at 5% error.<br><span class="grad">Same cases, three languages.</span></h2>
   <p class="body">The same <strong>2,974 cases</strong> in English, Spanish and Catalan. Only the language changes — and so does how much each judge can <strong>safely automate</strong>:</p>
-  <div class="glance">
-    <div class="grow">
-      <div class="ghead"><b>microsoft-decision-1 <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −50.6 pts</span></div>
-      <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:80.7%;background:var(--g1)"></i></div><span class="gval">80.7%</span></div>
-      <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:72.3%;background:var(--g2)"></i></div><span class="gval">72.3%</span></div>
-      <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:30.1%;background:var(--g3)"></i></div><span class="gval">30.1%</span></div>
+  <div class="jcarousel reveal">
+    <div class="jtrack" id="jTrack">
+      <div class="grow">
+        <div class="ghead"><b>microsoft-decision-1 <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −50.6 pts</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:80.7%;background:var(--g1)"></i></div><span class="gval">80.7%</span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:72.3%;background:var(--g2)"></i></div><span class="gval">72.3%</span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:30.1%;background:var(--g3)"></i></div><span class="gval">30.1%</span></div>
+      </div>
+      <div class="grow">
+        <div class="ghead"><b>gemini-3.6-flash <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −28.0 pts</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:55.1%;background:var(--g1)"></i></div><span class="gval">55.1%</span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:26.6%;background:var(--g2)"></i></div><span class="gval">26.6%</span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:27.1%;background:var(--g3)"></i></div><span class="gval">27.1%</span></div>
+      </div>
+      <div class="grow">
+        <div class="ghead"><b>clef-flash <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −1.6 pts</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:40.6%;background:var(--g1)"></i></div><span class="gval">40.6%</span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:38.5%;background:var(--g2)"></i></div><span class="gval">38.5%</span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:39.0%;background:var(--g3)"></i></div><span class="gval">39.0%</span></div>
+      </div>
+      <div class="grow">
+        <div class="ghead"><b>jev-1.13.0</b><span class="gdelta">EN → CA · −29.0 pts</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29%;background:var(--g1)"></i></div><span class="gval">29.0%</span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--g2)"></i></div><span class="gval">25.3%</span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
+      </div>
+      <div class="grow">
+        <div class="ghead"><b>claude-sonnet-4.5</b><span class="gdelta">EN → CA · −21.5 pts</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:21.5%;background:var(--g1)"></i></div><span class="gval">21.5%</span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:8.5%;background:var(--g2)"></i></div><span class="gval">8.5%</span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
+      </div>
+      <div class="grow">
+        <div class="ghead"><b>gpt-6-luna</b><span class="gdelta">EN → CA · −12.9 pts</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:18.2%;background:var(--g1)"></i></div><span class="gval">18.2%</span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:0%;background:var(--g2)"></i></div><span class="gval">0.0%</span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:5.3%;background:var(--g3)"></i></div><span class="gval">5.3%</span></div>
+      </div>
     </div>
-    <div class="grow">
-      <div class="ghead"><b>jev</b><span class="gdelta">EN → CA · −29.0 pts</span></div>
-      <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29%;background:var(--g1)"></i></div><span class="gval">29.0%</span></div>
-      <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--g2)"></i></div><span class="gval">25.3%</span></div>
-      <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
-    </div>
-    <div class="grow">
-      <div class="ghead"><b>claude-sonnet-4.5</b><span class="gdelta">EN → CA · −21.5 pts</span></div>
-      <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:21.5%;background:var(--g1)"></i></div><span class="gval">21.5%</span></div>
-      <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:8.5%;background:var(--g2)"></i></div><span class="gval">8.5%</span></div>
-      <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
+    <div class="jnav">
+      <button class="jbtn" id="jPrev" aria-label="Previous judges">←</button>
+      <div class="cdots" id="jDots"></div>
+      <button class="jbtn" id="jNext" aria-label="Next judges">→</button>
     </div>
   </div>
-  <p class="caveat">Share of decisions automatable with error bounded at 5% — one-sided 95% Clopper–Pearson, validated out-of-sample. Twelve judges audited in total. <a href="https://github.com/kunko-ai-labs/judge-audit">Full study in the repo →</a></p>
+  <p class="caveat">Six of the twelve audited judges — drag or use the arrows. Share of decisions automatable with error bounded at 5% — one-sided 95% Clopper–Pearson, validated out-of-sample. <a href="https://github.com/kunko-ai-labs/judge-audit">Full study in the repo →</a></p>
 </section>
 
 <section id="platform">
@@ -656,6 +694,24 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
     }
     [sVol,sCost,sErr].forEach(function(s){s.addEventListener('input',upd);});
     upd();
+  }
+  document.documentElement.classList.add('js');
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1}):null;
+  document.querySelectorAll('.pcol,.finding,.card,.step,.seg,.reg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox,.ghead').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
+  var track=document.getElementById('jTrack');
+  if(track){
+    var dots=document.getElementById('jDots'),n=track.children.length;
+    for(var di=0;di<n;di++){var dd=document.createElement('i');dd.setAttribute('data-i',di);dots.appendChild(dd);}
+    var dotEls=dots.children;
+    function cw(){return track.children[0].getBoundingClientRect().width+14;}
+    function go(d){track.scrollBy({left:d*cw(),behavior:'smooth'});}
+    document.getElementById('jPrev').addEventListener('click',function(){go(-1);});
+    document.getElementById('jNext').addEventListener('click',function(){go(1);});
+    dots.addEventListener('click',function(e){var t=e.target;if(t.tagName==='I'){track.scrollTo({left:(+t.getAttribute('data-i'))*cw(),behavior:'smooth'});}});
+    function paintDots(){var idx=Math.min(n-1,Math.round(track.scrollLeft/cw()));for(var k=0;k<dotEls.length;k++){dotEls[k].className=idx===k?'on':'';}}
+    track.addEventListener('scroll',paintDots,{passive:true});paintDots();
+    var auto=setInterval(function(){if(document.hidden)return;if(track.scrollLeft>=track.scrollWidth-track.clientWidth-12){track.scrollTo({left:0,behavior:'smooth'});}else{go(1);}},6000);
+    track.addEventListener('pointerdown',function(){clearInterval(auto);},{once:true});
   }
 })();
 </script>

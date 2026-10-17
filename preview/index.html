@@ -67,11 +67,12 @@ p.body + p.body{margin-top:16px}
 .reg{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:22px}
 .reg h4{font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .reg p{color:var(--muted);font-size:13.5px;line-height:1.7}
-.flow{display:flex;align-items:stretch;gap:0;margin-top:44px;flex-wrap:wrap}
-.fnode{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;flex:1 1 120px;min-width:120px;text-align:center}
+.flow{display:flex;align-items:stretch;gap:0;margin-top:58px;flex-wrap:wrap;counter-reset:fnode}
+.fnode{background:linear-gradient(var(--card),var(--card)) padding-box,var(--grad) border-box;border:1px solid transparent;border-radius:16px;padding:26px 20px 18px;flex:1 1 120px;min-width:120px;text-align:center;position:relative}
+.fnode::before{counter-increment:fnode;content:counter(fnode);position:absolute;top:-15px;left:50%;transform:translateX(-50%);width:30px;height:30px;border-radius:999px;background:var(--bg);border:1px solid var(--g2);color:var(--ink);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
 .fnode b{display:block;font-size:14.5px;margin-bottom:4px}
 .fnode span{color:var(--muted);font-size:12.5px;line-height:1.45;display:block}
-.farrow{align-self:center;padding:0 10px;color:var(--g2);font-size:20px;font-weight:700}
+.farrow{align-self:center;padding:0 10px;font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 8px rgba(99,102,241,.45))}
 .fout{display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap}
 .pill{padding:12px 28px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.08em}
 .pill.auto{background:rgba(52,211,153,.14);color:var(--g1);border:1px solid rgba(52,211,153,.4)}
@@ -110,7 +111,9 @@ table.compare td{color:var(--muted)}
 .measure svg{width:100%;height:auto;display:block}
 .measure figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
 .metrics{list-style:none;display:grid;gap:14px}
-.metrics li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.metrics li{background:linear-gradient(var(--card),var(--card)) padding-box,var(--grad) border-box;border:1px solid transparent;border-radius:16px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start}
+.mico{flex:0 0 36px;width:36px;height:36px}
+.mico svg{width:100%;height:100%;display:block}
 .metrics b{color:var(--ink);font-size:15.5px}
 .metrics b i{font-style:normal;color:var(--g1)}
 .metrics span{color:var(--muted);font-size:14px;display:block;margin-top:4px}
@@ -507,12 +510,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <figcaption>A reliability diagram: the diagonal is perfect calibration — most judges aren't on it.</figcaption>
     </figure>
     <ul class="metrics">
-      <li><b><i>Safe Automation Rate</i></b><span>What share of decisions can be automated at a certified error bound. The ROI number.</span></li>
-      <li><b><i>ECE</i> with confidence intervals</b><span>How far confidence drifts from reality — as an interval, never a lonely point estimate.</span></li>
-      <li><b><i>MCE</i> — worst-bin error</b><span>The regulator's question, not the average case: where is this judge <em>most</em> wrong?</span></li>
-      <li><b>Selective prediction, certified</b><span>Finite-sample risk bounds (Clopper–Pearson): automation you can sign off on.</span></li>
-      <li><b>Adversarial robustness</b><span>Prompt injection, homoglyphs, social engineering — does calibration survive attack?</span></li>
-      <li><b>Cost, latency &amp; drift</b><span>Calibration per dollar and per millisecond — plus continuous monitoring for when it degrades.</span></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4.5-4.5"/><circle cx="12" cy="15" r="1.4" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>Safe Automation Rate</i></b><span>What share of decisions can be automated at a certified error bound. The ROI number.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 4-6"/><path d="M18 4v5M15.5 6.5h5"/></svg></span><div><b><i>ECE</i> with confidence intervals</b><span>How far confidence drifts from reality — as an interval, never a lonely point estimate.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5L2.5 20h19L12 3.5z"/><path d="M12 9.5v4.5"/><circle cx="12" cy="17" r="1.1" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>MCE</i> — worst-bin error</b><span>The regulator's question, not the average case: where is this judge <em>most</em> wrong?</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9.8 9l1.6 1.6 3-3.2"/><path d="M8.6 13.4L7 21l5-2.6L17 21l-1.6-7.6"/></svg></span><div><b>Selective prediction, certified</b><span>Finite-sample risk bounds (Clopper–Pearson): automation you can sign off on.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z"/><path d="M9.3 12l2 2 3.6-4.2"/></svg></span><div><b>Adversarial robustness</b><span>Prompt injection, homoglyphs, social engineering — does calibration survive attack?</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2.2"/></svg></span><div><b>Cost, latency &amp; drift</b><span>Calibration per dollar and per millisecond — plus continuous monitoring for when it degrades.</span></div></li>
     </ul>
   </div>
 </section>
@@ -609,33 +612,35 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="step"><h4>Enterprise Assurance</h4><p>The full control plane: inventory, risk, evidence, policy, monitoring.</p></div>
   </div>
   <figure class="loopfig">
-    <svg viewBox="0 0 640 400" role="img" aria-label="Continuous assurance loop: certified, change, impact analysis, revalidate">
+    <svg viewBox="0 0 480 400" role="img" aria-label="Continuous assurance loop: certified, change, impact analysis, revalidate" style="max-width:440px">
       <defs>
         <linearGradient id="loopg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/>
         </linearGradient>
+        <marker id="looparr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/>
+        </marker>
       </defs>
-      <circle cx="320" cy="180" r="120" fill="none" stroke="url(#loopg)" stroke-width="2.5" opacity=".5"/>
-      <g fill="url(#loopg)" opacity=".9">
-        <polygon points="-9,-6 9,0 -9,6" transform="translate(405 95) rotate(45)"/>
-        <polygon points="-9,-6 9,0 -9,6" transform="translate(405 265) rotate(135)"/>
-        <polygon points="-9,-6 9,0 -9,6" transform="translate(235 265) rotate(225)"/>
-        <polygon points="-9,-6 9,0 -9,6" transform="translate(235 95) rotate(315)"/>
+      <g fill="none" stroke="url(#loopg)" stroke-width="9" opacity=".55" stroke-linecap="round">
+        <path d="M 267 73 A 130 130 0 0 1 367 173" marker-end="url(#looparr)"/>
+        <path d="M 367 227 A 130 130 0 0 1 267 327" marker-end="url(#looparr)"/>
+        <path d="M 213 327 A 130 130 0 0 1 113 227" marker-end="url(#looparr)"/>
+        <path d="M 113 173 A 130 130 0 0 1 213 73" marker-end="url(#looparr)"/>
       </g>
-      <circle class="ln" cx="320" cy="60" r="30" stroke="url(#loopg)"/>
-      <text class="lnum" x="320" y="67">1</text>
-      <text class="ltit" x="320" y="20">CERTIFIED</text>
-      <circle class="ln" cx="440" cy="180" r="30" stroke="url(#loopg)"/>
-      <text class="lnum" x="440" y="187">2</text>
-      <text class="ltit" x="482" y="185" style="text-anchor:start">CHANGE</text>
-      <circle class="ln" cx="320" cy="300" r="30" stroke="url(#loopg)"/>
-      <text class="lnum" x="320" y="307">3</text>
-      <text class="ltit" x="320" y="348">IMPACT ANALYSIS</text>
-      <circle class="ln" cx="200" cy="180" r="30" stroke="url(#loopg)"/>
-      <text class="lnum" x="200" y="187">4</text>
-      <text class="ltit" x="158" y="185" style="text-anchor:end">REVALIDATE</text>
-      <text class="llab" x="320" y="172">CONTINUOUS</text>
-      <text class="llab" x="320" y="190">ASSURANCE LOOP</text>
+      <circle class="ln" cx="240" cy="70" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="240" y="77">1</text>
+      <text class="ltit" x="240" y="26">CERTIFIED</text>
+      <circle class="ln" cx="370" cy="200" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="370" y="207">2</text>
+      <text class="ltit" x="408" y="205" style="text-anchor:start">CHANGE</text>
+      <circle class="ln" cx="240" cy="330" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="240" y="337">3</text>
+      <text class="ltit" x="240" y="374">IMPACT ANALYSIS</text>
+      <circle class="ln" cx="110" cy="200" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="110" y="207">4</text>
+      <text class="ltit" x="72" y="205" style="text-anchor:end">REVALIDATE</text>
+      <text class="llab" x="240" y="193">CONTINUOUS</text>
+      <text class="llab" x="240" y="211">ASSURANCE LOOP</text>
     </svg>
     <div class="loop" style="margin-top:4px">
       <span class="lnode hot">CERTIFIED · stays in force</span>

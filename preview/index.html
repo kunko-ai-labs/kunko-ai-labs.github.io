@@ -225,6 +225,26 @@ html.js .reveal.in{opacity:1;transform:none}
 #oAuto{color:var(--g1)}#oSave{color:var(--g1)}#oBlock{color:var(--red)}
 @media(max-width:720px){.simgrid{grid-template-columns:1fr}}
 .loopfig .llab{fill:var(--muted);font-size:11px;letter-spacing:.22em;text-anchor:middle}
+.vdiag{display:grid;grid-template-columns:1fr 28px 1.55fr 28px 1fr;gap:14px;align-items:stretch;margin-top:44px}
+.vcol{display:grid;gap:14px;align-content:center}
+.vlink{align-self:center;text-align:center;color:var(--g2);font-weight:700;font-size:22px}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.vcard .vk{font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--g2);margin-bottom:8px}
+.vin .vcard .vk{color:var(--g1)}
+.vout .vcard .vk{color:var(--g3)}
+.vcard b{display:block;font-size:14.5px;margin-bottom:4px}
+.vcard span{color:var(--muted);font-size:12.5px;line-height:1.55;display:block}
+.vcore{border:1.5px solid transparent;border-radius:20px;padding:26px 28px;background:linear-gradient(var(--card),var(--card)) padding-box,var(--grad) border-box}
+.vcore .vk{font-size:11px;font-weight:700;letter-spacing:.24em;text-align:center;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vstep{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line)}
+.vstep i{flex:0 0 30px;width:30px;height:30px;border-radius:999px;background:var(--grad);color:#fff;font-style:normal;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.vstep b{display:block;font-size:15px;margin-bottom:2px}
+.vstep span{color:var(--muted);font-size:13px;line-height:1.55;display:block}
+.vpillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.vpillar{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.vpillar b{display:block;font-size:11px;letter-spacing:.14em;margin-bottom:5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vpillar span{color:var(--muted);font-size:12px;line-height:1.55;display:block}
+@media(max-width:900px){.vdiag{grid-template-columns:1fr}.vlink{display:none}.vpillars{grid-template-columns:1fr 1fr}}
 .loopfig text{font-family:inherit}
 .loopcap{color:var(--muted);font-size:14px;margin-top:18px;max-width:640px;margin-left:auto;margin-right:auto}
 @media(max-width:720px){.nav a.link{margin-left:16px;font-size:13px}.hero{padding:70px 0 30px}.measure,.duo,.plat,.rgrid{grid-template-columns:1fr}section{padding:64px 0}.farrow{display:none}.themetoggle{margin-left:12px}}
@@ -312,38 +332,38 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="platform">
   <div class="eyebrow">The vision</div>
   <h2>The <span class="grad">control plane</span> for AI assurance</h2>
-  <p class="body">Not another governance dashboard. Kunko is the layer that continuously determines <strong>what AI is allowed to do</strong> — and whether it remains trustworthy enough to do it. Three planes, one evidence backbone:</p>
-  <div class="plat">
-    <div class="pcol"><div class="k">DISCOVER</div><ul>
-      <li><b>AI inventory</b> — every system you run</li>
-      <li>Models, agents, judges, prompts</li>
-      <li>Versions, owners, environments</li>
-      <li>Data sources &amp; providers</li>
-    </ul></div>
-    <div class="pcol"><div class="k">ASSURE</div><ul>
-      <li><b>Judge Audit</b> — calibration evidence</li>
-      <li><b>Agent Assurance</b> — capability control</li>
-      <li>Evaluations, red-team, security tests</li>
-      <li>Human outcomes &amp; incident history</li>
-    </ul></div>
-    <div class="pcol"><div class="k">CONTROL</div><ul>
-      <li><b>Risk engine</b> — low → critical per system</li>
-      <li><b>Policies</b> — what each system may do</li>
-      <li>Human review queues</li>
-      <li>Runtime controls &amp; blocks</li>
-    </ul></div>
+  <p class="body">Not another governance dashboard. Kunko is the layer that continuously determines <strong>what AI is allowed to do</strong> — and whether it remains trustworthy enough to do it. Everything it touches runs through one assurance loop:</p>
+  <div class="vdiag">
+    <div class="vcol vin">
+      <div class="vcard"><div class="vk">INPUT</div><b>Models, agents, judges</b><span>the systems you run</span></div>
+      <div class="vcard"><div class="vk">INPUT</div><b>Prompts &amp; versions</b><span>owners, environments</span></div>
+      <div class="vcard"><div class="vk">INPUT</div><b>Data &amp; providers</b><span>ground truth, policies</span></div>
+    </div>
+    <div class="vlink" aria-hidden="true">→</div>
+    <div class="vcore">
+      <div class="vk">THE ASSURANCE LOOP</div>
+      <div class="vstep"><i>1</i><div><b>Audit</b><span>Judge Audit measures calibration in shadow mode</span></div></div>
+      <div class="vstep"><i>2</i><div><b>Decide</b><span>risk engine: automate, review or block — per segment</span></div></div>
+      <div class="vstep"><i>3</i><div><b>Prove</b><span>Trust Passport: a signed receipt per decision</span></div></div>
+      <div class="vstep"><i>4</i><div><b>Monitor</b><span>detect change → re-evaluate → act, continuously</span></div></div>
+    </div>
+    <div class="vlink" aria-hidden="true">→</div>
+    <div class="vcol vout">
+      <div class="vcard"><div class="vk">FOR PEOPLE</div><b>Review queues</b><span>evidence dossiers, board-ready reports</span></div>
+      <div class="vcard"><div class="vk">FOR SYSTEMS</div><b>Runtime control</b><span>policies enforced, blocks automatic</span></div>
+    </div>
+  </div>
+  <div class="vpillars">
+    <div class="vpillar"><b>INVENTORY</b><span>every model, agent, judge, prompt, version</span></div>
+    <div class="vpillar"><b>RISK</b><span>low → critical, per system and decision</span></div>
+    <div class="vpillar"><b>EVIDENCE</b><span>calibration, red-team, outcomes, history</span></div>
+    <div class="vpillar"><b>POLICY</b><span>automate · review · block per decision</span></div>
   </div>
   <div class="strip"><div class="k">CONTINUOUS ASSURANCE</div>
     <p><b>Monitor → detect change → re-evaluate → act.</b> When the model, prompt, data or policy changes, Kunko re-runs the evidence and can automatically downgrade or block autonomy. Trust is not a one-time certificate — it's a stream.</p>
   </div>
   <div class="strip"><div class="k">EVIDENCE LAYER</div>
     <p>Evaluations · calibration reports · audit trails · provenance · signed dossiers — everything the platform decides is backed by evidence a regulator, an auditor or your board can inspect.</p>
-  </div>
-  <div class="regs">
-    <div class="reg"><h4>Inventory</h4><p>What AI systems do I run? Model, agent, judge, prompt, version, owner, environment, data, provider.</p></div>
-    <div class="reg"><h4>Risk</h4><p>What risk does each carry? Low, medium, high, critical — per system, per decision type.</p></div>
-    <div class="reg"><h4>Evidence</h4><p>Why do we trust it? Evaluations, calibration, red-team results, security tests, human outcomes, incidents, audit history.</p></div>
-    <div class="reg"><h4>Policy</h4><p>What may it do? <strong style="color:var(--g1)">Automate</strong> · <strong style="color:var(--amber)">review</strong> · <strong style="color:var(--red)">block</strong> — per decision, per risk level.</p></div>
   </div>
 </section>
 
@@ -697,7 +717,7 @@ html.js .reveal.in{opacity:1;transform:none}
   }
   document.documentElement.classList.add('js');
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1}):null;
-  document.querySelectorAll('.pcol,.finding,.card,.step,.seg,.reg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox,.ghead').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
+  document.querySelectorAll('.vcard,.vcore,.vpillar,.finding,.card,.step,.seg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
   var track=document.getElementById('jTrack');
   if(track){
     var dots=document.getElementById('jDots'),n=track.children.length;

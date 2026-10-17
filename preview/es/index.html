@@ -245,6 +245,26 @@ html.js .reveal.in{opacity:1;transform:none}
 .vpillar b{display:block;font-size:11px;letter-spacing:.14em;margin-bottom:5px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .vpillar span{color:var(--muted);font-size:12px;line-height:1.55;display:block}
 @media(max-width:900px){.vdiag{grid-template-columns:1fr}.vlink{display:none}.vpillars{grid-template-columns:1fr 1fr}}
+.chansec{margin-top:60px}
+.chansec h3{font-size:clamp(22px,2.9vw,30px);letter-spacing:-.015em;margin:14px 0 12px;line-height:1.3}
+.chans{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:26px}
+.chan{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;cursor:pointer;transition:border-color .2s,transform .15s;text-align:left;color:var(--ink);font-family:inherit}
+.chan:hover{transform:translateY(-2px)}
+.chan.sel{border-color:var(--g2);box-shadow:0 0 0 1px var(--g2)}
+.chan b{display:block;font-size:15.5px;margin-bottom:10px}
+.chan .pill{padding:6px 14px;font-size:11.5px}
+.chan p{color:var(--muted);font-size:13px;margin-top:10px;line-height:1.6}
+.chan .cbody{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.chan.open .cbody{display:block}
+.chan .cbody i{display:block;font-style:normal;color:var(--muted);font-size:12.5px;padding:5px 0 5px 18px;position:relative;line-height:1.5}
+.chan .cbody i::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;border-radius:999px;background:var(--grad)}
+.rmp{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rmp>div{padding:24px 22px;border-left:1px solid var(--line)}
+.rmp>div:first-child{border-left:none}
+.rmp .rk{font-size:11px;font-weight:700;letter-spacing:.18em;margin-bottom:10px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rmp b{display:block;font-size:14.5px;margin-bottom:6px}
+.rmp span{color:var(--muted);font-size:13px;line-height:1.6;display:block}
+@media(max-width:900px){.chans{grid-template-columns:repeat(2,1fr)}.rmp{grid-template-columns:1fr 1fr}.rmp>div:nth-child(3){border-left:none}.rmp>div:nth-child(n+3){border-top:1px solid var(--line)}}
 .loopfig text{font-family:inherit}
 .loopcap{color:var(--muted);font-size:14px;margin-top:18px;max-width:640px;margin-left:auto;margin-right:auto}
 @media(max-width:720px){.nav a.link{margin-left:16px;font-size:13px}.hero{padding:70px 0 30px}.measure,.duo,.plat,.rgrid{grid-template-columns:1fr}section{padding:64px 0}.farrow{display:none}.themetoggle{margin-left:12px}}
@@ -385,6 +405,20 @@ html.js .reveal.in{opacity:1;transform:none}
     <span class="pill block">BLOCK</span>
   </div>
 
+  <div class="chansec">
+    <div class="eyebrow">De la medición a la decisión</div>
+    <h3>Automatizar, revisar o bloquear,<br><span class="grad">por canal, con recibo</span></h3>
+    <p class="body">Una media esconde el segmento que falla. Kunko convierte la auditoría en una decisión por segmento, escribe un contrato para cada segmento que te permite automatizar y emite un recibo por cada decisión automatizada. Un segmento que su propia auditoría marca nunca se automatiza. <strong>Pulsa un canal para inspeccionar su contrato.</strong></p>
+    <div class="chans">
+      <button class="chan"><b>Web</b><span class="pill auto">● AUTOMATE</span><p>Cota de error bajo el objetivo en suficientes decisiones auditadas. Se escribe un contrato para este segmento.</p><span class="cbody"><i>Umbral τ = 0,98</i><i>Cota de error ≤ 5% (unilateral al 95%)</i><i>Automatización solo dentro del porcentaje validado</i><i>Recibo firmado por decisión</i></span></button>
+      <button class="chan"><b>Teléfono</b><span class="pill review">● REVIEW</span><p>El juez sugiere, una persona decide.</p><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
+      <button class="chan"><b>Chat</b><span class="pill review">● REVIEW</span><p>El juez sugiere, una persona decide.</p><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
+      <button class="chan"><b>Email</b><span class="pill block">× BLOCK</span><p>La auditoría marca este segmento. Ninguna decisión de email se automatiza.</p><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
+      <button class="chan"><b>Tienda</b><span class="pill block">× BLOCK</span><p>La auditoría marca este segmento.</p><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
+    </div>
+    <p class="caveat">Ejemplo ilustrativo de cinco canales construido con un fixture sintético y calculable a mano. No son datos de clientes.</p>
+  </div>
+
   <div class="rdemo">
     <div class="k">DEMO DEL ROUTER EN VIVO</div>
     <p>Elige una decisión bancaria entrante. <code>contract.decide()</code> lee el segmento, aplica el contrato firmado en memoria — sin disco — y emite un recibo:</p>
@@ -398,6 +432,13 @@ html.js .reveal.in{opacity:1;transform:none}
       <pre class="rreceipt"><code id="receiptJson"></code></pre>
     </div>
     <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo va firmado con HMAC-SHA256 con la clave del cliente, no almacena datos personales y referencia el contrato exacto que autorizó — o denegó — la decisión. Es la traza de auditoría que un regulador, una aseguradora o un consejo pueden volver a verificar.</p>
+  </div>
+
+  <div class="rmp">
+    <div><div class="rk">REPRODUCIR</div><b>Tus decisiones pasadas</b><span>Ejecuta el juez en modo sombra sobre decisiones que tu gente ya tomó. Nada se automatiza.</span></div>
+    <div><div class="rk">MEDIR</div><b>Confianza contra resultado</b><span>Calibración, tasa de automatización segura con su cota, coste y latencia — por segmento.</span></div>
+    <div><div class="rk">DECIDIR</div><b>Una decisión por segmento</b><span>Automatizar, revisar o bloquear por segmento, con un contrato para cada uno automatizado.</span></div>
+    <div><div class="rk">DEMOSTRAR</div><b>Recibos, no promesas</b><span>Un recibo por decisión automatizada, con tu propia clave, que apunta a la auditoría.</span></div>
   </div>
   <p class="body" style="margin-top:36px"><strong>La tasa de automatización segura</strong> convierte la fiabilidad en economía: <em>¿cuánto trabajo humano puedes eliminar con seguridad?</em> El valor que creamos es directamente proporcional a la revisión humana — y al riesgo — que eliminamos de forma segura.</p>
   <p class="body" style="margin-top:16px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="inline" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
@@ -717,7 +758,12 @@ html.js .reveal.in{opacity:1;transform:none}
   }
   document.documentElement.classList.add('js');
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1}):null;
-  document.querySelectorAll('.vcard,.vcore,.vpillar,.finding,.card,.step,.seg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
+  document.querySelectorAll('.vcard,.vcore,.vpillar,.finding,.card,.step,.seg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox,.chan,.rmp>div').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
+  document.querySelectorAll('.chan').forEach(function(c){c.addEventListener('click',function(){
+    var was=c.classList.contains('open');
+    document.querySelectorAll('.chan.open').forEach(function(x){x.classList.remove('open');x.classList.remove('sel');});
+    if(!was){c.classList.add('open');c.classList.add('sel');}
+  });});
   var track=document.getElementById('jTrack');
   if(track){
     var dots=document.getElementById('jDots'),n=track.children.length;

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0a0f1e" id="themeColor">
+<title>Kunko AI Labs — The AI Decision Assurance Platform for enterprises</title>
+<meta name="description" content="Kunko is building the AI Decision Assurance Platform for enterprises. We help companies audit, control and continuously assure AI systems before allowing them to make autonomous decisions. Starting with open-source Judge Audit: we tell enterprises which AI decisions are safe to automate — measured, certified, continuously monitored.">
+<meta name="keywords" content="AI assurance, AI decision assurance platform, safe automation rate, AI judge calibration, LLM-as-a-judge audit, selective prediction, model risk management, EU AI Act compliance, AI governance, continuous assurance, trustworthy AI, agent guardrails">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<style>
+:root{
+  --bg:#0a0f1e; --card:#0f1626; --ink:#eef2f9; --muted:#9aa7bd;
+  --line:rgba(255,255,255,.09);
+  --g1:#34d399; --g2:#3b82f6; --g3:#8b5cf6;
+  --grad:linear-gradient(92deg,var(--g1),var(--g2) 55%,var(--g3));
+  --amber:#f5b544; --red:#f87171;
+  --axline:rgba(255,255,255,.25); --headerbg:rgba(10,15,30,.82); --soft:rgba(255,255,255,.03);
+}
+[data-theme="light"]{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#0b1226; --muted:#4d5b76;
+  --line:rgba(11,18,38,.12);
+  --axline:rgba(11,18,38,.22); --headerbg:rgba(244,246,251,.88); --soft:rgba(11,18,38,.035);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+header{background:var(--headerbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.12em;font-size:14px;text-decoration:none;color:var(--ink)}
+.brand img{height:38px;width:auto;display:block}
+.brand em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.link{color:var(--muted);text-decoration:none;font-size:14.5px;margin-left:28px;transition:color .2s}
+.nav a.link:hover{color:var(--ink)}
+.hero{padding:110px 0 44px;text-align:center}
+.kicker{color:var(--g1);letter-spacing:.3em;font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:26px}
+h1{font-size:clamp(38px,5.6vw,66px);line-height:1.12;letter-spacing:-.03em;font-weight:700}
+.lede{color:var(--muted);font-size:clamp(17px,2.2vw,21px);max-width:740px;margin:28px auto 0;line-height:1.75}
+.lede strong{color:var(--ink);font-weight:600}
+.cta{margin-top:42px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15.5px;transition:transform .15s, box-shadow .15s}
+.btn.solid{background:var(--grad);color:#fff;box-shadow:0 8px 28px rgba(99,102,241,.32)}
+.btn.ghost{color:var(--ink);border:1px solid var(--line);background:var(--soft)}
+.btn:hover{transform:translateY(-1px)}
+section{padding:88px 0}
+section + section{border-top:1px solid var(--line)}
+.eyebrow{letter-spacing:.26em;font-size:12px;font-weight:700;text-transform:uppercase;margin-bottom:16px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+h2{font-size:clamp(28px,3.8vw,42px);letter-spacing:-.02em;font-weight:700;margin-bottom:16px;line-height:1.22}
+p.body{color:var(--muted);max-width:760px;font-size:16.5px}
+p.body strong{color:var(--ink);font-weight:600}
+p.body + p.body{margin-top:16px}
+.plat{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.pcol{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;position:relative;overflow:hidden}
+.pcol::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.85}
+.pcol .k{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:16px}
+.pcol ul{list-style:none;display:grid;gap:10px}
+.pcol li{color:var(--muted);font-size:14.5px}
+.pcol li b{color:var(--ink);font-weight:600}
+.strip{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 34px;margin-top:22px}
+.strip .k{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:12px}
+.strip p{color:var(--muted);font-size:15px}
+.strip p b{color:var(--ink)}
+.regs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
+.reg{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:22px}
+.reg h4{font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.reg p{color:var(--muted);font-size:13.5px;line-height:1.7}
+.flow{display:flex;align-items:stretch;gap:0;margin-top:44px;flex-wrap:wrap}
+.fnode{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;flex:1 1 120px;min-width:120px;text-align:center}
+.fnode b{display:block;font-size:14.5px;margin-bottom:4px}
+.fnode span{color:var(--muted);font-size:12.5px;line-height:1.45;display:block}
+.farrow{align-self:center;padding:0 10px;color:var(--g2);font-size:20px;font-weight:700}
+.fout{display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.pill{padding:12px 28px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.08em}
+.pill.auto{background:rgba(52,211,153,.14);color:var(--g1);border:1px solid rgba(52,211,153,.4)}
+.pill.review{background:rgba(245,181,68,.12);color:var(--amber);border:1px solid rgba(245,181,68,.4)}
+.pill.block{background:rgba(248,113,113,.12);color:var(--red);border:1px solid rgba(248,113,113,.4)}
+table.proof{width:100%;border-collapse:collapse;margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:15px}
+table.proof th,table.proof td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
+table.proof th{color:var(--muted);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+table.proof tr:last-child td{border-bottom:none}
+table.proof td.n{font-weight:700;font-size:19px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.finding{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:38px;margin-top:44px;position:relative;overflow:hidden}
+.finding::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.85}
+.finding .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:14px}
+.finding h3{font-size:clamp(21px,2.8vw,28px);letter-spacing:-.015em;margin-bottom:14px;line-height:1.35}
+.finding p{color:var(--muted);font-size:15.5px;max-width:760px}
+.finding p strong{color:var(--ink)}
+table.compare{width:100%;border-collapse:collapse;margin-top:28px;background:var(--soft);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:14.5px}
+table.compare th,table.compare td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.compare th{color:var(--muted);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+table.compare tr:last-child td{border-bottom:none}
+table.compare td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+table.compare td{color:var(--muted)}
+.caveat{color:var(--muted);font-size:13px;margin-top:14px;max-width:760px}
+.caveat a{color:var(--g1);text-decoration:none;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:44px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.85}
+.card h3{font-size:20px;margin-bottom:10px;letter-spacing:-.01em}
+.card p{color:var(--muted);font-size:15px}
+.card .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g1);margin-bottom:14px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.duo .tier{font-size:13px;font-weight:700;letter-spacing:.1em;margin-bottom:14px}
+.tier.free{color:var(--g1)} .tier.ent{color:var(--g3)}
+.measure{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px;align-items:start}
+.measure figure{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.measure svg{width:100%;height:auto;display:block}
+.measure figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
+.metrics{list-style:none;display:grid;gap:14px}
+.metrics li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.metrics b{color:var(--ink);font-size:15.5px}
+.metrics b i{font-style:normal;color:var(--g1)}
+.metrics span{color:var(--muted);font-size:14px;display:block;margin-top:4px}
+.usecase{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px;margin-top:44px;position:relative;overflow:hidden}
+.usecase::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.usecase .big{font-size:clamp(20px,2.6vw,26px);font-weight:600;line-height:1.55;letter-spacing:-.01em}
+.usecase .big em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+.usecase p{color:var(--muted);margin-top:14px;font-size:15.5px}
+.offer{margin-top:26px;border:1px dashed rgba(52,211,153,.45);border-radius:16px;padding:28px;background:rgba(52,211,153,.05)}
+.offer b{color:var(--ink);font-size:17px}
+.offer p{color:var(--muted);font-size:15px;margin-top:8px}
+.offer .fine{font-size:13px;color:var(--g1);font-weight:600;margin-top:10px}
+.prog{display:flex;align-items:center;gap:0;margin-top:44px;flex-wrap:wrap}
+.pstep{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;flex:1 1 140px;text-align:center}
+.pstep b{display:block;font-size:15.5px}
+.pstep span{color:var(--muted);font-size:12.5px}
+.loop{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:36px;flex-wrap:wrap;text-align:center}
+.lnode{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 22px;font-weight:700;font-size:13.5px;letter-spacing:.06em}
+.lnode.hot{border-color:rgba(52,211,153,.5);color:var(--g1)}
+.lnode.warn{border-color:rgba(245,181,68,.5);color:var(--amber)}
+.lnode.bad{border-color:rgba(248,113,113,.5);color:var(--red)}
+.larrow{color:var(--g2);font-weight:700}
+.quote{font-size:clamp(24px,3.4vw,36px);line-height:1.45;max-width:880px;margin:0 auto;text-align:center;font-weight:700;letter-spacing:-.015em}
+.quote small{display:block;margin-top:20px;font-size:14.5px;color:var(--muted);font-weight:400}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:44px;counter-reset:step}
+.step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.step::before{counter-increment:step;content:"0" counter(step);font-weight:700;letter-spacing:.1em;font-size:13px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h4{margin:12px 0 8px;font-size:16.5px}
+.step p{color:var(--muted);font-size:14.5px}
+.faq{margin-top:36px;display:grid;gap:14px;max-width:780px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
+.faq summary{font-weight:600;cursor:pointer;font-size:16.5px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq p{color:var(--muted);font-size:15px;margin-top:12px}
+.contact{text-align:center}
+.contact a.mail{font-size:clamp(22px,3vw,30px);text-decoration:none;font-weight:700;letter-spacing:-.01em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:13.5px;margin-top:20px}
+code{background:rgba(52,211,153,.1);color:var(--g1);padding:3px 10px;border-radius:8px;font-size:.92em;font-weight:500}
+a.inline{color:var(--g1);font-weight:600;text-decoration:none}
+.buyers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
+.buyer{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:22px}
+.buyer h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px}
+.buyer p{color:var(--muted);font-size:14px}
+.measure svg .ax{stroke:var(--axline);stroke-width:1}
+.measure svg .ax.dash{stroke-dasharray:5,5;opacity:.7}
+.measure svg text.axlab{fill:var(--muted)}
+.themetoggle{margin-left:22px;background:var(--soft);border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:999px;cursor:pointer;font-size:17px;line-height:1;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s}
+.themetoggle:hover{transform:translateY(-1px)}
+.glance{display:grid;gap:14px;margin-top:36px}
+.grow{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
+.ghead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.ghead b{font-size:15px}
+.ghead b .exp{color:var(--muted);font-weight:400;font-size:12px}
+.gdelta{font-size:13px;font-weight:700;color:var(--red);white-space:nowrap}
+.grow-row{display:grid;grid-template-columns:26px 1fr 64px;align-items:center;gap:12px;margin:7px 0}
+.glab{font-size:12px;font-weight:700;color:var(--muted)}
+.gbar{background:var(--soft);border-radius:999px;height:10px;overflow:hidden}
+.gbar i{display:block;height:100%;border-radius:999px}
+.gval{font-size:13.5px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.rdemo{margin-top:44px}
+.rdemo .k{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:10px}
+.rdemo>p{color:var(--muted);font-size:15px;max-width:760px;margin-bottom:20px}
+.rgrid{display:grid;grid-template-columns:minmax(280px,5fr) minmax(320px,7fr);gap:18px;align-items:start}
+.rtickets{display:grid;gap:12px}
+.rticket{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;cursor:pointer;color:var(--ink);font-family:inherit;transition:border-color .2s, transform .15s;display:grid;gap:6px}
+.rticket:hover{transform:translateY(-1px)}
+.rticket.sel{border-color:var(--g2);box-shadow:0 0 0 1px var(--g2)}
+.rticket b{font-size:14.5px;display:block}
+.rticket span{color:var(--muted);font-size:12.5px;display:block}
+.rticket .pill{justify-self:start;padding:6px 16px;font-size:12px}
+.rreceipt{background:#070b16;border:1px solid var(--line);border-radius:16px;padding:22px;overflow-x:auto;margin:0}
+[data-theme="light"] .rreceipt{background:#0b1226}
+.rreceipt code{background:none;color:#c9d4e8;padding:0;font-size:12.5px;line-height:1.7;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.rreceipt .rk{color:#7dd3fc}.rreceipt .rv{color:#a5b4fc}.rreceipt .rg{color:#6ee7b7}.rreceipt .ra{color:#fcd34d}.rreceipt .rr{color:#fca5a5}
+.segs{display:grid;gap:14px;margin-top:26px}
+.seg{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
+.shead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.shead b{font-size:15px}
+.shead b span{color:var(--muted);font-weight:400;font-size:13px}
+.shead .pill{padding:6px 16px;font-size:12px}
+.sbar{background:var(--soft);border-radius:999px;height:12px;overflow:hidden;margin-bottom:10px}
+.sbar i{display:block;height:100%;border-radius:999px}
+.seg p{color:var(--muted);font-size:14px}
+.usecase .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:14px}
+.loopfig{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;margin-top:36px;text-align:center}
+.loopfig svg{max-width:640px;width:100%;height:auto}
+.loopfig .ln{fill:var(--card);stroke-width:2}
+.loopfig .lnum{fill:var(--ink);font-weight:700;font-size:16px;text-anchor:middle}
+.loopfig .ltit{fill:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-anchor:middle}
+.loopfig .llab{fill:var(--muted);font-size:11px;letter-spacing:.22em;text-anchor:middle}
+.loopfig text{font-family:inherit}
+.loopcap{color:var(--muted);font-size:14px;margin-top:18px;max-width:640px;margin-left:auto;margin-right:auto}
+@media(max-width:720px){.nav a.link{margin-left:16px;font-size:13px}.hero{padding:70px 0 30px}.measure,.duo,.plat,.rgrid{grid-template-columns:1fr}section{padding:64px 0}.farrow{display:none}.themetoggle{margin-left:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><img src="assets/logo-mark.png" alt="Kunko AI Labs mark">KUNKO <em>AI</em> LABS</a>
+    <nav>
+      <a class="link" href="#platform">Platform</a>
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#proof">Proof</a>
+      <a class="link" href="#roadmap">Roadmap</a>
+      <a class="link" href="#contact">Contact</a>
+      <button class="themetoggle" id="themeToggle" aria-label="Toggle light and dark mode" aria-pressed="false" title="Light / dark mode">☾</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <h1>Kunko tells enterprises<br>which AI decisions are <span class="grad">safe to automate.</span></h1>
+  <p class="lede"><strong>Kunko is building the AI Decision Assurance Platform for enterprises.</strong> We help companies audit, control and continuously assure AI systems <strong>before</strong> allowing them to make autonomous decisions.</p>
+  <p class="lede" style="margin-top:18px">We start with open-source <strong>Judge Audit</strong>, which measures whether AI judges can actually be trusted. We are expanding this into a full assurance platform covering AI decisions, agents, evidence, policies and continuous monitoring.</p>
+  <div class="cta">
+    <a class="btn solid" href="https://github.com/kunko-ai-labs/judge-audit">Explore Judge Audit</a>
+    <a class="btn ghost" href="#demo">Request the Enterprise Demo</a>
+  </div>
+</div>
+
+<div class="wrap">
+<section id="glance" style="padding-top:20px">
+  <div class="eyebrow">Study v0.6 · Pre-registered</div>
+  <h2>Validated automation at 5% error.<br><span class="grad">Same cases, three languages.</span></h2>
+  <p class="body">The same <strong>2,974 cases</strong> in English, Spanish and Catalan. Only the language changes — and so does how much each judge can <strong>safely automate</strong>:</p>
+  <div class="glance">
+    <div class="grow">
+      <div class="ghead"><b>microsoft-decision-1 <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −50.6 pts</span></div>
+      <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:80.7%;background:var(--g1)"></i></div><span class="gval">80.7%</span></div>
+      <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:72.3%;background:var(--g2)"></i></div><span class="gval">72.3%</span></div>
+      <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:30.1%;background:var(--g3)"></i></div><span class="gval">30.1%</span></div>
+    </div>
+    <div class="grow">
+      <div class="ghead"><b>jev</b><span class="gdelta">EN → CA · −29.0 pts</span></div>
+      <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29%;background:var(--g1)"></i></div><span class="gval">29.0%</span></div>
+      <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--g2)"></i></div><span class="gval">25.3%</span></div>
+      <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
+    </div>
+    <div class="grow">
+      <div class="ghead"><b>claude-sonnet-4.5</b><span class="gdelta">EN → CA · −21.5 pts</span></div>
+      <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:21.5%;background:var(--g1)"></i></div><span class="gval">21.5%</span></div>
+      <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:8.5%;background:var(--g2)"></i></div><span class="gval">8.5%</span></div>
+      <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
+    </div>
+  </div>
+  <p class="caveat">Share of decisions automatable with error bounded at 5% — one-sided 95% Clopper–Pearson, validated out-of-sample. Twelve judges audited in total. <a href="https://github.com/kunko-ai-labs/judge-audit">Full study in the repo →</a></p>
+</section>
+
+<section id="platform">
+  <div class="eyebrow">The vision</div>
+  <h2>The <span class="grad">control plane</span> for AI assurance</h2>
+  <p class="body">Not another governance dashboard. Kunko is the layer that continuously determines <strong>what AI is allowed to do</strong> — and whether it remains trustworthy enough to do it. Three planes, one evidence backbone:</p>
+  <div class="plat">
+    <div class="pcol"><div class="k">DISCOVER</div><ul>
+      <li><b>AI inventory</b> — every system you run</li>
+      <li>Models, agents, judges, prompts</li>
+      <li>Versions, owners, environments</li>
+      <li>Data sources &amp; providers</li>
+    </ul></div>
+    <div class="pcol"><div class="k">ASSURE</div><ul>
+      <li><b>Judge Audit</b> — calibration evidence</li>
+      <li><b>Agent Assurance</b> — capability control</li>
+      <li>Evaluations, red-team, security tests</li>
+      <li>Human outcomes &amp; incident history</li>
+    </ul></div>
+    <div class="pcol"><div class="k">CONTROL</div><ul>
+      <li><b>Risk engine</b> — low → critical per system</li>
+      <li><b>Policies</b> — what each system may do</li>
+      <li>Human review queues</li>
+      <li>Runtime controls &amp; blocks</li>
+    </ul></div>
+  </div>
+  <div class="strip"><div class="k">CONTINUOUS ASSURANCE</div>
+    <p><b>Monitor → detect change → re-evaluate → act.</b> When the model, prompt, data or policy changes, Kunko re-runs the evidence and can automatically downgrade or block autonomy. Trust is not a one-time certificate — it's a stream.</p>
+  </div>
+  <div class="strip"><div class="k">EVIDENCE LAYER</div>
+    <p>Evaluations · calibration reports · audit trails · provenance · signed dossiers — everything the platform decides is backed by evidence a regulator, an auditor or your board can inspect.</p>
+  </div>
+  <div class="regs">
+    <div class="reg"><h4>Inventory</h4><p>What AI systems do I run? Model, agent, judge, prompt, version, owner, environment, data, provider.</p></div>
+    <div class="reg"><h4>Risk</h4><p>What risk does each carry? Low, medium, high, critical — per system, per decision type.</p></div>
+    <div class="reg"><h4>Evidence</h4><p>Why do we trust it? Evaluations, calibration, red-team results, security tests, human outcomes, incidents, audit history.</p></div>
+    <div class="reg"><h4>Policy</h4><p>What may it do? <strong style="color:var(--g1)">Automate</strong> · <strong style="color:var(--amber)">review</strong> · <strong style="color:var(--red)">block</strong> — per decision, per risk level.</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="eyebrow">How it works</div>
+  <h2>From AI decision to <span class="grad">controlled autonomy</span></h2>
+  <p class="body">Judge Audit, our open-source engine, runs AI judges in <strong>shadow mode</strong> against decisions humans already made. No rip-and-replace, no blind trust — just measurement:</p>
+  <div class="flow">
+    <div class="fnode"><b>AI decides</b><span>judge or agent output</span></div><div class="farrow">→</div>
+    <div class="fnode"><b>Confidence?</b><span>what it claims</span></div><div class="farrow">→</div>
+    <div class="fnode"><b>Trusted?</b><span>calibration check</span></div><div class="farrow">→</div>
+    <div class="fnode"><b>Measured error</b><span>certified bounds</span></div><div class="farrow">→</div>
+    <div class="fnode"><b>% automatable</b><span>safe automation rate</span></div><div class="farrow">→</div>
+    <div class="fnode"><b>Risk OK?</b><span>your threshold</span></div>
+  </div>
+  <div class="fout">
+    <span class="pill auto">AUTOMATE</span>
+    <span class="pill review">REVIEW</span>
+    <span class="pill block">BLOCK</span>
+  </div>
+
+  <div class="rdemo">
+    <div class="k">LIVE ROUTER DEMO</div>
+    <p>Pick an incoming banking decision. <code>contract.decide()</code> reads the segment, applies the signed contract in memory — no disk — and issues a receipt:</p>
+    <div class="rgrid">
+      <div class="rtickets">
+        <button class="rticket sel" data-t="0"><b>#1042 · “Transfer €50 to my savings account”</b><span>meta.length_band = “medium” (9–11 words) · conf = 0.99</span><i class="pill auto">AUTOMATE</i></button>
+        <button class="rticket" data-t="1"><b>#1043 · “I made an international transfer last Tuesday and was charged a double fee…”</b><span>meta.length_band = “long” (12+ words) · conf = 0.99</span><i class="pill block">BLOCK</i></button>
+        <button class="rticket" data-t="2"><b>#1044 · “Card balance”</b><span>meta.length_band = “short” (2–8 words) · conf = 0.99</span><i class="pill review">REVIEW</i></button>
+        <button class="rticket" data-t="3"><b>#1045 · Payload with no segment metadata</b><span>meta: {} · fail-closed · conf = 0.99</span><i class="pill review">FAIL-CLOSED</i></button>
+      </div>
+      <pre class="rreceipt"><code id="receiptJson"></code></pre>
+    </div>
+    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Every receipt is HMAC-SHA256 signed with the client's key, stores no personal data, and references the exact contract that authorized — or refused — the decision. It is the audit trail a regulator, an insurer or a board can re-verify.</p>
+  </div>
+  <p class="body" style="margin-top:36px"><strong>Safe Automation Rate</strong> turns reliability into economics: <em>how much human work can you safely remove?</em> The value we create is directly proportional to the amount of human review — and risk — we safely remove.</p>
+  <p class="body" style="margin-top:16px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="inline" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
+</section>
+
+<section id="proof">
+  <div class="eyebrow">Proof, not promises</div>
+  <h2>What looks automatable is not<br>what you can <span class="grad">sign off.</span></h2>
+  <p class="body">Our v0.5 study ran three judges over <strong>3,080 human-labelled banking decisions</strong> (BANKING77) — pre-registered before the first model call, every result published including the unflattering ones. Same data, same 5% error target:</p>
+  <table class="proof">
+    <tr><th>Judge</th><th>Decides alone at ≤ 5% error</th><th>Range over seeds</th></tr>
+    <tr><td>TypeSafe Jev, native probability</td><td class="n">41.0%</td><td>27.0 – 45.1%</td></tr>
+    <tr><td>Gemini 3.6 Flash, verbalized</td><td class="n">14.3%</td><td>7.6 – 30.0%</td></tr>
+    <tr><td>Qwen3-8B, token log-probability</td><td class="n">0%</td><td>0.0 – 4.4%</td></tr>
+  </table>
+  <p class="caveat">A 95% confidence score is not a 95% guarantee — token probabilities couldn't automate a single decision at this bar. That's the point: <strong style="color:var(--ink)">confidence means different things across judges, and Kunko measures whether it can be trusted.</strong> We publish the range across ten other data splits, not just the headline. Caveats as published: public dataset, likely seen in pretraining; label noise not measured. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Full study →</a> The v0.5 roster is the start — Judge Arena keeps score as it grows.</p>
+
+  <div class="finding">
+    <div class="tag">FINDING</div>
+    <h3>A good calibration score is <span class="grad">not enough</span> to automate</h3>
+    <p>On 200 adversarial emails, Gemini 3 Flash was <strong>97% accurate</strong> with one of the lowest calibration errors we measured <strong>(ECE 0.015)</strong> — and still couldn't decide a single email alone without error. It was just as confident when wrong. Jev, slightly less accurate and worse calibrated on average (ECE 0.039), separated its mistakes and automated <strong>73% of the emails with zero errors</strong>. Accuracy and average calibration don't tell you what you can hand over. <strong>We measure what does.</strong></p>
+  </div>
+
+  <div class="finding">
+    <div class="tag">POSITIONING</div>
+    <h3>A leaderboard tells you which model is smart.<br>It does not tell you <span class="grad">how much to hand over.</span></h3>
+    <table class="compare">
+      <tr><th></th><th>Model leaderboard</th><th>Kunko audit</th></tr>
+      <tr><td>The question</td><td>Which model is strongest overall?</td><td>How much of my decisions can this model take alone, at the error I accept?</td></tr>
+      <tr><td>The unit</td><td>One score per model, ranked</td><td>One rate per decision type and segment, with its statistical bound</td></tr>
+      <tr><td>The scores</td><td>Averages and weighted blends</td><td>No composite: error bound, coverage and cost stay separate</td></tr>
+      <tr><td>The data</td><td>The benchmark's own sealed items</td><td>Your past decisions, replayed in shadow mode</td></tr>
+      <tr><td>The output</td><td>A rank</td><td>Automate, review or block — per segment, with receipts</td></tr>
+    </table>
+  </div>
+
+  <p class="caveat" style="margin-top:28px">Every number on this page recomputes from committed evidence. v0.6 is published — 12 judges × 3 languages, pre-registered before the first model call. <a href="https://github.com/kunko-ai-labs/judge-audit">Results in the repo →</a></p>
+
+  <div class="prog">
+    <div class="pstep"><b>Evaluation</b><span>does my model work?</span></div><div class="farrow">→</div>
+    <div class="pstep"><b>Assurance</b><span>can I trust this decision?</span></div><div class="farrow">→</div>
+    <div class="pstep"><b>Autonomy</b><span>automate / review / block</span></div><div class="farrow">→</div>
+    <div class="pstep"><b>Continuous assurance</b><span>prove it stays safe</span></div>
+  </div>
+  <p class="body" style="margin-top:28px"><strong>From AI evaluation to AI assurance.</strong> The market is full of "does my model work?". We take you to "can I safely trust this system with this decision?" — and then to "can I continuously prove it remains safe to trust?"</p>
+</section>
+
+<section>
+  <div class="eyebrow">Under the hood</div>
+  <h2>We measure what <span class="grad">accuracy can't tell you</span></h2>
+  <div class="measure">
+    <figure>
+    <svg viewBox="0 0 300 230" role="img" aria-label="Reliability diagram: a miscalibrated judge curve against the perfect-calibration diagonal">
+      <defs><linearGradient id="jg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+      <line class="ax" x1="40" y1="190" x2="280" y2="190"/>
+      <line class="ax" x1="40" y1="190" x2="40" y2="20"/>
+      <line class="ax dash" x1="40" y1="190" x2="280" y2="20"/>
+      <path d="M40,185 C110,180 170,150 215,95 S265,35 278,28" fill="none" stroke="url(#jg)" stroke-width="3.5"/>
+      <circle cx="120" cy="172" r="5" fill="#34d399" opacity=".9"/><circle cx="165" cy="150" r="5" fill="#3b82f6" opacity=".9"/>
+      <circle cx="205" cy="110" r="5" fill="#3b82f6" opacity=".9"/><circle cx="245" cy="55" r="5" fill="#8b5cf6" opacity=".9"/>
+      <text class="axlab" x="150" y="215" font-size="12" text-anchor="middle">stated confidence →</text>
+      <text class="axlab" x="14" y="110" font-size="12" text-anchor="middle" transform="rotate(-90 14 110)">actual accuracy</text>
+      <text class="axlab" x="252" y="42" font-size="11">perfect</text>
+      <text x="196" y="140" fill="#34d399" font-size="11">this judge</text>
+    </svg>
+    <figcaption>A reliability diagram: the diagonal is perfect calibration — most judges aren't on it.</figcaption>
+    </figure>
+    <ul class="metrics">
+      <li><b><i>Safe Automation Rate</i></b><span>What share of decisions can be automated at a certified error bound. The ROI number.</span></li>
+      <li><b><i>ECE</i> with confidence intervals</b><span>How far confidence drifts from reality — as an interval, never a lonely point estimate.</span></li>
+      <li><b><i>MCE</i> — worst-bin error</b><span>The regulator's question, not the average case: where is this judge <em>most</em> wrong?</span></li>
+      <li><b>Selective prediction, certified</b><span>Finite-sample risk bounds (Clopper–Pearson): automation you can sign off on.</span></li>
+      <li><b>Adversarial robustness</b><span>Prompt injection, homoglyphs, social engineering — does calibration survive attack?</span></li>
+      <li><b>Cost, latency &amp; drift</b><span>Calibration per dollar and per millisecond — plus continuous monitoring for when it degrades.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="eyebrow">The killer use case</div>
+  <h2>From 100% human review to <span class="grad">measured autonomy</span></h2>
+  <div class="usecase">
+    <div class="tag">ILLUSTRATIVE SCENARIO</div>
+    <p class="big">A bank processes <em>200,000</em> customer-service decisions a month. Today <em>100%</em> require human review. Kunko proves that <em>63%</em> can be automated while keeping error below <em>2%</em> — and continuously monitors whether that remains true.</p>
+    <p>Or an insurer reviewing claims: which auto-approve, which need a human, which must be blocked. Or a fintech running AML triage inside its risk threshold. <strong>One workflow, one measured number, one budget line that shrinks.</strong></p>
+    <div class="offer">
+      <b>Kunko Enterprise Assurance Demo</b>
+      <p>Give us 5,000 of your historical decisions. We'll show you exactly what percentage of your current human review could be automated — under your own error threshold.</p>
+      <p class="fine">Start in shadow mode. No production risk.</p>
+    </div>
+  </div>
+
+  <div class="finding" style="margin-top:36px">
+    <div class="tag">THE SMOKING GUN · BANKING77 · GEMINI 3.6 FLASH</div>
+    <h3>One global threshold <span class="grad">fails in production</span></h3>
+    <p>A global cut at 0.99 says “automate 14.3%”. Routed by query length — a field known <strong>before</strong> the decision is made — the segments say something else entirely:</p>
+    <div class="segs">
+      <div class="seg">
+        <div class="shead"><b>medium <span>9–11 words · n=854</span></b><i class="pill auto">AUTOMATE</i></div>
+        <div class="sbar"><i style="width:24%;background:var(--g1)"></i></div>
+        <p><strong style="color:var(--ink)">24.0% automated out-of-sample</strong> (observed error 3.90%, 10-split range 0.0–49.4%). Bounded and checked.</p>
+      </div>
+      <div class="seg">
+        <div class="shead"><b>short <span>2–8 words · n=1,303</span></b><i class="pill review">REVIEW</i></div>
+        <div class="sbar"><i style="width:0%;background:var(--amber)"></i></div>
+        <p>In-sample validates τ = 0.98 (43.05%), but the held-out split automates <strong style="color:var(--ink)">0 decisions</strong> (range 0.0–21.57%) → held in REVIEW. Unproven is unproven.</p>
+      </div>
+      <div class="seg">
+        <div class="shead"><b>long <span>12+ words · n=923</span></b><i class="pill block">BLOCK</i></div>
+        <div class="sbar"><i style="width:100%;background:var(--red);opacity:.85"></i></div>
+        <p><strong style="color:var(--ink)">27 errors in 429 decisions at maximum confidence = 6.29% observed error</strong> (95% upper bound 8.58% &gt; 5%). Blocked by contract — before it costs money.</p>
+      </div>
+    </div>
+    <p class="caveat">Real audit output: per-segment AUTOMATE / REVIEW / BLOCK contracts from the v0.5 study data. The bar shows the validated automation share — the long segment's full red bar is the error that never ships.</p>
+  </div>
+  <div class="buyers">
+    <div class="buyer"><h4>Champion</h4><p>Head of AI / AI Platform / ML Engineering — owns the models making the decisions.</p></div>
+    <div class="buyer"><h4>Economic buyer</h4><p>COO / Operations / Risk / Transformation — owns the cost of human review.</p></div>
+    <div class="buyer"><h4>Security buyer</h4><p>CISO / Model Risk / Compliance — owns what happens when the AI is wrong.</p></div>
+  </div>
+  <p class="body" style="margin-top:26px">Our initial ICP: <strong>AI teams in financial services and other regulated enterprises</strong> deploying AI into high-volume decisions that still require human review — because nobody can prove when the AI is safe to trust.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Business model</div>
+  <h2>Open source is the wedge.<br><span class="grad">The platform is the business.</span></h2>
+  <div class="duo">
+    <div class="card"><div class="tier free">FREE · OPEN SOURCE</div>
+      <h3>Judge Audit</h3>
+      <p>The measurement layer, open to everyone. We open-sourced it because the industry needs an independent standard for AI decision reliability — and because credibility compounds: every public audit makes Kunko the authority on what "trustworthy" means.</p>
+    </div>
+    <div class="card"><div class="tier ent">ENTERPRISE</div>
+      <h3>Kunko Assurance Platform</h3>
+      <p>The commercial product is not the auditor — the auditor is the entry point. We monetize the assurance layer around enterprise AI decisions: continuous monitoring, evidence dossiers, policies, risk controls, integrations and governance.</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px">We're deliberately starting with an open-source wedge: Judge Audit builds credibility and adoption around an independent standard <strong>before</strong> asking enterprises to put sensitive production decisions behind a commercial platform. Our job is to remain <strong>model-independent</strong> — the company whose model benefits from being trusted shouldn't be the only one certifying that trust.</p>
+</section>
+
+<section id="roadmap">
+  <div class="eyebrow">Roadmap</div>
+  <h2>Judge Audit is the entry point<br>into a much bigger <span class="grad">control plane.</span></h2>
+  <p class="body">Judge Audit isn't the company — it's the wedge. Each layer compounds on the last:</p>
+  <div class="steps">
+    <div class="step"><h4>Judge Audit</h4><p>Open-source calibration audits. The credibility layer — live today.</p></div>
+    <div class="step"><h4>Decision Assurance</h4><p>Evidence + risk + policy per decision: automate, review, or block.</p></div>
+    <div class="step"><h4>Agent Assurance</h4><p>Capability control for agents: what it may do, verified continuously.</p></div>
+    <div class="step"><h4>Enterprise Assurance</h4><p>The full control plane: inventory, risk, evidence, policy, monitoring.</p></div>
+  </div>
+  <figure class="loopfig">
+    <svg viewBox="0 0 640 400" role="img" aria-label="Continuous assurance loop: certified, change, impact analysis, revalidate">
+      <defs>
+        <linearGradient id="loopg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/>
+        </linearGradient>
+      </defs>
+      <circle cx="320" cy="180" r="120" fill="none" stroke="url(#loopg)" stroke-width="2.5" opacity=".5"/>
+      <g fill="url(#loopg)" opacity=".9">
+        <polygon points="-9,-6 9,0 -9,6" transform="translate(405 95) rotate(45)"/>
+        <polygon points="-9,-6 9,0 -9,6" transform="translate(405 265) rotate(135)"/>
+        <polygon points="-9,-6 9,0 -9,6" transform="translate(235 265) rotate(225)"/>
+        <polygon points="-9,-6 9,0 -9,6" transform="translate(235 95) rotate(315)"/>
+      </g>
+      <circle class="ln" cx="320" cy="60" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="320" y="67">1</text>
+      <text class="ltit" x="320" y="20">CERTIFIED</text>
+      <circle class="ln" cx="440" cy="180" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="440" y="187">2</text>
+      <text class="ltit" x="482" y="185" style="text-anchor:start">CHANGE</text>
+      <circle class="ln" cx="320" cy="300" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="320" y="307">3</text>
+      <text class="ltit" x="320" y="348">IMPACT ANALYSIS</text>
+      <circle class="ln" cx="200" cy="180" r="30" stroke="url(#loopg)"/>
+      <text class="lnum" x="200" y="187">4</text>
+      <text class="ltit" x="158" y="185" style="text-anchor:end">REVALIDATE</text>
+      <text class="llab" x="320" y="172">CONTINUOUS</text>
+      <text class="llab" x="320" y="190">ASSURANCE LOOP</text>
+    </svg>
+    <div class="loop" style="margin-top:4px">
+      <span class="lnode hot">CERTIFIED · stays in force</span>
+      <span class="lnode warn">DEGRADED · coverage reduced</span>
+      <span class="lnode bad">BLOCKED · back to human review</span>
+    </div>
+    <p class="loopcap">When the model, prompt, data or policy changes, the loop re-runs the evidence out-of-sample and re-issues the verdict automatically. No change goes live unaudited.</p>
+  </figure>
+  <p class="body" style="margin-top:26px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Continuous assurance: when anything changes, Kunko re-evaluates the evidence and downgrades or blocks autonomy automatically.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Why Kunko wins</div>
+  <h2>We don't decide whether AI is intelligent.<br><span class="grad">We determine whether it's trustworthy enough to act.</span></h2>
+  <div class="grid">
+    <div class="card"><div class="tag">Independence</div><h3>Outside the model</h3><p>The vendor tells you how confident its model is. We independently measure whether that confidence is trustworthy for your decisions — and we stay put when you swap the model.</p></div>
+    <div class="card"><div class="tag">Evidence moat</div><h3>Compounding ground truth</h3><p>Every audited decision generates evidence: decision, model, prompt, confidence, ground truth, risk, outcome, override. Over time, that's proprietary data on when enterprises actually trust AI — and when it fails them.</p></div>
+    <div class="card"><div class="tag">Economics</div><h3>A number, not a dashboard</h3><p>Safe Automation Rate converts reliability into budget: the share of human review you can remove at a certified error. It's the number deployment actually needs.</p></div>
+  </div>
+</section>
+
+<section id="assurance">
+  <div class="eyebrow">Also from the lab</div>
+  <h2>Agent Assurance</h2>
+  <p class="body">Judges decide; <strong>agents act</strong> — the second building block of the platform. Declare what your AI agent may do, and verify it on every edit, PR and release. A GitHub Action that checks MCP configs, Claude Code permissions and tool definitions against your policy — deterministic, OWASP-mapped, with signed evidence.</p>
+  <p class="body" style="margin-top:24px"><a class="inline" href="https://github.com/kunko-ai-labs/agent-assurance">github.com/kunko-ai-labs/agent-assurance →</a></p>
+</section>
+
+<section>
+  <p class="quote">"We don't want to make AI more confident.<br><span class="grad">We want to make autonomy measurable.</span>"
+  <small>As AI moves from generating information to making decisions and taking actions, enterprises need a system that continuously determines what AI is allowed to do — and whether it remains trustworthy enough to do it. That's Kunko.</small></p>
+</section>
+
+<section id="faq">
+  <div class="eyebrow">FAQ</div>
+  <h2>Questions we get</h2>
+  <div class="faq">
+    <details>
+      <summary>What does "calibration" mean, in plain language?</summary>
+      <p>If an AI judge says it's 90% confident across 100 decisions, it should be right about 90 times. If it's right 60 times, it's miscalibrated — overconfident. Calibration is the match between stated confidence and actual accuracy, and it's what makes a judge safe to automate around.</p>
+    </details>
+    <details>
+      <summary>Isn't accuracy enough?</summary>
+      <p>No. Accuracy tells you how often the judge is right; calibration tells you whether you can believe it when it matters. A 95%-accurate judge reporting 99.9% confidence on its errors is more dangerous than an 80%-accurate judge that knows when it's unsure. Automation decisions need the second number.</p>
+    </details>
+    <details>
+      <summary>Why can't the model vendor do this?</summary>
+      <p>The vendor can tell you how confident its model is. It cannot independently tell you whether that confidence is trustworthy for <em>your</em> business decisions. Kunko sits outside the model: we measure the decision system against your own ground truth, risk thresholds and policies — and we stay put when you swap the underlying model.</p>
+    </details>
+    <details>
+      <summary>Is Judge Audit itself another AI judge?</summary>
+      <p>No. Judge Audit judges nothing — it measures. Given a judge and a dataset with known-correct answers, it computes statistics. That's arithmetic, not opinion, and every number is reproducible from raw checkpoints in the repo.</p>
+    </details>
+    <details>
+      <summary>Why does this matter for the EU AI Act?</summary>
+      <p>High-risk AI systems (in force December 2027) need logging, human oversight, and demonstrated accuracy and robustness. Independent calibration evidence — including worst-case metrics, not just averages — is exactly the kind of documentation those obligations call for.</p>
+    </details>
+    <details>
+      <summary>How do I run an audit?</summary>
+      <p><code>pip install kunko-judge-audit</code>, bring your judge and a labeled dataset, and follow the quickstart in the repo. Pre-register your hypotheses if you want the audit to count as evidence.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="eyebrow">Contact</div>
+  <h2>Let's measure what matters</h2>
+  <p class="body" style="margin:0 auto 26px;text-align:center">Audits, partnerships, enterprise pilots — or 5,000 historical decisions and an error threshold.</p>
+  <a class="mail" href="mailto:info@kunkoai.com">info@kunkoai.com</a>
+</section>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
+    <span>© 2026 Kunko AI Labs · Madrid, Spain</span>
+    <span>Merit, demonstrated — not marketed.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeToggle'),tc=document.getElementById('themeColor');
+  function paint(){var light=root.getAttribute('data-theme')==='light';btn.textContent=light?'☀':'☾';btn.setAttribute('aria-pressed',String(light));if(tc)tc.setAttribute('content',light?'#f4f6fb':'#0a0f1e');}
+  try{var s=localStorage.getItem('kunko-theme');if(s==='light'){root.setAttribute('data-theme','light');}else if(s==='dark'){root.removeAttribute('data-theme');}}catch(e){}
+  paint();
+  btn.addEventListener('click',function(){
+    var light=root.getAttribute('data-theme')!=='light';
+    if(light){root.setAttribute('data-theme','light');}else{root.removeAttribute('data-theme');}
+    try{localStorage.setItem('kunko-theme',light?'light':'dark');}catch(e){}
+    paint();
+  });
+  var receipts=[
+   {id:'dec_1042',text:'"Transfer €50 to my savings account"',segment_field:'meta.length_band',segment:'"medium" (9–11 words)',conf:'0.99',action:'AUTOMATE',cls:'rg',reason:'"τ=0.98 satisfied; error bound ≤ 5% (95% one-sided)"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1043',text:'"I made an international transfer last Tuesday and was charged a double fee…"',segment_field:'meta.length_band',segment:'"long" (12+ words)',conf:'0.99',action:'BLOCK',cls:'rr',reason:'"6.29% observed error at max confidence; 95% upper bound 8.58% > 5% target"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1044',text:'"Card balance"',segment_field:'meta.length_band',segment:'"short" (2–8 words)',conf:'0.99',action:'REVIEW',cls:'ra',reason:'"held-out split automates 0 decisions; unproven is unproven"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1045',text:'"[payload]"',segment_field:'meta.length_band',segment:'null (missing)',conf:'0.99',action:'FAIL-CLOSED',cls:'ra',reason:'"no segment metadata — refused by contract, routed to human review"',contract:'contract v3 · sha 9f2c…a41d'}];
+  var pre=document.getElementById('receiptJson');
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function render(i){var r=receipts[i];
+    pre.innerHTML='<span class="rk">"id"</span>: <span class="rv">"'+r.id+'"</span>,\n<span class="rk">"decision"</span>: <span class="rv">'+esc(r.text)+'</span>,\n<span class="rk">"segment_field"</span>: <span class="rv">"'+r.segment_field+'"</span>,\n<span class="rk">"segment"</span>: <span class="rv">'+r.segment+'</span>,\n<span class="rk">"declared_confidence"</span>: <span class="rv">'+r.conf+'</span>,\n<span class="rk">"threshold_applied"</span>: <span class="rv">"τ = 0.98"</span>,\n<span class="rk">"target_risk"</span>: <span class="rv">"≤ 5% error"</span>,\n<span class="rk">"action"</span>: <span class="'+r.cls+'">"'+r.action+'"</span>,\n<span class="rk">"reason"</span>: <span class="rv">'+esc(r.reason)+'</span>,\n<span class="rk">"contract"</span>: <span class="rv">"'+r.contract+'"</span>,\n<span class="rk">"pii_stored"</span>: <span class="rv">false</span>,\n<span class="rk">"hmac_sha256"</span>: <span class="rv">"7be1…c4f0"</span>';}
+  var tickets=document.querySelectorAll('.rticket');
+  tickets.forEach(function(t){t.addEventListener('click',function(){
+    tickets.forEach(function(x){x.classList.remove('sel');});t.classList.add('sel');render(parseInt(t.getAttribute('data-t'),10));});});
+  if(pre)render(0);
+})();
+</script>
+</body>
+</html>

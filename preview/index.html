@@ -140,7 +140,8 @@ table.compare td{color:var(--muted)}
 .step::before{counter-increment:step;content:"0" counter(step);font-weight:700;letter-spacing:.1em;font-size:13px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .step h4{margin:12px 0 8px;font-size:16.5px}
 .step p{color:var(--muted);font-size:14.5px}
-.faq{margin-top:36px;display:grid;gap:14px;max-width:780px}
+.faq{margin-top:36px;display:grid;gap:12px}
+@media(min-width:721px){.faq{grid-template-columns:1fr 1fr}.faq details{align-self:start}}
 .faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
 .faq summary{font-weight:600;cursor:pointer;font-size:16.5px;list-style:none}
 .faq summary::-webkit-details-marker{display:none}
@@ -200,6 +201,17 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
 .loopfig .ln{fill:var(--card);stroke-width:2}
 .loopfig .lnum{fill:var(--ink);font-weight:700;font-size:16px;text-anchor:middle}
 .loopfig .ltit{fill:var(--ink);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-anchor:middle}
+.simsub{color:var(--muted);font-size:14.5px;margin:10px 0 22px;max-width:720px}
+.simgrid{display:grid;grid-template-columns:5fr 6fr;gap:28px;align-items:start}
+.simcontrols label{display:block;color:var(--muted);font-size:14px;margin-bottom:20px}
+.simcontrols label b{color:var(--ink);float:right;font-variant-numeric:tabular-nums}
+.simcontrols input[type=range]{width:100%;margin-top:10px;accent-color:var(--g2);cursor:pointer}
+.simout{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sbox{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.sbox span{color:var(--muted);font-size:12.5px;display:block;margin-bottom:6px;line-height:1.5}
+.sbox b{font-size:19px;font-variant-numeric:tabular-nums}
+#oAuto{color:var(--g1)}#oSave{color:var(--g1)}#oBlock{color:var(--red)}
+@media(max-width:720px){.simgrid{grid-template-columns:1fr}}
 .loopfig .llab{fill:var(--muted);font-size:11px;letter-spacing:.22em;text-anchor:middle}
 .loopfig text{font-family:inherit}
 .loopcap{color:var(--muted);font-size:14px;margin-top:18px;max-width:640px;margin-left:auto;margin-right:auto}
@@ -380,18 +392,18 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
   <h2>We measure what <span class="grad">accuracy can't tell you</span></h2>
   <div class="measure">
     <figure>
-    <svg viewBox="0 0 300 230" role="img" aria-label="Reliability diagram: a miscalibrated judge curve against the perfect-calibration diagonal">
+    <svg viewBox="0 0 300 320" role="img" aria-label="Reliability diagram: a miscalibrated judge curve against the perfect-calibration diagonal">
       <defs><linearGradient id="jg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
-      <line class="ax" x1="40" y1="190" x2="280" y2="190"/>
-      <line class="ax" x1="40" y1="190" x2="40" y2="20"/>
-      <line class="ax dash" x1="40" y1="190" x2="280" y2="20"/>
-      <path d="M40,185 C110,180 170,150 215,95 S265,35 278,28" fill="none" stroke="url(#jg)" stroke-width="3.5"/>
-      <circle cx="120" cy="172" r="5" fill="#34d399" opacity=".9"/><circle cx="165" cy="150" r="5" fill="#3b82f6" opacity=".9"/>
-      <circle cx="205" cy="110" r="5" fill="#3b82f6" opacity=".9"/><circle cx="245" cy="55" r="5" fill="#8b5cf6" opacity=".9"/>
-      <text class="axlab" x="150" y="215" font-size="12" text-anchor="middle">stated confidence →</text>
-      <text class="axlab" x="14" y="110" font-size="12" text-anchor="middle" transform="rotate(-90 14 110)">actual accuracy</text>
-      <text class="axlab" x="252" y="42" font-size="11">perfect</text>
-      <text x="196" y="140" fill="#34d399" font-size="11">this judge</text>
+      <line class="ax" x1="40" y1="270" x2="280" y2="270"/>
+      <line class="ax" x1="40" y1="270" x2="40" y2="20"/>
+      <line class="ax dash" x1="40" y1="270" x2="280" y2="30"/>
+      <path d="M40,263 C110,255 170,211 215,130 S265,42 278,32" fill="none" stroke="url(#jg)" stroke-width="3.5"/>
+      <circle cx="120" cy="243" r="5" fill="#34d399" opacity=".9"/><circle cx="165" cy="211" r="5" fill="#3b82f6" opacity=".9"/>
+      <circle cx="205" cy="152" r="5" fill="#3b82f6" opacity=".9"/><circle cx="245" cy="71" r="5" fill="#8b5cf6" opacity=".9"/>
+      <text class="axlab" x="150" y="307" font-size="12" text-anchor="middle">stated confidence →</text>
+      <text class="axlab" x="14" y="152" font-size="12" text-anchor="middle" transform="rotate(-90 14 152)">actual accuracy</text>
+      <text class="axlab" x="252" y="53" font-size="11">perfect</text>
+      <text x="196" y="197" fill="#34d399" font-size="11">this judge</text>
     </svg>
     <figcaption>A reliability diagram: the diagonal is perfect calibration — most judges aren't on it.</figcaption>
     </figure>
@@ -442,6 +454,26 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
       </div>
     </div>
     <p class="caveat">Real audit output: per-segment AUTOMATE / REVIEW / BLOCK contracts from the v0.5 study data. The bar shows the validated automation share — the long segment's full red bar is the error that never ships.</p>
+  </div>
+
+  <div class="card" style="margin-top:22px">
+    <div class="tag">IMPACT SIMULATOR</div>
+    <h3>What would this be worth <span class="grad">on your traffic?</span></h3>
+    <p class="simsub">BANKING77 · Gemini 3.6 Flash · routed by meta.length_band (n=3,080). Drag the sliders — every figure recomputes from the audited out-of-sample shares:</p>
+    <div class="simgrid">
+      <div class="simcontrols">
+        <label>Monthly decision volume <b id="vVol">280,000 / mo</b><input type="range" id="sVol" min="10000" max="1000000" step="10000" value="280000" aria-label="Monthly decision volume"></label>
+        <label>Human review cost per decision <b id="vCost">€3.50</b><input type="range" id="sCost" min="0.5" max="10" step="0.1" value="3.5" aria-label="Human review cost per decision"></label>
+        <label>Cost of one undetected wrong automation <b id="vErr">€45</b><input type="range" id="sErr" min="5" max="500" step="5" value="45" aria-label="Cost of one undetected wrong automation"></label>
+      </div>
+      <div class="simout">
+        <div class="sbox"><span>Automated decisions (out-of-sample validated)</span><b id="oAuto">18,648 (6.7%)</b></div>
+        <div class="sbox"><span>Gross human-review savings / month</span><b id="oSave">€65,268</b></div>
+        <div class="sbox"><span>High-confidence errors stopped by BLOCK</span><b id="oBlock">2,449 (€110,200)</b></div>
+        <div class="sbox"><span>Weekly control sample (SPRT monitoring)</span><b>48 rows / wk</b></div>
+      </div>
+    </div>
+    <p class="caveat">Savings and error exposure are kept separate — no composite scores. Figures derive only from the audited case above; your diagnostic replaces them with your own traffic.</p>
   </div>
   <div class="buyers">
     <div class="buyer"><h4>Champion</h4><p>Head of AI / AI Platform / ML Engineering — owns the models making the decisions.</p></div>
@@ -608,6 +640,23 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
   tickets.forEach(function(t){t.addEventListener('click',function(){
     tickets.forEach(function(x){x.classList.remove('sel');});t.classList.add('sel');render(parseInt(t.getAttribute('data-t'),10));});});
   if(pre)render(0);
+  var sVol=document.getElementById('sVol'),sCost=document.getElementById('sCost'),sErr=document.getElementById('sErr');
+  if(sVol){
+    var SHARE=0.0666,ERRR=0.008746;
+    function fmt(n){return Math.round(n).toLocaleString('en-US');}
+    function upd(){
+      var vol=+sVol.value,cost=+sCost.value,err=+sErr.value;
+      document.getElementById('vVol').textContent=fmt(vol)+' / mo';
+      document.getElementById('vCost').textContent='€'+cost.toFixed(2);
+      document.getElementById('vErr').textContent='€'+fmt(err);
+      var auto=vol*SHARE,blocked=vol*ERRR;
+      document.getElementById('oAuto').textContent=fmt(auto)+' ('+(SHARE*100).toFixed(1)+'%)';
+      document.getElementById('oSave').textContent='€'+fmt(auto*cost);
+      document.getElementById('oBlock').textContent=fmt(blocked)+' (€'+fmt(blocked*err)+')';
+    }
+    [sVol,sCost,sErr].forEach(function(s){s.addEventListener('input',upd);});
+    upd();
+  }
 })();
 </script>
 </body>

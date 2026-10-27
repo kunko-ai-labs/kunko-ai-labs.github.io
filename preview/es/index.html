@@ -6,8 +6,8 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0f1e" id="themeColor">
 <title>Kunko AI Labs — La plataforma de assurance para decisiones de IA en la empresa</title>
-<meta name="description" content="Kunko está construyendo la plataforma de assurance para decisiones de IA en la empresa. Ayudamos a las compañías a auditar, controlar y asegurar de forma continua sus sistemas de IA antes de permitirles tomar decisiones autónomas. Empezamos con Judge Audit, de código abierto: decimos a las empresas qué decisiones de la IA pueden automatizarse con seguridad — medido, certificado y monitorizado de forma continua.">
-<meta name="keywords" content="AI assurance, AI decision assurance platform, safe automation rate, AI judge calibration, LLM-as-a-judge audit, selective prediction, model risk management, EU AI Act compliance, AI governance, continuous assurance, trustworthy AI, agent guardrails">
+<meta name="description" content="Kunko está construyendo la plataforma de assurance para decisiones de IA en la empresa. Ayudamos a las compañías a auditar y controlar sus sistemas de IA antes de permitirles tomar decisiones autónomas. Empezamos con Judge Audit, de código abierto: decimos a las empresas qué decisiones de la IA pueden automatizarse con el error que aceptan — medido sobre sus decisiones etiquetadas y validado sobre decisiones reservadas.">
+<meta name="keywords" content="AI assurance, AI decision assurance platform, safe automation rate, AI judge calibration, LLM-as-a-judge audit, selective prediction, model risk management, EU AI Act, AI governance, continuous assurance, trustworthy AI, agent guardrails">
 <link rel="icon" type="image/png" href="/assets/logo-mark.png">
 <style>
 :root{
@@ -297,8 +297,8 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <div class="wrap hero">
   <h1>Kunko dice a las empresas<br>qué decisiones de la IA <span class="grad">pueden automatizarse con seguridad.</span></h1>
-  <p class="lede"><strong>Kunko está construyendo la plataforma de assurance para decisiones de IA en la empresa.</strong> Ayudamos a las compañías a auditar, controlar y asegurar de forma continua sus sistemas de IA <strong>antes</strong> de permitirles tomar decisiones autónomas.</p>
-  <p class="lede" style="margin-top:18px">Empezamos con <strong>Judge Audit</strong>, de código abierto, que mide si los jueces de IA son realmente fiables. Lo estamos expandiendo hacia una plataforma de assurance completa que cubre decisiones de IA, agentes, evidencia, políticas y monitorización continua.</p>
+  <p class="lede"><strong>Kunko está construyendo la plataforma de assurance para decisiones de IA en la empresa.</strong> Ayudamos a las compañías a auditar y controlar sus sistemas de IA <strong>antes</strong> de permitirles tomar decisiones autónomas.</p>
+  <p class="lede" style="margin-top:18px">Empezamos con <strong>Judge Audit</strong>, de código abierto, que mide si los jueces de IA son realmente fiables. Lo estamos expandiendo hacia una plataforma de assurance completa que cubre decisiones de IA, agentes, evidencia, políticas y monitorización continua. <strong>Disponible hoy:</strong> la auditoría de calibración, el umbral seguro, la comparativa Arena, la GitHub Action, el servidor MCP y el paquete de PyPI, y la comprobación de permisos de agentes de IA. <strong>En piloto:</strong> decisiones por segmento con contrato y recibo, y el informe ejecutivo. <strong>Previsto:</strong> vigilancia en vivo con un test secuencial, y una vista OWASP AIMA.</p>
   <div class="cta">
     <a class="btn solid" href="https://github.com/kunko-ai-labs/judge-audit">Explorar Judge Audit</a>
     <a class="btn ghost" href="#demo">Solicitar la demo enterprise</a>
@@ -308,7 +308,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <div class="wrap">
 <section id="glance" style="padding-top:20px">
   <div class="eyebrow">Estudio v0.6 · Pre-registrado</div>
-  <h2>Automatización validada con un 5% de error.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
+  <h2>Automatización validada con un objetivo de error del 5%.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
   <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma — y con él, cuánto puede <strong>automatizar con seguridad</strong> cada juez:</p>
   <div class="jcarousel reveal">
     <div class="jtrack" id="jTrack">
@@ -355,13 +355,13 @@ html.js .reveal.in{opacity:1;transform:none}
       <button class="jbtn" id="jNext" aria-label="Next judges">→</button>
     </div>
   </div>
-  <p class="caveat">Seis de los doce jueces auditados — arrastra o usa las flechas. Porcentaje de decisiones automatizables con el error acotado al 5% — Clopper–Pearson unilateral al 95%, validado fuera de muestra. <a href="https://github.com/kunko-ai-labs/judge-audit">Estudio completo en el repo →</a></p>
+  <p class="caveat">Seis de los doce jueces auditados — arrastra o usa las flechas. Porcentaje de decisiones validado con un objetivo de error del 5% sobre mitades reservadas de los casos etiquetados del estudio: cota unilateral al 95%, aproximada (las mitades se agregan). Una cifra para casos como estos, no una previsión del tráfico futuro. <a href="https://github.com/kunko-ai-labs/judge-audit">Estudio completo en el repo →</a></p>
 </section>
 
 <section id="platform">
   <div class="eyebrow">La visión</div>
   <h2>El <span class="grad">plano de control</span> del assurance de IA</h2>
-  <p class="body">No es otro panel de gobernanza. Kunko es la capa que determina de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si sigue siendo lo bastante fiable para hacerlo. Todo lo que toca pasa por un solo bucle de assurance:</p>
+  <p class="body">No es otro panel de gobernanza. Kunko es la capa que determina de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si sigue siendo lo bastante fiable para hacerlo. Todo lo que toca pasa por un solo bucle de assurance. <strong>Estado:</strong> Auditar está disponible; Decidir y Registrar, en piloto; Monitorizar, previsto.</p>
   <div class="vdiag">
     <div class="vcol vin">
       <div class="vcard"><div class="vk">ENTRADA</div><b>Modelos, agentes, jueces</b><span>los sistemas que usas</span></div>
@@ -371,15 +371,15 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="vlink" aria-hidden="true">→</div>
     <div class="vcore">
       <div class="vk">EL BUCLE DE ASSURANCE</div>
-      <div class="vstep"><i>1</i><div><b>Auditar</b><span>Judge Audit mide la calibración en modo sombra</span></div></div>
-      <div class="vstep"><i>2</i><div><b>Decidir</b><span>motor de riesgo: automatizar, revisar o bloquear — por segmento</span></div></div>
-      <div class="vstep"><i>3</i><div><b>Demostrar</b><span>Trust Passport: un recibo firmado por decisión</span></div></div>
-      <div class="vstep"><i>4</i><div><b>Monitorizar</b><span>detectar el cambio → reevaluar → actuar, de forma continua</span></div></div>
+      <div class="vstep"><i>1</i><div><b>Auditar</b><span>Judge Audit mide la calibración en modo sombra · disponible</span></div></div>
+      <div class="vstep"><i>2</i><div><b>Decidir</b><span>motor de riesgo: automatizar, revisar o bloquear — por segmento · piloto</span></div></div>
+      <div class="vstep"><i>3</i><div><b>Registrar</b><span>Trust Passport: un recibo firmado por decisión · piloto</span></div></div>
+      <div class="vstep"><i>4</i><div><b>Monitorizar</b><span>detectar el cambio → reevaluar → actuar, de forma continua · previsto</span></div></div>
     </div>
     <div class="vlink" aria-hidden="true">→</div>
     <div class="vcol vout">
-      <div class="vcard"><div class="vk">PARA PERSONAS</div><b>Colas de revisión</b><span>dosieres de evidencia, informes para el consejo</span></div>
-      <div class="vcard"><div class="vk">PARA SISTEMAS</div><b>Control en ejecución</b><span>políticas aplicadas, bloqueos automáticos</span></div>
+      <div class="vcard"><div class="vk">PARA PERSONAS</div><b>Colas de revisión</b><span>dosieres de evidencia, informes ejecutivos · piloto</span></div>
+      <div class="vcard"><div class="vk">PARA SISTEMAS</div><b>Control en ejecución</b><span>contratos por segmento aplicados en cada decisión · piloto</span></div>
     </div>
   </div>
   <div class="vpillars">
@@ -389,7 +389,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="vpillar"><b>POLÍTICA</b><span>automatizar · revisar · bloquear por decisión</span></div>
   </div>
   <div class="strip"><div class="k">ASSURANCE CONTINUO</div>
-    <p><b>Monitorizar → detectar el cambio → reevaluar → actuar.</b> Cuando cambian el modelo, el prompt, los datos o la política, Kunko vuelve a generar la evidencia y puede degradar o bloquear la autonomía automáticamente. La confianza no es un certificado puntual — es un flujo continuo.</p>
+    <p><b>Monitorizar → detectar el cambio → reevaluar → actuar (previsto).</b> Cuando cambien el modelo, el prompt, los datos o la política, Kunko volverá a generar la evidencia y degradará o bloqueará la autonomía. Hoy cada resultado dice para qué es válido y la fecha en que hay que revisarlo, y una comprobación de deriva en CI compara cada ejecución con su referencia. La confianza no es un sello puntual — es un flujo continuo.</p>
   </div>
   <div class="strip"><div class="k">CAPA DE EVIDENCIA</div>
     <p>Evaluaciones · informes de calibración · trazas de auditoría · procedencia · dosieres firmados — cada decisión de la plataforma está respaldada por evidencia que un regulador, un auditor o tu consejo pueden inspeccionar.</p>
@@ -404,7 +404,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="fnode"><b>La IA decide</b><span>salida del juez o agente</span></div><div class="farrow">→</div>
     <div class="fnode"><b>¿Confianza?</b><span>lo que declara</span></div><div class="farrow">→</div>
     <div class="fnode"><b>¿Fiable?</b><span>chequeo de calibración</span></div><div class="farrow">→</div>
-    <div class="fnode"><b>Error medido</b><span>cotas certificadas</span></div><div class="farrow">→</div>
+    <div class="fnode"><b>Error medido</b><span>acotado sobre datos etiquetados</span></div><div class="farrow">→</div>
     <div class="fnode"><b>% automatizable</b><span>tasa de automatización segura</span></div><div class="farrow">→</div>
     <div class="fnode"><b>¿Riesgo OK?</b><span>tu umbral</span></div>
   </div>
@@ -415,11 +415,11 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 
   <div class="chansec">
-    <div class="eyebrow">De la medición a la decisión</div>
+    <div class="eyebrow">De la medición a la decisión · piloto</div>
     <h3>Automatizar, revisar o bloquear,<br><span class="grad">por canal, con recibo</span></h3>
     <p class="body">Una media esconde el segmento que falla. Kunko convierte la auditoría en una decisión por segmento, escribe un contrato para cada segmento que te permite automatizar y emite un recibo por cada decisión automatizada. Un segmento que su propia auditoría marca nunca se automatiza. <strong>Pulsa un canal para inspeccionar su contrato.</strong></p>
     <div class="chans">
-      <button class="chan"><b>Web</b><span class="pill auto">● AUTOMATE</span><p>Cota de error bajo el objetivo en suficientes decisiones auditadas. Se escribe un contrato para este segmento.</p><span class="cbody"><i>Umbral τ = 0,98</i><i>Cota de error ≤ 5% (unilateral al 95%)</i><i>Automatización solo dentro del porcentaje validado</i><i>Recibo firmado por decisión</i></span></button>
+      <button class="chan"><b>Web</b><span class="pill auto">● AUTOMATE</span><p>Cota de error bajo el objetivo en suficientes decisiones auditadas. Se escribe un contrato para este segmento.</p><span class="cbody"><i>Umbral τ = 0,98</i><i>Cota de error dentro del objetivo del 5% (unilateral al 95%)</i><i>Automatización solo dentro del porcentaje validado</i><i>Recibo firmado por decisión</i></span></button>
       <button class="chan"><b>Teléfono</b><span class="pill review">● REVIEW</span><p>El juez sugiere, una persona decide.</p><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
       <button class="chan"><b>Chat</b><span class="pill review">● REVIEW</span><p>El juez sugiere, una persona decide.</p><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
       <button class="chan"><b>Email</b><span class="pill block">× BLOCK</span><p>La auditoría marca este segmento. Ninguna decisión de email se automatiza.</p><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
@@ -429,7 +429,7 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 
   <div class="rdemo">
-    <div class="k">DEMO DEL ROUTER EN VIVO</div>
+    <div class="k">DEMO DEL ROUTER EN VIVO · PILOTO</div>
     <p>Elige una decisión bancaria entrante. <code>contract.decide()</code> lee el segmento, aplica el contrato firmado en memoria — sin disco — y emite un recibo:</p>
     <div class="rgrid">
       <div class="rtickets">
@@ -440,14 +440,14 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <pre class="rreceipt"><code id="receiptJson"></code></pre>
     </div>
-    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo va firmado con HMAC-SHA256 con la clave del cliente, no almacena datos personales y referencia el contrato exacto que autorizó — o denegó — la decisión. Es la traza de auditoría que un regulador, una aseguradora o un consejo pueden volver a verificar.</p>
+    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo va firmado con HMAC-SHA256 con la clave del cliente, no almacena datos personales y referencia, por su hash, el contrato que autorizó — o denegó — la decisión. Es la traza de auditoría que un regulador, una aseguradora o un consejo pueden volver a verificar.</p>
   </div>
 
   <div class="rmp">
-    <div><div class="rk">REPRODUCIR</div><b>Tus decisiones pasadas</b><span>Ejecuta el juez en modo sombra sobre decisiones que tu gente ya tomó. Nada se automatiza.</span></div>
-    <div><div class="rk">MEDIR</div><b>Confianza contra resultado</b><span>Calibración, tasa de automatización segura con su cota, coste y latencia — por segmento.</span></div>
-    <div><div class="rk">DECIDIR</div><b>Una decisión por segmento</b><span>Automatizar, revisar o bloquear por segmento, con un contrato para cada uno automatizado.</span></div>
-    <div><div class="rk">DEMOSTRAR</div><b>Recibos, no promesas</b><span>Un recibo por decisión automatizada, con tu propia clave, que apunta a la auditoría.</span></div>
+    <div><div class="rk">REPRODUCIR</div><b>Tus decisiones pasadas</b><span>Ejecuta el juez en modo sombra sobre decisiones que tu gente ya tomó. Nada se automatiza. Disponible.</span></div>
+    <div><div class="rk">MEDIR</div><b>Confianza contra resultado</b><span>Calibración, tasa de automatización segura con su cota, coste y latencia — por segmento. Disponible.</span></div>
+    <div><div class="rk">DECIDIR</div><b>Una decisión por segmento</b><span>Automatizar, revisar o bloquear por segmento, con un contrato para cada uno automatizado. Piloto.</span></div>
+    <div><div class="rk">REGISTRAR</div><b>Recibos, no promesas</b><span>Un recibo por decisión automatizada, con tu propia clave, que apunta a la auditoría. Piloto.</span></div>
   </div>
   <p class="body" style="margin-top:36px"><strong>La tasa de automatización segura</strong> convierte la fiabilidad en economía: <em>¿cuánto trabajo humano puedes eliminar con seguridad?</em> El valor que creamos es directamente proporcional a la revisión humana — y al riesgo — que eliminamos de forma segura.</p>
   <p class="body" style="margin-top:16px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="inline" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
@@ -458,17 +458,17 @@ html.js .reveal.in{opacity:1;transform:none}
   <h2>Lo que parece automatizable no es<br>lo que puedes <span class="grad">firmar.</span></h2>
   <p class="body">Nuestro estudio v0.5 evaluó tres jueces sobre <strong>3.080 decisiones bancarias etiquetadas por humanos</strong> (BANKING77) — pre-registrado antes de la primera llamada al modelo, con todos los resultados publicados incluidos los poco favorecedores. Mismos datos, mismo objetivo de 5% de error:</p>
   <table class="proof">
-    <tr><th>Juez</th><th>Decide solo con ≤ 5% de error</th><th>Rango entre semillas</th></tr>
+    <tr><th>Juez</th><th>Porcentaje validado con un objetivo de error del 5% (datos reservados, aproximado)</th><th>Rango entre semillas</th></tr>
     <tr><td>TypeSafe Jev, probabilidad nativa</td><td class="n">41.0%</td><td>27.0 – 45.1%</td></tr>
     <tr><td>Gemini 3.6 Flash, verbalizado</td><td class="n">14.3%</td><td>7.6 – 30.0%</td></tr>
     <tr><td>Qwen3-8B, log-probabilidad de tokens</td><td class="n">0%</td><td>0.0 – 4.4%</td></tr>
   </table>
-  <p class="caveat">Un 95% de confianza no es una garantía del 95% — las probabilidades de los tokens no pudieron automatizar ni una sola decisión con este listón. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide si se puede confiar en ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Caveats publicados: dataset público, probablemente visto en el preentrenamiento; ruido en etiquetas no medido. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Estudio completo →</a> El roster de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
+  <p class="caveat">Un 95% de confianza no significa acertar el 95% — las probabilidades de los tokens no pudieron automatizar ni una sola decisión con este listón. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide si se puede confiar en ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Caveats publicados: dataset público, probablemente visto en el preentrenamiento; ruido en etiquetas no medido. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Estudio completo →</a> El roster de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
 
   <div class="finding">
     <div class="tag">HALLAZGO</div>
     <h3>Una buena calibración <span class="grad">no basta</span> para automatizar</h3>
-    <p>Con 200 emails adversariales, Gemini 3 Flash tuvo un <strong>97% de precisión</strong> con uno de los errores de calibración más bajos que hemos medido <strong>(ECE 0,015)</strong> — y aun así no pudo decidir ni un solo email solo y sin errores. Tenía la misma confianza cuando se equivocaba. Jev, algo menos preciso y peor calibrado en promedio (ECE 0,039), separó mejor sus errores y automatizó el <strong>73% de los emails con cero errores</strong>. La precisión y la calibración media no te dicen lo que puedes delegar. <strong>Nosotros medimos lo que sí lo dice.</strong></p>
+    <p>Con 200 emails adversariales, Gemini 3 Flash tuvo un <strong>97% de precisión</strong> con uno de los errores de calibración más bajos que hemos medido <strong>(ECE 0,015)</strong> — y aun así no pudo decidir ni un solo email solo y sin errores. Tenía la misma confianza cuando se equivocaba. Jev, algo menos preciso y peor calibrado en promedio (ECE 0,039), separó mejor sus errores y automatizó el <strong>73% de esos 200 emails etiquetados con cero errores</strong>. La precisión y la calibración media no te dicen lo que puedes delegar. <strong>Nosotros medimos lo que sí lo dice.</strong></p>
   </div>
 
   <div class="finding">
@@ -490,9 +490,9 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="pstep"><b>Evaluación</b><span>¿funciona mi modelo?</span></div><div class="farrow">→</div>
     <div class="pstep"><b>Assurance</b><span>¿puedo fiarme de esta decisión?</span></div><div class="farrow">→</div>
     <div class="pstep"><b>Autonomía</b><span>automatizar / revisar / bloquear</span></div><div class="farrow">→</div>
-    <div class="pstep"><b>Assurance continuo</b><span>demostrar que sigue siendo seguro</span></div>
+    <div class="pstep"><b>Assurance continuo</b><span>comprobar que sigue dentro del objetivo · previsto</span></div>
   </div>
-  <p class="body" style="margin-top:28px"><strong>De la evaluación de la IA al assurance de la IA.</strong> El mercado está lleno de «¿funciona mi modelo?». Nosotros te llevamos a «¿puedo confiar con seguridad este sistema con esta decisión?» — y después a «¿puedo demostrar de forma continua que sigue siendo seguro confiar?»</p>
+  <p class="body" style="margin-top:28px"><strong>De la evaluación de la IA al assurance de la IA.</strong> El mercado está lleno de «¿funciona mi modelo?». Nosotros te llevamos a «¿puedo confiar con seguridad este sistema con esta decisión?» — y después, con la vigilancia en vivo (prevista), a «¿sigue dentro de mi objetivo?»</p>
 </section>
 
 <section>
@@ -516,12 +516,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <figcaption>Un diagrama de fiabilidad: la diagonal es la calibración perfecta — la mayoría de los jueces no están en ella.</figcaption>
     </figure>
     <ul class="metrics">
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4.5-4.5"/><circle cx="12" cy="15" r="1.4" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>Tasa de automatización segura</i></b><span>Qué porcentaje de decisiones puede automatizarse con una cota de error certificada. El número del ROI.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4.5-4.5"/><circle cx="12" cy="15" r="1.4" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>Tasa de automatización segura</i></b><span>Qué porcentaje de decisiones puede automatizarse con tu objetivo de error, validado sobre decisiones etiquetadas reservadas (aproximado). El número del ROI.</span></div></li>
       <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 4-6"/><path d="M18 4v5M15.5 6.5h5"/></svg></span><div><b><i>ECE</i> con intervalos de confianza</b><span>Cuánto se desvía la confianza de la realidad — como intervalo, nunca como una estimación puntual solitaria.</span></div></li>
       <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5L2.5 20h19L12 3.5z"/><path d="M12 9.5v4.5"/><circle cx="12" cy="17" r="1.1" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>MCE</i> — error del peor segmento</b><span>La pregunta del regulador, no el caso medio: ¿dónde se equivoca <em>más</em> este juez?</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9.8 9l1.6 1.6 3-3.2"/><path d="M8.6 13.4L7 21l5-2.6L17 21l-1.6-7.6"/></svg></span><div><b>Predicción selectiva, certificada</b><span>Cotas de riesgo con muestras finitas (Clopper–Pearson): automatización que puedes firmar.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9.8 9l1.6 1.6 3-3.2"/><path d="M8.6 13.4L7 21l5-2.6L17 21l-1.6-7.6"/></svg></span><div><b>Predicción selectiva, con cotas</b><span>Cotas de riesgo con muestras finitas (Clopper–Pearson) sobre tus decisiones etiquetadas: un umbral que puedes revisar antes de firmar.</span></div></li>
       <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z"/><path d="M9.3 12l2 2 3.6-4.2"/></svg></span><div><b>Robustez adversarial</b><span>Prompt injection, homoglifos, ingeniería social — ¿sobrevive la calibración al ataque?</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2.2"/></svg></span><div><b>Coste, latencia y deriva</b><span>Calibración por dólar y por milisegundo — más monitorización continua para cuando se degrade.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2.2"/></svg></span><div><b>Coste, latencia y deriva</b><span>Calibración por dólar y por milisegundo, y una comprobación de deriva frente a una referencia en CI. La monitorización continua está prevista.</span></div></li>
     </ul>
   </div>
 </section>
@@ -531,11 +531,11 @@ html.js .reveal.in{opacity:1;transform:none}
   <h2>De un 100% de revisión humana a la <span class="grad">autonomía medida</span></h2>
   <div class="usecase">
     <div class="tag">ESCENARIO ILUSTRATIVO</div>
-    <p class="big">Un banco procesa <em>200.000</em> decisiones de atención al cliente al mes. Hoy el <em>100%</em> requiere revisión humana. Kunko demuestra que el <em>63%</em> puede automatizarse manteniendo el error por debajo del <em>2%</em> — y monitoriza de forma continua si eso sigue siendo cierto.</p>
+    <p class="big">Un banco procesa <em>200.000</em> decisiones de atención al cliente al mes. Hoy el <em>100%</em> requiere revisión humana. La auditoría mide, sobre decisiones que el banco ya ha etiquetado, qué porcentaje podría tomar un juez solo con el error que el banco fija, validado sobre decisiones reservadas — una estimación para tráfico como esa muestra, no una promesa sobre el mes que viene.</p>
     <p>O una aseguradora revisando siniestros: cuáles auto-aprobar, cuáles necesitan un humano y cuáles hay que bloquear. O una fintech haciendo triaje AML dentro de su umbral de riesgo. <strong>Un flujo, un número medido, una línea de presupuesto que se reduce.</strong></p>
     <div class="offer">
       <b>Demo de Kunko Enterprise Assurance</b>
-      <p>Danos 5.000 de tus decisiones históricas. Te mostraremos exactamente qué porcentaje de tu revisión humana actual podría automatizarse — con tu propio umbral de error.</p>
+      <p>Danos 5.000 de tus decisiones históricas. Mediremos qué porcentaje de tu revisión humana actual podría validarse para automatizarse — con tu propio umbral de error, sobre tus decisiones etiquetadas.</p>
       <p class="fine">Empieza en modo sombra. Sin riesgo en producción.</p>
     </div>
   </div>
@@ -553,7 +553,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <div class="seg">
         <div class="shead"><b>short <span>2–8 palabras · n=1.303</span></b><i class="pill review">REVIEW</i></div>
         <div class="sbar"><i style="width:0%;background:var(--amber)"></i></div>
-        <p>En muestra valida τ = 0,98 (43,05%), pero la partición reservada automatiza <strong style="color:var(--ink)">0 decisiones</strong> (rango 0,0–21,57%) → se queda en REVIEW. Lo no probado, no probado está.</p>
+        <p>En muestra valida τ = 0,98 (43,05%), pero la partición reservada automatiza <strong style="color:var(--ink)">0 decisiones</strong> (rango 0,0–21,57%) → se queda en REVIEW. Sin validar, no se automatiza.</p>
       </div>
       <div class="seg">
         <div class="shead"><b>long <span>12+ palabras · n=923</span></b><i class="pill block">BLOCK</i></div>
@@ -578,7 +578,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <div class="sbox"><span>Decisiones automatizadas (validadas fuera de muestra)</span><b id="oAuto">18.648 (6,7%)</b></div>
         <div class="sbox"><span>Ahorro bruto en revisión humana / mes</span><b id="oSave">65.268&nbsp;€</b></div>
         <div class="sbox"><span>Errores de alta confianza frenados por BLOCK</span><b id="oBlock">2.449 (110.200&nbsp;€)</b></div>
-        <div class="sbox"><span>Muestra semanal de control (monitorización SPRT)</span><b>48 filas / sem</b></div>
+        <div class="sbox"><span>Muestra semanal de control (monitorización SPRT, prevista)</span><b>48 filas / sem</b></div>
       </div>
     </div>
     <p class="caveat">El ahorro y la exposición al error se mantienen por separado — sin puntuaciones compuestas. Las cifras derivan solo del caso auditado de arriba; tu diagnóstico las sustituye por las de tu propio tráfico.</p>
@@ -588,7 +588,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="buyer"><h4>Comprador económico</h4><p>COO / Operaciones / Riesgos / Transformación — responsable del coste de la revisión humana.</p></div>
     <div class="buyer"><h4>Comprador de seguridad</h4><p>CISO / Model Risk / Cumplimiento — responsable de lo que pasa cuando la IA se equivoca.</p></div>
   </div>
-  <p class="body" style="margin-top:26px">Nuestro ICP inicial: <strong>equipos de IA en servicios financieros y otras empresas reguladas</strong> que llevan la IA a decisiones de alto volumen que aún requieren revisión humana — porque nadie puede demostrar cuándo es seguro fiarse de la IA.</p>
+  <p class="body" style="margin-top:26px">Nuestro ICP inicial: <strong>equipos de IA en servicios financieros y otras empresas reguladas</strong> que llevan la IA a decisiones de alto volumen que aún requieren revisión humana — porque nadie mide cuándo es seguro fiarse de la IA.</p>
 </section>
 
 <section>
@@ -601,10 +601,10 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
     <div class="card"><div class="tier ent">ENTERPRISE</div>
       <h3>Kunko Assurance Platform</h3>
-      <p>El producto comercial no es el auditor — el auditor es la puerta de entrada. Monetizamos la capa de assurance alrededor de las decisiones de IA en la empresa: monitorización continua, dosieres de evidencia, políticas, controles de riesgo, integraciones y gobernanza.</p>
+      <p>El producto comercial no es el auditor — el auditor es la puerta de entrada. Monetizamos la capa de assurance alrededor de las decisiones de IA en la empresa: contratos y recibos por decisión y el informe ejecutivo (en piloto); monitorización continua, políticas, integraciones y gobernanza (previstas).</p>
     </div>
   </div>
-  <p class="body" style="margin-top:28px">Empezamos deliberadamente con una cuña open source: Judge Audit construye credibilidad y adopción alrededor de un estándar independiente <strong>antes</strong> de pedir a las empresas que pongan decisiones sensibles de producción detrás de una plataforma comercial. Nuestro trabajo es seguir siendo <strong>independientes del modelo</strong> — la compañía cuyo modelo se beneficia de que confíen en él no debería ser la única que certifica esa confianza.</p>
+  <p class="body" style="margin-top:28px">Empezamos deliberadamente con una cuña open source: Judge Audit construye credibilidad y adopción alrededor de un estándar independiente <strong>antes</strong> de pedir a las empresas que pongan decisiones sensibles de producción detrás de una plataforma comercial. Nuestro trabajo es seguir siendo <strong>independientes del modelo</strong> — la compañía cuyo modelo se beneficia de que confíen en él no debería ser la única que avala esa confianza.</p>
 </section>
 
 <section id="roadmap">
@@ -613,13 +613,13 @@ html.js .reveal.in{opacity:1;transform:none}
   <p class="body">Judge Audit no es la compañía — es la cuña. Cada capa compone sobre la anterior:</p>
   <div class="steps">
     <div class="step"><h4>Judge Audit</h4><p>Auditorías de calibración open source. La capa de credibilidad — en vivo hoy.</p></div>
-    <div class="step"><h4>Decision Assurance</h4><p>Evidencia + riesgo + política por decisión: automatizar, revisar o bloquear.</p></div>
-    <div class="step"><h4>Agent Assurance</h4><p>Control de capacidades para agentes: qué puede hacer, verificado de forma continua.</p></div>
-    <div class="step"><h4>Enterprise Assurance</h4><p>El plano de control completo: inventario, riesgo, evidencia, política, monitorización.</p></div>
+    <div class="step"><h4>Decision Assurance</h4><p>Evidencia + riesgo + política por decisión: automatizar, revisar o bloquear. En piloto.</p></div>
+    <div class="step"><h4>Agent Assurance</h4><p>Control de capacidades para agentes: qué puede hacer, comprobado en cada edición, PR y release. Disponible.</p></div>
+    <div class="step"><h4>Enterprise Assurance</h4><p>El plano de control completo: inventario, riesgo, evidencia, política, monitorización. Previsto.</p></div>
   </div>
       <figure class="loopfig">
-    <div class="looplab">EL BUCLE DE GARANTÍA CONTINUA</div>
-    <svg viewBox="0 0 680 470" role="img" aria-label="Bucle de assurance continuo: certificado, cambio, análisis de impacto, revalidar">
+    <div class="looplab">EL BUCLE DE ASSURANCE CONTINUO · PREVISTO</div>
+    <svg viewBox="0 0 680 470" role="img" aria-label="Bucle de assurance continuo (previsto): validado, cambio, análisis de impacto, revalidar">
       <defs>
         <linearGradient id="loopg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/>
@@ -652,7 +652,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <circle cx="340" cy="115" r="32" fill="none" stroke="#34d399" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
       <circle class="ln" cx="340" cy="115" r="32" stroke="#34d399"/>
       <svg x="326" y="101" width="28" height="28" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.3 12l2 2 3.6-4.2" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <text class="ltit" x="340" y="56">CERTIFICADO</text>
+      <text class="ltit" x="340" y="56">VALIDADO</text>
       <circle cx="475" cy="250" r="32" fill="none" stroke="#f87171" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
       <circle class="ln" cx="475" cy="250" r="32" stroke="#f87171"/>
       <svg x="461" y="236" width="28" height="28" viewBox="0 0 24 24"><path d="M12 4.5L3.5 19.5h17L12 4.5z" fill="none" stroke="#f87171" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4.2" stroke="#f87171" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="#f87171"/></svg>
@@ -669,13 +669,13 @@ html.js .reveal.in{opacity:1;transform:none}
       <text class="llab" x="340" y="262">CONTINUO</text>
     </svg>
     <div class="loop" style="margin-top:26px">
-      <span class="lnode hot"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>CERTIFICADO · sigue en vigor</span>
+      <span class="lnode hot"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>VALIDADO · sigue en vigor</span>
       <span class="lnode warn"><svg viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L3.5 19.5h17L12 4.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="#f5b544"/></svg>DEGRADADO · cobertura reducida</span>
       <span class="lnode bad"><svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>BLOQUEADO · vuelve a revisión humana</span>
     </div>
-    <p class="loopcap">Cuando cambian el modelo, el prompt, los datos o la política, el bucle vuelve a generar la evidencia fuera de muestra y reemite el veredicto automáticamente. Ningún cambio llega a producción sin auditar.</p>
+    <p class="loopcap">Previsto: cuando cambien el modelo, el prompt, los datos o la política, el bucle volverá a generar la evidencia fuera de muestra y reemitirá el veredicto, para que ningún cambio llegue a producción sin auditar.</p>
   </figure>
-  <p class="body" style="margin-top:26px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Assurance continuo: cuando algo cambia, Kunko reevalúa la evidencia y degrada o bloquea la autonomía automáticamente.</p>
+  <p class="body" style="margin-top:26px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Assurance continuo (previsto): cuando algo cambie, Kunko reevaluará la evidencia y degradará o bloqueará la autonomía.</p>
 </section>
 
 <section>
@@ -684,14 +684,14 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="grid">
     <div class="card"><div class="tag">Independencia</div><h3>Fuera del modelo</h3><p>El proveedor te dice cuánta confianza tiene su modelo. Nosotros medimos de forma independiente si esa confianza es fiable para tus decisiones — y seguimos ahí cuando cambias de modelo.</p></div>
     <div class="card"><div class="tag">Foso de evidencia</div><h3>Verdad fundamental que compone</h3><p>Cada decisión auditada genera evidencia: decisión, modelo, prompt, confianza, verdad fundamental, riesgo, resultado, override. Con el tiempo, son datos propietarios sobre cuándo las empresas confían de verdad en la IA — y cuándo les falla.</p></div>
-    <div class="card"><div class="tag">Economía</div><h3>Un número, no un panel</h3><p>La tasa de automatización segura convierte la fiabilidad en presupuesto: el porcentaje de revisión humana que puedes eliminar con un error certificado. Es el número que el despliegue necesita.</p></div>
+    <div class="card"><div class="tag">Economía</div><h3>Un número, no un panel</h3><p>La tasa de automatización segura convierte la fiabilidad en presupuesto: el porcentaje de revisión humana que puedes eliminar con tu objetivo de error, validado sobre decisiones etiquetadas reservadas. Es el número que el despliegue necesita.</p></div>
   </div>
 </section>
 
 <section id="assurance">
   <div class="eyebrow">También del laboratorio</div>
   <h2>Agent Assurance</h2>
-  <p class="body">Los jueces deciden; <strong>los agentes actúan</strong> — el segundo bloque de la plataforma. Declara lo que tu agente de IA puede hacer y verifícalo en cada edición, PR y release. Una GitHub Action que comprueba configuraciones MCP, permisos de Claude Code y definiciones de herramientas contra tu política — determinista, mapeada a OWASP, con evidencia firmada.</p>
+  <p class="body">Los jueces deciden; <strong>los agentes actúan</strong> — el segundo bloque de la plataforma. Declara lo que tu agente de IA puede hacer y verifícalo en cada edición, PR y release. Una GitHub Action que comprueba configuraciones MCP, permisos de Claude Code y definiciones de herramientas contra tu política — determinista, mapeada a OWASP, con evidencia firmada. Disponible.</p>
   <p class="body" style="margin-top:24px"><a class="inline" href="https://github.com/kunko-ai-labs/agent-assurance">github.com/kunko-ai-labs/agent-assurance →</a></p>
 </section>
 
@@ -722,7 +722,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </details>
     <details>
       <summary>¿Por qué importa esto para el AI Act europeo?</summary>
-      <p>Los sistemas de IA de alto riesgo (en vigor en diciembre de 2027) necesitan registro, supervisión humana y precisión y robustez demostradas. La evidencia independiente de calibración — incluidas métricas del peor caso, no solo medias — es exactamente el tipo de documentación que esas obligaciones requieren.</p>
+      <p>Los sistemas de IA de alto riesgo (en vigor en diciembre de 2027) necesitan registro, supervisión humana y un nivel adecuado de precisión y robustez. La evidencia independiente de calibración — incluidas métricas del peor caso, no solo medias — puede apoyar la documentación que esas obligaciones requieren; no es una evaluación de conformidad.</p>
     </details>
     <details>
       <summary>¿Cómo ejecuto una auditoría?</summary>
@@ -742,7 +742,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
     <span>© 2026 Kunko AI Labs · Madrid, España</span>
-    <span>El mérito, demostrado — no publicitado.</span>
+    <span>El mérito, medido — no publicitado.</span>
   </div>
 </footer>
 <script>
@@ -758,14 +758,14 @@ html.js .reveal.in{opacity:1;transform:none}
     paint();
   });
   var receipts=[
-   {id:'dec_1042',text:'"Transferir 50 € a mi cuenta de ahorro"',segment_field:'meta.length_band',segment:'"medium" (9–11 palabras)',conf:'0.99',action:'AUTOMATE',cls:'rg',reason:'"τ=0,98 cumplido; cota de error ≤ 5% (unilateral al 95%)"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1042',text:'"Transferir 50 € a mi cuenta de ahorro"',segment_field:'meta.length_band',segment:'"medium" (9–11 palabras)',conf:'0.99',action:'AUTOMATE',cls:'rg',reason:'"τ=0,98 cumplido; cota de error dentro del objetivo del 5% (unilateral al 95%)"',contract:'contract v3 · sha 9f2c…a41d'},
    {id:'dec_1043',text:'"Hice una transferencia internacional el martes pasado y me cobraron una comisión doble…"',segment_field:'meta.length_band',segment:'"long" (12+ palabras)',conf:'0.99',action:'BLOCK',cls:'rr',reason:'"6,29% de error observado a máxima confianza; cota superior al 95%: 8,58% > objetivo del 5%"',contract:'contract v3 · sha 9f2c…a41d'},
-   {id:'dec_1044',text:'"Saldo de la tarjeta"',segment_field:'meta.length_band',segment:'"short" (2–8 palabras)',conf:'0.99',action:'REVIEW',cls:'ra',reason:'"la partición reservada automatiza 0 decisiones; lo no probado, no probado está"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1044',text:'"Saldo de la tarjeta"',segment_field:'meta.length_band',segment:'"short" (2–8 palabras)',conf:'0.99',action:'REVIEW',cls:'ra',reason:'"la partición reservada automatiza 0 decisiones; sin validar, no se automatiza"',contract:'contract v3 · sha 9f2c…a41d'},
    {id:'dec_1045',text:'"[payload]"',segment_field:'meta.length_band',segment:'null (sin metadatos)',conf:'0.99',action:'FAIL-CLOSED',cls:'ra',reason:'"sin metadatos de segmento — denegado por contrato, derivado a revisión humana"',contract:'contract v3 · sha 9f2c…a41d'}];
   var pre=document.getElementById('receiptJson');
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
   function render(i){var r=receipts[i];
-    pre.innerHTML='<span class="rk">"id"</span>: <span class="rv">"'+r.id+'"</span>,\n<span class="rk">"decision"</span>: <span class="rv">'+esc(r.text)+'</span>,\n<span class="rk">"segment_field"</span>: <span class="rv">"'+r.segment_field+'"</span>,\n<span class="rk">"segment"</span>: <span class="rv">'+r.segment+'</span>,\n<span class="rk">"declared_confidence"</span>: <span class="rv">'+r.conf+'</span>,\n<span class="rk">"threshold_applied"</span>: <span class="rv">"τ = 0.98"</span>,\n<span class="rk">"target_risk"</span>: <span class="rv">"≤ 5% error"</span>,\n<span class="rk">"action"</span>: <span class="'+r.cls+'">"'+r.action+'"</span>,\n<span class="rk">"reason"</span>: <span class="rv">'+esc(r.reason)+'</span>,\n<span class="rk">"contract"</span>: <span class="rv">"'+r.contract+'"</span>,\n<span class="rk">"pii_stored"</span>: <span class="rv">false</span>,\n<span class="rk">"hmac_sha256"</span>: <span class="rv">"7be1…c4f0"</span>';}
+    pre.innerHTML='<span class="rk">"id"</span>: <span class="rv">"'+r.id+'"</span>,\n<span class="rk">"decision"</span>: <span class="rv">'+esc(r.text)+'</span>,\n<span class="rk">"segment_field"</span>: <span class="rv">"'+r.segment_field+'"</span>,\n<span class="rk">"segment"</span>: <span class="rv">'+r.segment+'</span>,\n<span class="rk">"declared_confidence"</span>: <span class="rv">'+r.conf+'</span>,\n<span class="rk">"threshold_applied"</span>: <span class="rv">"τ = 0.98"</span>,\n<span class="rk">"target_risk"</span>: <span class="rv">"5% error target"</span>,\n<span class="rk">"action"</span>: <span class="'+r.cls+'">"'+r.action+'"</span>,\n<span class="rk">"reason"</span>: <span class="rv">'+esc(r.reason)+'</span>,\n<span class="rk">"contract"</span>: <span class="rv">"'+r.contract+'"</span>,\n<span class="rk">"pii_stored"</span>: <span class="rv">false</span>,\n<span class="rk">"hmac_sha256"</span>: <span class="rv">"7be1…c4f0"</span>';}
   var tickets=document.querySelectorAll('.rticket');
   tickets.forEach(function(t){t.addEventListener('click',function(){
     tickets.forEach(function(x){x.classList.remove('sel');});t.classList.add('sel');render(parseInt(t.getAttribute('data-t'),10));});});

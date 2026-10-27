@@ -6,8 +6,8 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0f1e" id="themeColor">
 <title>Kunko AI Labs — The AI Decision Assurance Platform for enterprises</title>
-<meta name="description" content="Kunko is building the AI Decision Assurance Platform for enterprises. We help companies audit, control and continuously assure AI systems before allowing them to make autonomous decisions. Starting with open-source Judge Audit: we tell enterprises which AI decisions are safe to automate — measured, certified, continuously monitored.">
-<meta name="keywords" content="AI assurance, AI decision assurance platform, safe automation rate, AI judge calibration, LLM-as-a-judge audit, selective prediction, model risk management, EU AI Act compliance, AI governance, continuous assurance, trustworthy AI, agent guardrails">
+<meta name="description" content="Kunko is building the AI Decision Assurance Platform for enterprises. We help companies audit, control and continuously assure AI systems before allowing them to make autonomous decisions. Starting with open-source Judge Audit: we tell enterprises which AI decisions can be automated at the error they accept — measured on their labelled decisions and validated on held-out ones.">
+<meta name="keywords" content="AI assurance, AI decision assurance platform, safe automation rate, AI judge calibration, LLM-as-a-judge audit, selective prediction, model risk management, EU AI Act, AI governance, continuous assurance, trustworthy AI, agent guardrails">
 <link rel="icon" type="image/png" href="/assets/logo-mark.png">
 <style>
 :root{
@@ -286,7 +286,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <nav>
       <a class="link" href="#platform">Platform</a>
       <a class="link" href="#how">How it works</a>
-      <a class="link" href="#proof">Proof</a>
+      <a class="link" href="#proof">Evidence</a>
       <a class="link" href="#roadmap">Roadmap</a>
       <a class="link" href="#contact">Contact</a>
       <a class="link" href="es/" lang="es">ES</a>
@@ -297,8 +297,8 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <div class="wrap hero">
   <h1>Kunko tells enterprises<br>which AI decisions are <span class="grad">safe to automate.</span></h1>
-  <p class="lede"><strong>Kunko is building the AI Decision Assurance Platform for enterprises.</strong> We help companies audit, control and continuously assure AI systems <strong>before</strong> allowing them to make autonomous decisions.</p>
-  <p class="lede" style="margin-top:18px">We start with open-source <strong>Judge Audit</strong>, which measures whether AI judges can actually be trusted. We are expanding this into a full assurance platform covering AI decisions, agents, evidence, policies and continuous monitoring.</p>
+  <p class="lede"><strong>Kunko is building the AI Decision Assurance Platform for enterprises.</strong> We help companies audit and control AI systems <strong>before</strong> allowing them to make autonomous decisions.</p>
+  <p class="lede" style="margin-top:18px">We start with open-source <strong>Judge Audit</strong>, which measures whether AI judges can actually be trusted. We are expanding this into a full assurance platform covering AI decisions, agents, evidence, policies and continuous monitoring. <strong>Available today:</strong> the calibration audit, the safe threshold, the Arena comparison, the GitHub Action, MCP server and PyPI package, and permission checks for AI agents. <strong>In pilot:</strong> decisions per segment with a contract and a receipt, and the executive report. <strong>Planned:</strong> live monitoring with a sequential test, and an OWASP AIMA view.</p>
   <div class="cta">
     <a class="btn solid" href="https://github.com/kunko-ai-labs/judge-audit">Explore Judge Audit</a>
     <a class="btn ghost" href="#demo">Request the Enterprise Demo</a>
@@ -308,7 +308,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <div class="wrap">
 <section id="glance" style="padding-top:20px">
   <div class="eyebrow">Study v0.6 · Pre-registered</div>
-  <h2>Validated automation at 5% error.<br><span class="grad">Same cases, three languages.</span></h2>
+  <h2>Validated automation at a 5% error target.<br><span class="grad">Same cases, three languages.</span></h2>
   <p class="body">The same <strong>2,974 cases</strong> in English, Spanish and Catalan. Only the language changes — and so does how much each judge can <strong>safely automate</strong>:</p>
   <div class="jcarousel reveal">
     <div class="jtrack" id="jTrack">
@@ -355,13 +355,13 @@ html.js .reveal.in{opacity:1;transform:none}
       <button class="jbtn" id="jNext" aria-label="Next judges">→</button>
     </div>
   </div>
-  <p class="caveat">Six of the twelve audited judges — drag or use the arrows. Share of decisions automatable with error bounded at 5% — one-sided 95% Clopper–Pearson, validated out-of-sample. <a href="https://github.com/kunko-ai-labs/judge-audit">Full study in the repo →</a></p>
+  <p class="caveat">Six of the twelve audited judges — drag or use the arrows. Share of decisions validated at a 5% error target on held-out halves of the study's labelled cases: one-sided 95% bound, approximate (the halves are pooled). A figure for cases like these, not a forecast for future traffic. <a href="https://github.com/kunko-ai-labs/judge-audit">Full study in the repo →</a></p>
 </section>
 
 <section id="platform">
   <div class="eyebrow">The vision</div>
   <h2>The <span class="grad">control plane</span> for AI assurance</h2>
-  <p class="body">Not another governance dashboard. Kunko is the layer that continuously determines <strong>what AI is allowed to do</strong> — and whether it remains trustworthy enough to do it. Everything it touches runs through one assurance loop:</p>
+  <p class="body">Not another governance dashboard. Kunko is the layer that continuously determines <strong>what AI is allowed to do</strong> — and whether it remains trustworthy enough to do it. Everything it touches runs through one assurance loop. <strong>Status:</strong> Audit is available; Decide and Record are in pilot; Monitor is planned.</p>
   <div class="vdiag">
     <div class="vcol vin">
       <div class="vcard"><div class="vk">INPUT</div><b>Models, agents, judges</b><span>the systems you run</span></div>
@@ -371,15 +371,15 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="vlink" aria-hidden="true">→</div>
     <div class="vcore">
       <div class="vk">THE ASSURANCE LOOP</div>
-      <div class="vstep"><i>1</i><div><b>Audit</b><span>Judge Audit measures calibration in shadow mode</span></div></div>
-      <div class="vstep"><i>2</i><div><b>Decide</b><span>risk engine: automate, review or block — per segment</span></div></div>
-      <div class="vstep"><i>3</i><div><b>Prove</b><span>Trust Passport: a signed receipt per decision</span></div></div>
-      <div class="vstep"><i>4</i><div><b>Monitor</b><span>detect change → re-evaluate → act, continuously</span></div></div>
+      <div class="vstep"><i>1</i><div><b>Audit</b><span>Judge Audit measures calibration in shadow mode · available</span></div></div>
+      <div class="vstep"><i>2</i><div><b>Decide</b><span>risk engine: automate, review or block — per segment · pilot</span></div></div>
+      <div class="vstep"><i>3</i><div><b>Record</b><span>Trust Passport: a signed receipt per decision · pilot</span></div></div>
+      <div class="vstep"><i>4</i><div><b>Monitor</b><span>detect change → re-evaluate → act, continuously · planned</span></div></div>
     </div>
     <div class="vlink" aria-hidden="true">→</div>
     <div class="vcol vout">
-      <div class="vcard"><div class="vk">FOR PEOPLE</div><b>Review queues</b><span>evidence dossiers, board-ready reports</span></div>
-      <div class="vcard"><div class="vk">FOR SYSTEMS</div><b>Runtime control</b><span>policies enforced, blocks automatic</span></div>
+      <div class="vcard"><div class="vk">FOR PEOPLE</div><b>Review queues</b><span>evidence dossiers, executive reports · pilot</span></div>
+      <div class="vcard"><div class="vk">FOR SYSTEMS</div><b>Runtime control</b><span>per-segment contracts applied at decision time · pilot</span></div>
     </div>
   </div>
   <div class="vpillars">
@@ -389,7 +389,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="vpillar"><b>POLICY</b><span>automate · review · block per decision</span></div>
   </div>
   <div class="strip"><div class="k">CONTINUOUS ASSURANCE</div>
-    <p><b>Monitor → detect change → re-evaluate → act.</b> When the model, prompt, data or policy changes, Kunko re-runs the evidence and can automatically downgrade or block autonomy. Trust is not a one-time certificate — it's a stream.</p>
+    <p><b>Monitor → detect change → re-evaluate → act (planned).</b> When the model, prompt, data or policy changes, Kunko will re-run the evidence and downgrade or block autonomy. Today a result names what it is valid for and a date to review it by, and a drift check in CI compares a run with its baseline. Trust is not a one-time stamp — it's a stream.</p>
   </div>
   <div class="strip"><div class="k">EVIDENCE LAYER</div>
     <p>Evaluations · calibration reports · audit trails · provenance · signed dossiers — everything the platform decides is backed by evidence a regulator, an auditor or your board can inspect.</p>
@@ -404,7 +404,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="fnode"><b>AI decides</b><span>judge or agent output</span></div><div class="farrow">→</div>
     <div class="fnode"><b>Confidence?</b><span>what it claims</span></div><div class="farrow">→</div>
     <div class="fnode"><b>Trusted?</b><span>calibration check</span></div><div class="farrow">→</div>
-    <div class="fnode"><b>Measured error</b><span>certified bounds</span></div><div class="farrow">→</div>
+    <div class="fnode"><b>Measured error</b><span>bounded on labelled data</span></div><div class="farrow">→</div>
     <div class="fnode"><b>% automatable</b><span>safe automation rate</span></div><div class="farrow">→</div>
     <div class="fnode"><b>Risk OK?</b><span>your threshold</span></div>
   </div>
@@ -415,11 +415,11 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 
   <div class="chansec">
-    <div class="eyebrow">From measurement to decision</div>
+    <div class="eyebrow">From measurement to decision · pilot</div>
     <h3>Automate, review or block,<br><span class="grad">per channel, with a receipt</span></h3>
     <p class="body">An average hides the segment that fails. Kunko turns the audit into one decision per segment, writes a contract for every segment it lets you automate, and issues a receipt for each automated decision. A segment that its own audit flags is never automated. <strong>Click a channel to inspect its contract.</strong></p>
     <div class="chans">
-      <button class="chan"><b>Web</b><span class="pill auto">● AUTOMATE</span><p>Error bound under the target on enough audited decisions. A contract is written for this segment.</p><span class="cbody"><i>Threshold τ = 0.98</i><i>Error bound ≤ 5% (one-sided 95%)</i><i>Automation only inside the validated share</i><i>Signed receipt per decision</i></span></button>
+      <button class="chan"><b>Web</b><span class="pill auto">● AUTOMATE</span><p>Error bound under the target on enough audited decisions. A contract is written for this segment.</p><span class="cbody"><i>Threshold τ = 0.98</i><i>Error bound within the 5% target (one-sided 95%)</i><i>Automation only inside the validated share</i><i>Signed receipt per decision</i></span></button>
       <button class="chan"><b>Phone</b><span class="pill review">● REVIEW</span><p>The judge suggests, a person decides.</p><span class="cbody"><i>No automation contract</i><i>Every suggestion logged with its confidence</i><i>Outcomes feed back into the audit</i></span></button>
       <button class="chan"><b>Chat</b><span class="pill review">● REVIEW</span><p>The judge suggests, a person decides.</p><span class="cbody"><i>No automation contract</i><i>Every suggestion logged with its confidence</i><i>Outcomes feed back into the audit</i></span></button>
       <button class="chan"><b>Email</b><span class="pill block">× BLOCK</span><p>The audit flags this segment. No email decision is automated.</p><span class="cbody"><i>Automation forbidden by contract</i><i>Flagged: error above target at high confidence</i><i>Everything routed to human review</i></span></button>
@@ -429,7 +429,7 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 
   <div class="rdemo">
-    <div class="k">LIVE ROUTER DEMO</div>
+    <div class="k">LIVE ROUTER DEMO · PILOT</div>
     <p>Pick an incoming banking decision. <code>contract.decide()</code> reads the segment, applies the signed contract in memory — no disk — and issues a receipt:</p>
     <div class="rgrid">
       <div class="rtickets">
@@ -440,35 +440,35 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <pre class="rreceipt"><code id="receiptJson"></code></pre>
     </div>
-    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Every receipt is HMAC-SHA256 signed with the client's key, stores no personal data, and references the exact contract that authorized — or refused — the decision. It is the audit trail a regulator, an insurer or a board can re-verify.</p>
+    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Every receipt is HMAC-SHA256 signed with the client's key, stores no personal data, and references, by its hash, the contract that authorized — or refused — the decision. It is the audit trail a regulator, an insurer or a board can re-verify.</p>
   </div>
 
   <div class="rmp">
-    <div><div class="rk">REPLAY</div><b>Your past decisions</b><span>Run the judge in shadow mode on decisions your people already made. Nothing is automated.</span></div>
-    <div><div class="rk">MEASURE</div><b>Confidence against outcome</b><span>Calibration, safe automation rate with its bound, cost and latency — per segment.</span></div>
-    <div><div class="rk">DECIDE</div><b>One decision per segment</b><span>Automate, review or block per segment, with a contract for each automated one.</span></div>
-    <div><div class="rk">PROVE</div><b>Receipts, not promises</b><span>A receipt per automated decision, keyed with your own key, that points back to the audit.</span></div>
+    <div><div class="rk">REPLAY</div><b>Your past decisions</b><span>Run the judge in shadow mode on decisions your people already made. Nothing is automated. Available.</span></div>
+    <div><div class="rk">MEASURE</div><b>Confidence against outcome</b><span>Calibration, safe automation rate with its bound, cost and latency — per segment. Available.</span></div>
+    <div><div class="rk">DECIDE</div><b>One decision per segment</b><span>Automate, review or block per segment, with a contract for each automated one. Pilot.</span></div>
+    <div><div class="rk">RECORD</div><b>Receipts, not promises</b><span>A receipt per automated decision, keyed with your own key, that points back to the audit. Pilot.</span></div>
   </div>
   <p class="body" style="margin-top:36px"><strong>Safe Automation Rate</strong> turns reliability into economics: <em>how much human work can you safely remove?</em> The value we create is directly proportional to the amount of human review — and risk — we safely remove.</p>
   <p class="body" style="margin-top:16px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="inline" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
 </section>
 
 <section id="proof">
-  <div class="eyebrow">Proof, not promises</div>
+  <div class="eyebrow">Evidence, not promises</div>
   <h2>What looks automatable is not<br>what you can <span class="grad">sign off.</span></h2>
   <p class="body">Our v0.5 study ran three judges over <strong>3,080 human-labelled banking decisions</strong> (BANKING77) — pre-registered before the first model call, every result published including the unflattering ones. Same data, same 5% error target:</p>
   <table class="proof">
-    <tr><th>Judge</th><th>Decides alone at ≤ 5% error</th><th>Range over seeds</th></tr>
+    <tr><th>Judge</th><th>Validated share at a 5% error target (held-out, approximate)</th><th>Range over seeds</th></tr>
     <tr><td>TypeSafe Jev, native probability</td><td class="n">41.0%</td><td>27.0 – 45.1%</td></tr>
     <tr><td>Gemini 3.6 Flash, verbalized</td><td class="n">14.3%</td><td>7.6 – 30.0%</td></tr>
     <tr><td>Qwen3-8B, token log-probability</td><td class="n">0%</td><td>0.0 – 4.4%</td></tr>
   </table>
-  <p class="caveat">A 95% confidence score is not a 95% guarantee — token probabilities couldn't automate a single decision at this bar. That's the point: <strong style="color:var(--ink)">confidence means different things across judges, and Kunko measures whether it can be trusted.</strong> We publish the range across ten other data splits, not just the headline. Caveats as published: public dataset, likely seen in pretraining; label noise not measured. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Full study →</a> The v0.5 roster is the start — Judge Arena keeps score as it grows.</p>
+  <p class="caveat">A 95% confidence score does not mean 95% right — token probabilities couldn't automate a single decision at this bar. That's the point: <strong style="color:var(--ink)">confidence means different things across judges, and Kunko measures whether it can be trusted.</strong> We publish the range across ten other data splits, not just the headline. Caveats as published: public dataset, likely seen in pretraining; label noise not measured. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Full study →</a> The v0.5 roster is the start — Judge Arena keeps score as it grows.</p>
 
   <div class="finding">
     <div class="tag">FINDING</div>
     <h3>A good calibration score is <span class="grad">not enough</span> to automate</h3>
-    <p>On 200 adversarial emails, Gemini 3 Flash was <strong>97% accurate</strong> with one of the lowest calibration errors we measured <strong>(ECE 0.015)</strong> — and still couldn't decide a single email alone without error. It was just as confident when wrong. Jev, slightly less accurate and worse calibrated on average (ECE 0.039), separated its mistakes and automated <strong>73% of the emails with zero errors</strong>. Accuracy and average calibration don't tell you what you can hand over. <strong>We measure what does.</strong></p>
+    <p>On 200 adversarial emails, Gemini 3 Flash was <strong>97% accurate</strong> with one of the lowest calibration errors we measured <strong>(ECE 0.015)</strong> — and still couldn't decide a single email alone without error. It was just as confident when wrong. Jev, slightly less accurate and worse calibrated on average (ECE 0.039), separated its mistakes and automated <strong>73% of those 200 labelled emails with zero errors</strong>. Accuracy and average calibration don't tell you what you can hand over. <strong>We measure what does.</strong></p>
   </div>
 
   <div class="finding">
@@ -490,9 +490,9 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="pstep"><b>Evaluation</b><span>does my model work?</span></div><div class="farrow">→</div>
     <div class="pstep"><b>Assurance</b><span>can I trust this decision?</span></div><div class="farrow">→</div>
     <div class="pstep"><b>Autonomy</b><span>automate / review / block</span></div><div class="farrow">→</div>
-    <div class="pstep"><b>Continuous assurance</b><span>prove it stays safe</span></div>
+    <div class="pstep"><b>Continuous assurance</b><span>check it stays within target · planned</span></div>
   </div>
-  <p class="body" style="margin-top:28px"><strong>From AI evaluation to AI assurance.</strong> The market is full of "does my model work?". We take you to "can I safely trust this system with this decision?" — and then to "can I continuously prove it remains safe to trust?"</p>
+  <p class="body" style="margin-top:28px"><strong>From AI evaluation to AI assurance.</strong> The market is full of "does my model work?". We take you to "can I safely trust this system with this decision?" — and then, with live monitoring (planned), to "is it still within my target?"</p>
 </section>
 
 <section>
@@ -516,12 +516,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <figcaption>A reliability diagram: the diagonal is perfect calibration — most judges aren't on it.</figcaption>
     </figure>
     <ul class="metrics">
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4.5-4.5"/><circle cx="12" cy="15" r="1.4" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>Safe Automation Rate</i></b><span>What share of decisions can be automated at a certified error bound. The ROI number.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4.5-4.5"/><circle cx="12" cy="15" r="1.4" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>Safe Automation Rate</i></b><span>What share of decisions can be automated at your target error, validated on held-out labelled decisions (approximate). The ROI number.</span></div></li>
       <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 4-6"/><path d="M18 4v5M15.5 6.5h5"/></svg></span><div><b><i>ECE</i> with confidence intervals</b><span>How far confidence drifts from reality — as an interval, never a lonely point estimate.</span></div></li>
       <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5L2.5 20h19L12 3.5z"/><path d="M12 9.5v4.5"/><circle cx="12" cy="17" r="1.1" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>MCE</i> — worst-bin error</b><span>The regulator's question, not the average case: where is this judge <em>most</em> wrong?</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9.8 9l1.6 1.6 3-3.2"/><path d="M8.6 13.4L7 21l5-2.6L17 21l-1.6-7.6"/></svg></span><div><b>Selective prediction, certified</b><span>Finite-sample risk bounds (Clopper–Pearson): automation you can sign off on.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9.8 9l1.6 1.6 3-3.2"/><path d="M8.6 13.4L7 21l5-2.6L17 21l-1.6-7.6"/></svg></span><div><b>Selective prediction, with bounds</b><span>Finite-sample risk bounds (Clopper–Pearson) on your labelled decisions: a threshold you can review before you sign off.</span></div></li>
       <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z"/><path d="M9.3 12l2 2 3.6-4.2"/></svg></span><div><b>Adversarial robustness</b><span>Prompt injection, homoglyphs, social engineering — does calibration survive attack?</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2.2"/></svg></span><div><b>Cost, latency &amp; drift</b><span>Calibration per dollar and per millisecond — plus continuous monitoring for when it degrades.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2.2"/></svg></span><div><b>Cost, latency &amp; drift</b><span>Calibration per dollar and per millisecond, and a drift check against a baseline in CI. Continuous monitoring is planned.</span></div></li>
     </ul>
   </div>
 </section>
@@ -531,11 +531,11 @@ html.js .reveal.in{opacity:1;transform:none}
   <h2>From 100% human review to <span class="grad">measured autonomy</span></h2>
   <div class="usecase">
     <div class="tag">ILLUSTRATIVE SCENARIO</div>
-    <p class="big">A bank processes <em>200,000</em> customer-service decisions a month. Today <em>100%</em> require human review. Kunko proves that <em>63%</em> can be automated while keeping error below <em>2%</em> — and continuously monitors whether that remains true.</p>
+    <p class="big">A bank processes <em>200,000</em> customer-service decisions a month. Today <em>100%</em> require human review. The audit measures, on decisions the bank has already labelled, what share a judge could take alone at the error the bank sets, validated on held-out decisions — an estimate for traffic like that sample, not a promise about next month.</p>
     <p>Or an insurer reviewing claims: which auto-approve, which need a human, which must be blocked. Or a fintech running AML triage inside its risk threshold. <strong>One workflow, one measured number, one budget line that shrinks.</strong></p>
     <div class="offer">
       <b>Kunko Enterprise Assurance Demo</b>
-      <p>Give us 5,000 of your historical decisions. We'll show you exactly what percentage of your current human review could be automated — under your own error threshold.</p>
+      <p>Give us 5,000 of your historical decisions. We'll measure what share of your current human review could be validated for automation — under your own error threshold, on your labelled decisions.</p>
       <p class="fine">Start in shadow mode. No production risk.</p>
     </div>
   </div>
@@ -553,7 +553,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <div class="seg">
         <div class="shead"><b>short <span>2–8 words · n=1,303</span></b><i class="pill review">REVIEW</i></div>
         <div class="sbar"><i style="width:0%;background:var(--amber)"></i></div>
-        <p>In-sample validates τ = 0.98 (43.05%), but the held-out split automates <strong style="color:var(--ink)">0 decisions</strong> (range 0.0–21.57%) → held in REVIEW. Unproven is unproven.</p>
+        <p>In-sample validates τ = 0.98 (43.05%), but the held-out split automates <strong style="color:var(--ink)">0 decisions</strong> (range 0.0–21.57%) → held in REVIEW. Not validated, so not automated.</p>
       </div>
       <div class="seg">
         <div class="shead"><b>long <span>12+ words · n=923</span></b><i class="pill block">BLOCK</i></div>
@@ -578,7 +578,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <div class="sbox"><span>Automated decisions (out-of-sample validated)</span><b id="oAuto">18,648 (6.7%)</b></div>
         <div class="sbox"><span>Gross human-review savings / month</span><b id="oSave">€65,268</b></div>
         <div class="sbox"><span>High-confidence errors stopped by BLOCK</span><b id="oBlock">2,449 (€110,200)</b></div>
-        <div class="sbox"><span>Weekly control sample (SPRT monitoring)</span><b>48 rows / wk</b></div>
+        <div class="sbox"><span>Weekly control sample (SPRT monitoring, planned)</span><b>48 rows / wk</b></div>
       </div>
     </div>
     <p class="caveat">Savings and error exposure are kept separate — no composite scores. Figures derive only from the audited case above; your diagnostic replaces them with your own traffic.</p>
@@ -588,7 +588,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="buyer"><h4>Economic buyer</h4><p>COO / Operations / Risk / Transformation — owns the cost of human review.</p></div>
     <div class="buyer"><h4>Security buyer</h4><p>CISO / Model Risk / Compliance — owns what happens when the AI is wrong.</p></div>
   </div>
-  <p class="body" style="margin-top:26px">Our initial ICP: <strong>AI teams in financial services and other regulated enterprises</strong> deploying AI into high-volume decisions that still require human review — because nobody can prove when the AI is safe to trust.</p>
+  <p class="body" style="margin-top:26px">Our initial ICP: <strong>AI teams in financial services and other regulated enterprises</strong> deploying AI into high-volume decisions that still require human review — because nobody measures when the AI is safe to trust.</p>
 </section>
 
 <section>
@@ -601,10 +601,10 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
     <div class="card"><div class="tier ent">ENTERPRISE</div>
       <h3>Kunko Assurance Platform</h3>
-      <p>The commercial product is not the auditor — the auditor is the entry point. We monetize the assurance layer around enterprise AI decisions: continuous monitoring, evidence dossiers, policies, risk controls, integrations and governance.</p>
+      <p>The commercial product is not the auditor — the auditor is the entry point. We monetize the assurance layer around enterprise AI decisions: decision contracts and receipts and the executive report (in pilot); continuous monitoring, policies, integrations and governance (planned).</p>
     </div>
   </div>
-  <p class="body" style="margin-top:28px">We're deliberately starting with an open-source wedge: Judge Audit builds credibility and adoption around an independent standard <strong>before</strong> asking enterprises to put sensitive production decisions behind a commercial platform. Our job is to remain <strong>model-independent</strong> — the company whose model benefits from being trusted shouldn't be the only one certifying that trust.</p>
+  <p class="body" style="margin-top:28px">We're deliberately starting with an open-source wedge: Judge Audit builds credibility and adoption around an independent standard <strong>before</strong> asking enterprises to put sensitive production decisions behind a commercial platform. Our job is to remain <strong>model-independent</strong> — the company whose model benefits from being trusted shouldn't be the only one vouching for that trust.</p>
 </section>
 
 <section id="roadmap">
@@ -613,13 +613,13 @@ html.js .reveal.in{opacity:1;transform:none}
   <p class="body">Judge Audit isn't the company — it's the wedge. Each layer compounds on the last:</p>
   <div class="steps">
     <div class="step"><h4>Judge Audit</h4><p>Open-source calibration audits. The credibility layer — live today.</p></div>
-    <div class="step"><h4>Decision Assurance</h4><p>Evidence + risk + policy per decision: automate, review, or block.</p></div>
-    <div class="step"><h4>Agent Assurance</h4><p>Capability control for agents: what it may do, verified continuously.</p></div>
-    <div class="step"><h4>Enterprise Assurance</h4><p>The full control plane: inventory, risk, evidence, policy, monitoring.</p></div>
+    <div class="step"><h4>Decision Assurance</h4><p>Evidence + risk + policy per decision: automate, review, or block. In pilot.</p></div>
+    <div class="step"><h4>Agent Assurance</h4><p>Capability control for agents: what it may do, checked on every edit, PR and release. Available.</p></div>
+    <div class="step"><h4>Enterprise Assurance</h4><p>The full control plane: inventory, risk, evidence, policy, monitoring. Planned.</p></div>
   </div>
   <figure class="loopfig">
-    <div class="looplab">THE CONTINUOUS ASSURANCE LOOP</div>
-    <svg viewBox="0 0 680 470" role="img" aria-label="Continuous assurance loop: certified, change, impact analysis, revalidate">
+    <div class="looplab">THE CONTINUOUS ASSURANCE LOOP · PLANNED</div>
+    <svg viewBox="0 0 680 470" role="img" aria-label="Continuous assurance loop (planned): validated, change, impact analysis, revalidate">
       <defs>
         <linearGradient id="loopg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/>
@@ -652,7 +652,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <circle cx="340" cy="115" r="32" fill="none" stroke="#34d399" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
       <circle class="ln" cx="340" cy="115" r="32" stroke="#34d399"/>
       <svg x="326" y="101" width="28" height="28" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.3 12l2 2 3.6-4.2" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <text class="ltit" x="340" y="56">CERTIFIED</text>
+      <text class="ltit" x="340" y="56">VALIDATED</text>
       <circle cx="475" cy="250" r="32" fill="none" stroke="#f87171" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
       <circle class="ln" cx="475" cy="250" r="32" stroke="#f87171"/>
       <svg x="461" y="236" width="28" height="28" viewBox="0 0 24 24"><path d="M12 4.5L3.5 19.5h17L12 4.5z" fill="none" stroke="#f87171" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4.2" stroke="#f87171" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="#f87171"/></svg>
@@ -669,13 +669,13 @@ html.js .reveal.in{opacity:1;transform:none}
       <text class="llab" x="340" y="262">ASSURANCE LOOP</text>
     </svg>
     <div class="loop" style="margin-top:26px">
-      <span class="lnode hot"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>CERTIFIED · stays in force</span>
+      <span class="lnode hot"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>VALIDATED · stays in force</span>
       <span class="lnode warn"><svg viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L3.5 19.5h17L12 4.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="#f5b544"/></svg>DEGRADED · coverage reduced</span>
       <span class="lnode bad"><svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>BLOCKED · back to human review</span>
     </div>
-    <p class="loopcap">When the model, prompt, data or policy changes, the loop re-runs the evidence out-of-sample and re-issues the verdict automatically. No change goes live unaudited.</p>
+    <p class="loopcap">Planned: when the model, prompt, data or policy changes, the loop re-runs the evidence out-of-sample and re-issues the verdict, so no change goes live unaudited.</p>
   </figure>
-  <p class="body" style="margin-top:26px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Continuous assurance: when anything changes, Kunko re-evaluates the evidence and downgrades or blocks autonomy automatically.</p>
+  <p class="body" style="margin-top:26px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Continuous assurance (planned): when anything changes, Kunko re-evaluates the evidence and downgrades or blocks autonomy.</p>
 </section>
 
 <section>
@@ -684,14 +684,14 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="grid">
     <div class="card"><div class="tag">Independence</div><h3>Outside the model</h3><p>The vendor tells you how confident its model is. We independently measure whether that confidence is trustworthy for your decisions — and we stay put when you swap the model.</p></div>
     <div class="card"><div class="tag">Evidence moat</div><h3>Compounding ground truth</h3><p>Every audited decision generates evidence: decision, model, prompt, confidence, ground truth, risk, outcome, override. Over time, that's proprietary data on when enterprises actually trust AI — and when it fails them.</p></div>
-    <div class="card"><div class="tag">Economics</div><h3>A number, not a dashboard</h3><p>Safe Automation Rate converts reliability into budget: the share of human review you can remove at a certified error. It's the number deployment actually needs.</p></div>
+    <div class="card"><div class="tag">Economics</div><h3>A number, not a dashboard</h3><p>Safe Automation Rate converts reliability into budget: the share of human review you can remove at your target error, validated on held-out labelled decisions. It's the number deployment actually needs.</p></div>
   </div>
 </section>
 
 <section id="assurance">
   <div class="eyebrow">Also from the lab</div>
   <h2>Agent Assurance</h2>
-  <p class="body">Judges decide; <strong>agents act</strong> — the second building block of the platform. Declare what your AI agent may do, and verify it on every edit, PR and release. A GitHub Action that checks MCP configs, Claude Code permissions and tool definitions against your policy — deterministic, OWASP-mapped, with signed evidence.</p>
+  <p class="body">Judges decide; <strong>agents act</strong> — the second building block of the platform. Declare what your AI agent may do, and verify it on every edit, PR and release. A GitHub Action that checks MCP configs, Claude Code permissions and tool definitions against your policy — deterministic, OWASP-mapped, with signed evidence. Available.</p>
   <p class="body" style="margin-top:24px"><a class="inline" href="https://github.com/kunko-ai-labs/agent-assurance">github.com/kunko-ai-labs/agent-assurance →</a></p>
 </section>
 
@@ -722,7 +722,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </details>
     <details>
       <summary>Why does this matter for the EU AI Act?</summary>
-      <p>High-risk AI systems (in force December 2027) need logging, human oversight, and demonstrated accuracy and robustness. Independent calibration evidence — including worst-case metrics, not just averages — is exactly the kind of documentation those obligations call for.</p>
+      <p>High-risk AI systems (in force December 2027) need logging, human oversight, and appropriate accuracy and robustness. Independent calibration evidence — including worst-case metrics, not just averages — can support the documentation those obligations call for; it is not a conformity assessment.</p>
     </details>
     <details>
       <summary>How do I run an audit?</summary>
@@ -742,7 +742,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
     <span>© 2026 Kunko AI Labs · Madrid, Spain</span>
-    <span>Merit, demonstrated — not marketed.</span>
+    <span>Merit, measured — not marketed.</span>
   </div>
 </footer>
 <script>
@@ -758,14 +758,14 @@ html.js .reveal.in{opacity:1;transform:none}
     paint();
   });
   var receipts=[
-   {id:'dec_1042',text:'"Transfer €50 to my savings account"',segment_field:'meta.length_band',segment:'"medium" (9–11 words)',conf:'0.99',action:'AUTOMATE',cls:'rg',reason:'"τ=0.98 satisfied; error bound ≤ 5% (95% one-sided)"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1042',text:'"Transfer €50 to my savings account"',segment_field:'meta.length_band',segment:'"medium" (9–11 words)',conf:'0.99',action:'AUTOMATE',cls:'rg',reason:'"τ=0.98 satisfied; error bound within the 5% target (95% one-sided)"',contract:'contract v3 · sha 9f2c…a41d'},
    {id:'dec_1043',text:'"I made an international transfer last Tuesday and was charged a double fee…"',segment_field:'meta.length_band',segment:'"long" (12+ words)',conf:'0.99',action:'BLOCK',cls:'rr',reason:'"6.29% observed error at max confidence; 95% upper bound 8.58% > 5% target"',contract:'contract v3 · sha 9f2c…a41d'},
-   {id:'dec_1044',text:'"Card balance"',segment_field:'meta.length_band',segment:'"short" (2–8 words)',conf:'0.99',action:'REVIEW',cls:'ra',reason:'"held-out split automates 0 decisions; unproven is unproven"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1044',text:'"Card balance"',segment_field:'meta.length_band',segment:'"short" (2–8 words)',conf:'0.99',action:'REVIEW',cls:'ra',reason:'"held-out split automates 0 decisions; not validated, so not automated"',contract:'contract v3 · sha 9f2c…a41d'},
    {id:'dec_1045',text:'"[payload]"',segment_field:'meta.length_band',segment:'null (missing)',conf:'0.99',action:'FAIL-CLOSED',cls:'ra',reason:'"no segment metadata — refused by contract, routed to human review"',contract:'contract v3 · sha 9f2c…a41d'}];
   var pre=document.getElementById('receiptJson');
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
   function render(i){var r=receipts[i];
-    pre.innerHTML='<span class="rk">"id"</span>: <span class="rv">"'+r.id+'"</span>,\n<span class="rk">"decision"</span>: <span class="rv">'+esc(r.text)+'</span>,\n<span class="rk">"segment_field"</span>: <span class="rv">"'+r.segment_field+'"</span>,\n<span class="rk">"segment"</span>: <span class="rv">'+r.segment+'</span>,\n<span class="rk">"declared_confidence"</span>: <span class="rv">'+r.conf+'</span>,\n<span class="rk">"threshold_applied"</span>: <span class="rv">"τ = 0.98"</span>,\n<span class="rk">"target_risk"</span>: <span class="rv">"≤ 5% error"</span>,\n<span class="rk">"action"</span>: <span class="'+r.cls+'">"'+r.action+'"</span>,\n<span class="rk">"reason"</span>: <span class="rv">'+esc(r.reason)+'</span>,\n<span class="rk">"contract"</span>: <span class="rv">"'+r.contract+'"</span>,\n<span class="rk">"pii_stored"</span>: <span class="rv">false</span>,\n<span class="rk">"hmac_sha256"</span>: <span class="rv">"7be1…c4f0"</span>';}
+    pre.innerHTML='<span class="rk">"id"</span>: <span class="rv">"'+r.id+'"</span>,\n<span class="rk">"decision"</span>: <span class="rv">'+esc(r.text)+'</span>,\n<span class="rk">"segment_field"</span>: <span class="rv">"'+r.segment_field+'"</span>,\n<span class="rk">"segment"</span>: <span class="rv">'+r.segment+'</span>,\n<span class="rk">"declared_confidence"</span>: <span class="rv">'+r.conf+'</span>,\n<span class="rk">"threshold_applied"</span>: <span class="rv">"τ = 0.98"</span>,\n<span class="rk">"target_risk"</span>: <span class="rv">"5% error target"</span>,\n<span class="rk">"action"</span>: <span class="'+r.cls+'">"'+r.action+'"</span>,\n<span class="rk">"reason"</span>: <span class="rv">'+esc(r.reason)+'</span>,\n<span class="rk">"contract"</span>: <span class="rv">"'+r.contract+'"</span>,\n<span class="rk">"pii_stored"</span>: <span class="rv">false</span>,\n<span class="rk">"hmac_sha256"</span>: <span class="rv">"7be1…c4f0"</span>';}
   var tickets=document.querySelectorAll('.rticket');
   tickets.forEach(function(t){t.addEventListener('click',function(){
     tickets.forEach(function(x){x.classList.remove('sel');});t.classList.add('sel');render(parseInt(t.getAttribute('data-t'),10));});});

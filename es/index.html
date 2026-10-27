@@ -184,11 +184,11 @@ html.js .reveal.in{opacity:1;transform:none}
 .ghead b{font-size:15px}
 .ghead b .exp{color:var(--muted);font-weight:400;font-size:12px}
 .gdelta{font-size:13px;font-weight:700;color:var(--red);white-space:nowrap}
-.grow-row{display:grid;grid-template-columns:26px 1fr 64px;align-items:center;gap:12px;margin:7px 0}
+.grow-row{display:grid;grid-template-columns:26px 1fr 92px;align-items:center;gap:12px;margin:7px 0}
 .glab{font-size:12px;font-weight:700;color:var(--muted)}
 .gbar{background:var(--soft);border-radius:999px;height:10px;overflow:hidden}
 .gbar i{display:block;height:100%;border-radius:999px}
-.gval{font-size:13.5px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.gval{font-size:13.5px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}.gval small{display:block;font-size:10.5px;font-weight:400;color:var(--muted)}
 .rdemo{margin-top:44px}
 .rdemo .k{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--g1);margin-bottom:10px}
 .rdemo>p{color:var(--muted);font-size:15px;max-width:760px;margin-bottom:20px}
@@ -308,45 +308,45 @@ html.js .reveal.in{opacity:1;transform:none}
 <div class="wrap">
 <section id="glance" style="padding-top:20px">
   <div class="eyebrow">Estudio v0.6 · Pre-registrado</div>
-  <h2>Automatización validada con un objetivo de error del 5%.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
-  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma — y con él, cuánto puede <strong>automatizar con seguridad</strong> cada juez:</p>
+  <h2>Automatización con un objetivo de error del 5%, en datos reservados.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
+  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma — y con él, cuánto automatiza cada juez en casos con los que no se ajustó:</p>
   <div class="jcarousel reveal">
     <div class="jtrack" id="jTrack">
       <div class="grow">
         <div class="ghead"><b>microsoft-decision-1 <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −50.6 pts</span></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:80.7%;background:var(--g1)"></i></div><span class="gval">80.7%</span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:72.3%;background:var(--g2)"></i></div><span class="gval">72.3%</span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:30.1%;background:var(--g3)"></i></div><span class="gval">30.1%</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:80.7%;background:var(--g1)"></i></div><span class="gval">80.7%<small>cumple</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:72.3%;background:var(--g2)"></i></div><span class="gval">72.3%<small>cumple</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:30.1%;background:var(--g3)"></i></div><span class="gval">30.1%<small>cumple</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>gemini-3.6-flash <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −28.0 pts</span></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:55.1%;background:var(--g1)"></i></div><span class="gval">55.1%</span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:26.6%;background:var(--g2)"></i></div><span class="gval">26.6%</span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:27.1%;background:var(--g3)"></i></div><span class="gval">27.1%</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:55.1%;background:var(--g1)"></i></div><span class="gval">55.1%<small>cumple</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:26.6%;background:var(--g2)"></i></div><span class="gval">26.6%<small>no cumple</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:27.1%;background:var(--g3)"></i></div><span class="gval">27.1%<small>no cumple</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>clef-flash <span class="exp">*exploratory</span></b><span class="gdelta">EN → CA · −1.6 pts</span></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:40.6%;background:var(--g1)"></i></div><span class="gval">40.6%</span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:38.5%;background:var(--g2)"></i></div><span class="gval">38.5%</span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:39.0%;background:var(--g3)"></i></div><span class="gval">39.0%</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:40.6%;background:var(--g1)"></i></div><span class="gval">40.6%<small>cumple</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:38.5%;background:var(--g2)"></i></div><span class="gval">38.5%<small>no cumple</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:39.0%;background:var(--g3)"></i></div><span class="gval">39.0%<small>cumple</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>jev-1.13.0</b><span class="gdelta">EN → CA · −29.0 pts</span></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29%;background:var(--g1)"></i></div><span class="gval">29.0%</span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--g2)"></i></div><span class="gval">25.3%</span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29%;background:var(--g1)"></i></div><span class="gval">29.0%<small>no cumple</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--g2)"></i></div><span class="gval">25.3%<small>no cumple</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%<small>ninguno</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>claude-sonnet-4.5</b><span class="gdelta">EN → CA · −21.5 pts</span></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:21.5%;background:var(--g1)"></i></div><span class="gval">21.5%</span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:8.5%;background:var(--g2)"></i></div><span class="gval">8.5%</span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:21.5%;background:var(--g1)"></i></div><span class="gval">21.5%<small>cumple</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:8.5%;background:var(--g2)"></i></div><span class="gval">8.5%<small>no cumple</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0.0%<small>ninguno</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>gpt-6-luna</b><span class="gdelta">EN → CA · −12.9 pts</span></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:18.2%;background:var(--g1)"></i></div><span class="gval">18.2%</span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:0%;background:var(--g2)"></i></div><span class="gval">0.0%</span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:5.3%;background:var(--g3)"></i></div><span class="gval">5.3%</span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:18.2%;background:var(--g1)"></i></div><span class="gval">18.2%<small>cumple</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:0%;background:var(--g2)"></i></div><span class="gval">0.0%<small>ninguno</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:5.3%;background:var(--g3)"></i></div><span class="gval">5.3%<small>no cumple</small></span></div>
       </div>
     </div>
     <div class="jnav">
@@ -355,7 +355,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <button class="jbtn" id="jNext" aria-label="Next judges">→</button>
     </div>
   </div>
-  <p class="caveat">Seis de los doce jueces auditados — arrastra o usa las flechas. Porcentaje de decisiones validado con un objetivo de error del 5% sobre mitades reservadas de los casos etiquetados del estudio: cota unilateral al 95%, aproximada (las mitades se agregan). Una cifra para casos como estos, no una previsión del tráfico futuro. <a href="https://github.com/kunko-ai-labs/judge-audit">Estudio completo en el repo →</a></p>
+  <p class="caveat">Seis de los doce jueces auditados — arrastra o usa las flechas. Porcentaje de casos automatizados en una mitad con un umbral elegido en la otra con un objetivo de error del 5%. <em>Cumple</em>: la cota unilateral al 95% de sus errores en datos reservados queda dentro del 5% (aproximada, mitades agregadas; calculada después del estudio, no pre-registrada) — solo esos porcentajes están validados. <em>No cumple</em>: la cota supera el 5%. Sobre los casos etiquetados del estudio, no una previsión del tráfico futuro. <a href="https://github.com/kunko-ai-labs/judge-audit">Estudio completo en el repo →</a></p>
   <p class="caveat">Demostrado en nuestro estudio pre-registrado de 12 jueces (datos públicos traducidos): la confianza declarada no siempre coincide con el acierto. <a href="https://github.com/kunko-ai-labs/judge-audit/tree/main/docs/v06">Resultados del estudio →</a></p>
 </section>
 
@@ -562,7 +562,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <p><strong style="color:var(--ink)">27 errores en 429 decisiones a máxima confianza = 6,29% de error observado</strong> (cota superior al 95%: 8,58% &gt; 5%). Bloqueado por contrato — antes de que cueste dinero.</p>
       </div>
     </div>
-    <p class="caveat">Salida real de auditoría: contratos AUTOMATE / REVIEW / BLOCK por segmento con los datos del estudio v0.5. La barra muestra el porcentaje de automatización validado — la barra roja completa del segmento largo es el error que nunca llega a producción.</p>
+    <p class="caveat">Salida real de auditoría: contratos AUTOMATE / REVIEW / BLOCK por segmento con los datos del estudio v0.5. La barra muestra el porcentaje automatizado fuera de muestra — la barra roja completa del segmento largo es el error que nunca llega a producción.</p>
   </div>
 
   <div class="card" style="margin-top:22px">
@@ -576,7 +576,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <label>Coste de un error automatizado no detectado <b id="vErr">45&nbsp;€</b><input type="range" id="sErr" min="5" max="500" step="5" value="45" aria-label="Coste de un error automatizado no detectado"></label>
       </div>
       <div class="simout">
-        <div class="sbox"><span>Decisiones automatizadas (validadas fuera de muestra)</span><b id="oAuto">18.648 (6,7%)</b></div>
+        <div class="sbox"><span>Decisiones automatizadas (porcentaje fuera de muestra)</span><b id="oAuto">18.648 (6,7%)</b></div>
         <div class="sbox"><span>Ahorro bruto en revisión humana / mes</span><b id="oSave">65.268&nbsp;€</b></div>
         <div class="sbox"><span>Errores de alta confianza frenados por BLOCK</span><b id="oBlock">2.449 (110.200&nbsp;€)</b></div>
         <div class="sbox"><span>Muestra semanal de control (monitorización SPRT, prevista)</span><b>48 filas / sem</b></div>

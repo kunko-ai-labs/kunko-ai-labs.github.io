@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0f1e" id="themeColor">
 <title>Kunko AI Labs — Qué decisiones de IA se pueden automatizar</title>
-<meta name="description" content="Kunko mide qué decisiones de IA puede automatizar una empresa con el error que acepta, validadas de forma aproximada en datos reservados. Código abierto.">
+<meta name="description" content="Kunko mide qué decisiones de IA son candidatas a automatizarse con un error objetivo definido, con validación aproximada en datos reservados. Código abierto.">
 <link rel="canonical" href="https://kunkoai.com/es/">
 <link rel="alternate" hreflang="en" href="https://kunkoai.com/">
 <link rel="alternate" hreflang="es" href="https://kunkoai.com/es/">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Kunko AI Labs">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Kunko AI Labs — Qué decisiones de IA se pueden automatizar">
-<meta property="og:description" content="Kunko mide qué decisiones de IA puede automatizar una empresa con el error que acepta, validadas de forma aproximada en datos reservados. Código abierto.">
+<meta property="og:description" content="Kunko mide qué decisiones de IA son candidatas a automatizarse con un error objetivo definido, con validación aproximada en datos reservados. Código abierto.">
 <meta property="og:url" content="https://kunkoai.com/es/">
 <meta property="og:image" content="https://kunkoai.com/assets/logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -307,7 +307,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <div class="wrap hero">
   <h1>Kunko dice a las empresas<br>qué decisiones de la IA <span class="grad">pueden validarse (de forma aproximada, en datos reservados) para automatizarse</span> — y cuáles no.</h1>
   <p class="lede"><strong>Kunko está construyendo la plataforma de assurance para decisiones de IA en la empresa.</strong> Ayudamos a las compañías a auditar y controlar sus sistemas de IA <strong>antes</strong> de permitirles tomar decisiones autónomas.</p>
-  <p class="lede" style="margin-top:18px">Empezamos con <strong>Judge Audit</strong>, de código abierto, que mide si los jueces de IA son realmente fiables. Lo estamos expandiendo hacia una plataforma de assurance completa que cubre decisiones de IA, agentes, evidencia, políticas y monitorización continua. <strong>Disponible hoy:</strong> la auditoría de calibración, el umbral seguro, la comparativa Arena, la GitHub Action, el servidor MCP y el paquete de PyPI, y la comprobación de permisos de agentes de IA. <strong>En piloto:</strong> decisiones por segmento con contrato y recibo, y el informe ejecutivo. <strong>Previsto:</strong> vigilancia en vivo con un test secuencial, y una vista OWASP AIMA.</p>
+  <p class="lede" style="margin-top:18px">Empezamos con <strong>Judge Audit</strong>, de código abierto, que mide en qué medida se puede contar con la confianza que declara un juez de IA. Lo estamos expandiendo hacia una plataforma de assurance completa que cubre decisiones de IA, agentes, evidencia, políticas y monitorización continua. <strong>Disponible hoy:</strong> la auditoría de calibración, el umbral seguro, la comparativa Arena, la GitHub Action, el servidor MCP y el paquete de PyPI, y la comprobación de permisos de agentes de IA. <strong>Construido, privado (aún sin clientes):</strong> decisiones por segmento con contrato y recibo, y el informe ejecutivo. <strong>Previsto:</strong> vigilancia en vivo con un test secuencial, y una vista OWASP AIMA.</p>
   <div class="cta">
     <a class="btn solid" href="https://github.com/kunko-ai-labs/judge-audit">Explorar Judge Audit</a>
     <a class="btn ghost" href="mailto:info@kunkoai.com?subject=Demo%20enterprise">Solicitar la demo enterprise</a>
@@ -318,7 +318,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="glance" style="padding-top:20px">
   <div class="eyebrow">Estudio v0.6 · Pre-registrado</div>
   <h2>Automatización con un objetivo de error del 5 %, en datos reservados.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
-  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma. De estos seis jueces, 5 quedan dentro del 5 % en la partición del estudio en inglés, 1 en español y 2 en catalán. Cada porcentaje corresponde a una partición de los casos y cambia con la partición:</p>
+  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma. 5 de los 6 jueces mostrados quedan dentro del criterio aproximado en datos reservados en la partición del estudio en inglés, 1 en español y 2 en catalán; los seis mostrados son una selección de los doce auditados. Cada porcentaje corresponde a una partición de los casos y cambia con la partición:</p>
   <div class="jcarousel reveal">
     <div class="jtrack" id="jTrack" tabindex="0" role="region" aria-label="Carrusel de jueces">
       <div class="grow">
@@ -371,7 +371,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="platform">
   <div class="eyebrow">La visión</div>
   <h2>El <span class="grad">plano de control</span> del assurance de IA</h2>
-  <p class="body">No es otro panel de gobernanza. Kunko está construyendo la capa que determinará de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si sigue siendo lo bastante fiable para hacerlo. Todo lo que toca pasa por un solo bucle de assurance. <strong>Estado:</strong> Auditar está disponible; Decidir y Registrar, en piloto; Monitorizar, previsto.</p>
+  <p class="body">No es otro panel de gobernanza. Kunko está construyendo la capa que determinará de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si la evidencia sigue respaldándolo. Todo lo que toca pasa por un solo bucle de assurance. <strong>Estado:</strong> Auditar está disponible; Decidir y Registrar, construidos y privados: aún sin clientes; Monitorizar, previsto.</p>
   <div class="vdiag">
     <div class="vcol vin">
       <div class="vcard"><div class="vk">ENTRADA</div><b>Modelos, agentes, jueces</b><span>los sistemas que usas</span></div>
@@ -382,14 +382,14 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="vcore">
       <div class="vk">EL BUCLE DE ASSURANCE</div>
       <div class="vstep"><i>1</i><div><b>Auditar</b><span>Judge Audit mide la calibración en modo sombra · disponible</span></div></div>
-      <div class="vstep"><i>2</i><div><b>Decidir</b><span>motor de riesgo: automatizar, revisar o bloquear — por segmento · piloto</span></div></div>
-      <div class="vstep"><i>3</i><div><b>Registrar</b><span>Trust Passport: un recibo por decisión · piloto</span></div></div>
+      <div class="vstep"><i>2</i><div><b>Decidir</b><span>motor de riesgo: automatizar, revisar o bloquear — por segmento · privado</span></div></div>
+      <div class="vstep"><i>3</i><div><b>Registrar</b><span>Trust Passport: un recibo por decisión · privado</span></div></div>
       <div class="vstep"><i>4</i><div><b>Monitorizar</b><span>detectar el cambio → reevaluar → actuar, de forma continua · previsto</span></div></div>
     </div>
     <div class="vlink" aria-hidden="true">→</div>
     <div class="vcol vout">
-      <div class="vcard"><div class="vk">PARA PERSONAS</div><b>Informes para revisores</b><span>informes ejecutivos · piloto; colas de revisión · previsto</span></div>
-      <div class="vcard"><div class="vk">PARA SISTEMAS</div><b>Control en ejecución</b><span>contratos por segmento aplicados en cada decisión · piloto</span></div>
+      <div class="vcard"><div class="vk">PARA PERSONAS</div><b>Informes para revisores</b><span>informes ejecutivos · privado; colas de revisión · previsto</span></div>
+      <div class="vcard"><div class="vk">PARA SISTEMAS</div><b>Control en ejecución</b><span>contratos por segmento aplicados en cada decisión · privado</span></div>
     </div>
   </div>
   <div class="vpillars">
@@ -402,7 +402,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <p><b>Monitorizar → detectar el cambio → reevaluar → actuar (previsto).</b> Cuando cambien el modelo, el prompt, los datos o la política, Kunko volverá a generar la evidencia y degradará o bloqueará la autonomía. Hoy cada resultado dice para qué es válido y la fecha en que hay que revisarlo, y una comprobación de deriva en CI compara cada ejecución con su referencia. La confianza no es un sello puntual — es un flujo continuo.</p>
   </div>
   <div class="strip"><div class="k">CAPA DE EVIDENCIA</div>
-    <p>Informes de calibración y procedencia: disponibles. Trazas de auditoría y registros de evidencia: piloto. En el piloto, cada decisión automatizada está respaldada por evidencia que un auditor puede inspeccionar.</p>
+    <p>Informes de calibración y procedencia: disponibles. Trazas de auditoría y registros de evidencia: privado (construido, aún sin clientes). En ese módulo privado, cada decisión automatizada debe estar respaldada por evidencia que un auditor puede inspeccionar.</p>
   </div>
 </section>
 
@@ -426,7 +426,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <p class="caveat" style="text-align:center;margin-left:auto;margin-right:auto">AUTOMATE = automatizar, REVIEW = revisar por una persona, BLOCK = bloquear. Mantenemos estos tres términos en inglés porque son los del producto.</p>
 
   <div class="chansec">
-    <div class="eyebrow">De la medición a la decisión · piloto</div>
+    <div class="eyebrow">De la medición a la decisión · privado</div>
     <h3>Automatizar, revisar o bloquear,<br><span class="grad">por canal, con recibo</span></h3>
     <p class="body">Una media esconde el segmento que falla. Kunko convierte la auditoría en una decisión por segmento, escribe un contrato para cada segmento que te permite automatizar y emite un recibo por cada decisión automatizada. Un segmento que su propia auditoría marca nunca se automatiza. <strong>Pulsa un canal para inspeccionar su contrato.</strong></p>
     <div class="chans">
@@ -436,11 +436,11 @@ html.js .reveal.in{opacity:1;transform:none}
       <button class="chan" aria-expanded="false"><b>Email</b><span class="pill block">× BLOCK</span><span class="cdesc">La auditoría marca este segmento. Ninguna decisión de email se automatiza.</span><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
       <button class="chan" aria-expanded="false"><b>Tienda</b><span class="pill block">× BLOCK</span><span class="cdesc">La auditoría marca este segmento.</span><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
     </div>
-    <p class="caveat">Ejemplo ilustrativo de cinco canales construido con un fixture sintético y calculable a mano. No son datos de clientes.</p>
+    <p class="caveat">Ejemplo ilustrativo de cinco canales construido con un fixture sintético y calculable a mano. No son datos de clientes. Cada segmento se evalúa a su propio nivel nominal del 95 %; no es una afirmación simultánea al 95 % para todos los segmentos: leídos juntos, al menos el 75 % para los cinco (70 % con el conjunto), de forma aproximada.</p>
   </div>
 
   <div class="rdemo">
-    <div class="k">DEMO DEL ROUTER EN VIVO · PILOTO</div>
+    <div class="k">DEMO DEL ROUTER EN VIVO · MÓDULO PRIVADO</div>
     <p>Elige una decisión bancaria entrante. <code>contract.decide()</code> lee el segmento, aplica el contrato aprobado en memoria — sin disco — y emite un recibo (recibos ilustrativos, identificadores acortados):</p>
     <div class="rgrid">
       <div class="rtickets">
@@ -451,14 +451,14 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <pre class="rreceipt"><code id="receiptJson"></code></pre>
     </div>
-    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo no guarda el texto de entrada, solo un hash con clave (HMAC-SHA256, con la clave del cliente; seudónimo); el resto depende de tus metadatos de segmento. Apunta, por su huella, al contrato que autorizó — o denegó — la decisión. Con los datos etiquetados, un auditor puede reconstruir lo que cita cada recibo. El visto bueno del contrato es una aprobación nominativa, no una firma electrónica.</p>
+    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> En modo con clave, cada recibo guarda una huella HMAC-SHA256 con una clave en poder del cliente; no se guarda el texto de entrada. Los identificadores de clave y su rotación están en desarrollo. La huella es un seudónimo y el resto depende de tus metadatos de segmento. Apunta, por su huella, al contrato que autorizó — o denegó — la decisión. Con los datos etiquetados, un auditor puede reconstruir lo que cita cada recibo. El visto bueno del contrato es una aprobación nominativa, no una firma electrónica.</p>
   </div>
 
   <div class="rmp">
     <div><div class="rk">REPRODUCIR</div><b>Tus decisiones pasadas</b><span>Ejecuta el juez en modo sombra sobre decisiones que tu gente ya tomó. Nada se automatiza. Disponible.</span></div>
     <div><div class="rk">MEDIR</div><b>Confianza contra resultado</b><span>Calibración, tasa de automatización segura con su cota, coste y latencia — por segmento. Disponible.</span></div>
-    <div><div class="rk">DECIDIR</div><b>Una decisión por segmento</b><span>Automatizar, revisar o bloquear por segmento, con un contrato para cada uno automatizado. Piloto.</span></div>
-    <div><div class="rk">REGISTRAR</div><b>Recibos, no promesas</b><span>Un recibo por decisión automatizada, con tu propia clave, que apunta a la auditoría. Piloto.</span></div>
+    <div><div class="rk">DECIDIR</div><b>Una decisión por segmento</b><span>Automatizar, revisar o bloquear por segmento, con un contrato para cada uno automatizado. Privado: construido, aún sin clientes.</span></div>
+    <div><div class="rk">REGISTRAR</div><b>Recibos, no promesas</b><span>Un recibo por decisión automatizada, con tu propia clave, que apunta a la auditoría. Privado: construido, aún sin clientes.</span></div>
   </div>
   <p class="body" style="margin-top:36px"><strong>La tasa de automatización segura</strong> convierte la fiabilidad en economía: <em>¿cuánta revisión humana se podría eliminar con el error que aceptas?</em> La medimos sobre tus decisiones etiquetadas, con su cota, en lugar de prometerla.</p>
   <p class="body" style="margin-top:16px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="inline" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
@@ -474,7 +474,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <tr><td>Gemini 3.6 Flash, verbalizado</td><td class="n">14,3 %</td><td>2,7 %</td><td>7,6 – 30,0 %</td></tr>
     <tr><td>Qwen3-8B, log-probabilidad de tokens</td><td class="n">ninguno validado</td><td>—</td><td>0,0 – 4,4 %</td></tr>
   </table></div>
-  <p class="caveat">Orden como en el README de judge-audit; no es una clasificación. Un 95 % de confianza no significa acertar el 95 % — la probabilidad de los tokens de Qwen3-8B no pudo validar ni una sola decisión con este objetivo. Que la cota quede dentro del objetivo depende de la partición: en la partición del estudio (semilla 2026) el 41,0 % de Jev tiene una cota del 3,9 %, dentro del 5 %; en otra partición de los mismos checkpoints (semillas 2033 y 2036) el mismo juez con el mismo objetivo del 5 % automatiza menos decisiones con una cota por encima del 5 %, fuera del objetivo; el rango por semillas muestra cuánto se mueve el porcentaje. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide si se puede confiar en ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Salvedades publicadas: dataset público, probablemente visto en el preentrenamiento; una sola ejecución cada uno, salvo Jev y Qwen3-8B verbalizado (3 ejecuciones); ruido en etiquetas no medido; la porción reservada no se ejecutó (<a href="https://github.com/kunko-ai-labs/judge-audit/issues/106">#106</a>), así que estas cifras son del conjunto de test público. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/v0.6.1/docs/results/v0.5.md">Estudio completo →</a> El plantel de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
+  <p class="caveat">Orden como en el README de judge-audit; no es una clasificación. Un 95 % de confianza no significa acertar el 95 % — la probabilidad de los tokens de Qwen3-8B no pudo validar ni una sola decisión con este objetivo. Que la cota quede dentro del objetivo depende de la partición: en la partición del estudio (semilla 2026) el 41,0 % de Jev tiene una cota del 3,9 %, dentro del 5 %; en otra partición de los mismos checkpoints (semillas 2033 y 2036) el mismo juez con el mismo objetivo del 5 % automatiza menos decisiones con una cota por encima del 5 %, fuera del objetivo; el rango por semillas muestra cuánto se mueve el porcentaje. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide en qué medida se puede contar con ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Salvedades publicadas: dataset público, probablemente visto en el preentrenamiento; una sola ejecución cada uno, salvo Jev y Qwen3-8B verbalizado (3 ejecuciones); ruido en etiquetas no medido; la porción reservada no se ejecutó (<a href="https://github.com/kunko-ai-labs/judge-audit/issues/106">#106</a>), así que estas cifras son del conjunto de test público. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/v0.6.1/docs/results/v0.5.md">Estudio completo →</a> El plantel de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
 
   <div class="finding">
     <div class="tag">HALLAZGO</div>
@@ -495,7 +495,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </table></div>
   </div>
 
-  <p class="caveat" style="margin-top:28px">Cada cifra de estudio de esta página enlaza a evidencia publicada en el repo público judge-audit; las cifras por segmento de BANKING77 salen de nuestro módulo de decisión (piloto) sobre esos checkpoints públicos y aún no son reproducibles desde el repositorio público; las cifras en euros y el ejemplo de cinco canales son ilustrativos. v0.6 se congeló antes de su primera llamada al modelo: 12 jueces × 3 idiomas, 3 en los tests pre-registrados y 9 exploratorios, con 5 enmiendas fechadas publicadas. <a href="https://github.com/kunko-ai-labs/judge-audit/tree/v0.6.1">Resultados en el repo →</a></p>
+  <p class="caveat" style="margin-top:28px">Cada cifra de estudio de esta página enlaza a evidencia publicada en el repo público judge-audit; las cifras por segmento de BANKING77 salen de nuestro módulo de decisión privado sobre esos checkpoints públicos y aún no son reproducibles desde el repositorio público; las cifras en euros y el ejemplo de cinco canales son ilustrativos. v0.6 se congeló antes de su primera llamada al modelo: 12 jueces × 3 idiomas, 3 en los tests pre-registrados y 9 exploratorios, con 5 enmiendas fechadas publicadas. <a href="https://github.com/kunko-ai-labs/judge-audit/tree/v0.6.1">Resultados en el repo →</a></p>
 
   <div class="prog">
     <div class="pstep"><b>Evaluación</b><span>¿funciona mi modelo?</span></div><div class="farrow">→</div>
@@ -553,7 +553,7 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 
   <div class="finding" style="margin-top:36px">
-    <div class="tag">EJEMPLO POR SEGMENTO (PILOTO) · BANKING77 · GEMINI 3.6 FLASH</div>
+    <div class="tag">EJEMPLO POR SEGMENTO (MÓDULO PRIVADO) · BANKING77 · GEMINI 3.6 FLASH</div>
     <h3>Un umbral global <span class="grad">oculta el segmento que falla</span></h3>
     <p>Un corte global en 0,99 dice «automatiza el 14,3 %». Segmentando por longitud de la consulta — un campo conocido <strong>antes</strong> de tomar la decisión — los segmentos cuentan otra historia muy distinta:</p>
     <div class="segs">
@@ -574,7 +574,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <p><strong style="color:var(--ink)">27 errores en 429 decisiones a máxima confianza = 6,29 % de error observado</strong> (cota superior al 95 %: 8,58 % &gt; 5 %). Bloqueado por contrato — antes de que cueste dinero.</p>
       </div>
     </div>
-    <p class="caveat">Salida de nuestro módulo de decisión piloto sobre los checkpoints públicos de v0.5; aún no reproducible desde el repositorio público. BANKING77, con la regla de decisión vigente: todavía no se automatiza ningún segmento y el segmento largo queda bloqueado. La barra muestra el porcentaje automatizado en mitades reservadas.</p>
+    <p class="caveat">Salida de nuestro módulo de decisión privado sobre los checkpoints públicos de v0.5; aún no reproducible desde el repositorio público. BANKING77, con la regla de decisión vigente: todavía no se automatiza ningún segmento y el segmento largo queda bloqueado. La barra muestra el porcentaje automatizado en mitades reservadas.</p>
   </div>
 
   <div class="buyers">
@@ -593,9 +593,9 @@ html.js .reveal.in{opacity:1;transform:none}
       <h3>Judge Audit</h3>
       <p>La capa de medición, abierta para todos. Lo publicamos como open source porque la industria necesita un estándar independiente para la fiabilidad de las decisiones de IA — y porque cualquiera puede comprobar cómo medimos: cada auditoría pública se puede recalcular desde su evidencia.</p>
     </div>
-    <div class="card"><div class="tier ent">ENTERPRISE · PILOTO Y PREVISTO</div>
+    <div class="card"><div class="tier ent">ENTERPRISE · PRIVADO Y PREVISTO</div>
       <h3>Kunko Assurance Platform</h3>
-      <p>El producto comercial no es el auditor — el auditor es la puerta de entrada. Monetizamos la capa de assurance alrededor de las decisiones de IA en la empresa: contratos y recibos por decisión y el informe ejecutivo (en piloto); monitorización continua, políticas, integraciones y gobernanza (previstas).</p>
+      <p>El producto comercial no es el auditor — el auditor es la puerta de entrada. Monetizamos la capa de assurance alrededor de las decisiones de IA en la empresa: contratos y recibos por decisión y el informe ejecutivo (construidos, privados: aún sin clientes); monitorización continua, políticas, integraciones y gobernanza (previstas).</p>
     </div>
   </div>
   <p class="body" style="margin-top:28px">Empezamos deliberadamente con código abierto: Judge Audit construye confianza y adopción alrededor de un método independiente <strong>antes</strong> de pedir a las empresas que pongan decisiones sensibles de producción detrás de una plataforma comercial. Nuestro trabajo es seguir siendo <strong>independientes del modelo</strong> — la compañía cuyo modelo se beneficia de que confíen en él no debería ser la única que avala esa confianza.</p>
@@ -607,7 +607,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <p class="body">Judge Audit es donde empezamos. Cada capa se apoya en la anterior:</p>
   <div class="steps">
     <div class="step"><h3>Judge Audit</h3><p>Auditorías de calibración open source. La capa de credibilidad — en vivo hoy.</p></div>
-    <div class="step"><h3>Decision Assurance</h3><p>Evidencia + riesgo + política por decisión: automatizar, revisar o bloquear. En piloto.</p></div>
+    <div class="step"><h3>Decision Assurance</h3><p>Evidencia + riesgo + política por decisión: automatizar, revisar o bloquear. Construido, privado: aún sin clientes.</p></div>
     <div class="step"><h3>Agent Assurance</h3><p>Control de capacidades para agentes: qué puede hacer, comprobado en cada edición, PR y release. Disponible.</p></div>
     <div class="step"><h3>Enterprise Assurance</h3><p>El plano de control completo: inventario, riesgo, evidencia, política, monitorización. Previsto.</p></div>
   </div>
@@ -674,9 +674,9 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <section>
   <div class="eyebrow">Por qué Kunko</div>
-  <h2>No valoramos lo inteligente que es la IA.<br><span class="grad">Medimos hasta qué punto se puede confiar en ella para actuar.</span></h2>
+  <h2>No valoramos lo inteligente que es la IA.<br><span class="grad">Medimos en qué medida se puede contar con su confianza declarada.</span></h2>
   <div class="grid">
-    <div class="card"><div class="tag">Independencia · disponible</div><h3>Fuera del modelo</h3><p>El proveedor te dice cuánta confianza tiene su modelo. Nosotros medimos de forma independiente si esa confianza es fiable para tus decisiones — y seguimos ahí cuando cambias de modelo.</p></div>
+    <div class="card"><div class="tag">Independencia · disponible</div><h3>Fuera del modelo</h3><p>El proveedor te dice cuánta confianza tiene su modelo. Medimos la confianza con independencia del modelo y de su proveedor — y seguimos ahí cuando cambias de modelo.</p></div>
     <div class="card"><div class="tag">Economía · disponible</div><h3>Un número, no un panel</h3><p>La tasa de automatización segura convierte la fiabilidad en presupuesto: el porcentaje de revisión humana que puedes eliminar con tu objetivo de error, validado sobre decisiones etiquetadas reservadas (aproximado). Es el número que el despliegue necesita.</p></div>
   </div>
 </section>
@@ -690,7 +690,7 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <section>
   <p class="quote">"No queremos que la IA tenga más confianza.<br><span class="grad">Queremos que la autonomía sea medible.</span>"
-  <small>A medida que la IA pasa de generar información a tomar decisiones y ejecutar acciones, las empresas necesitan un sistema que determine de forma continua qué tiene permitido hacer la IA — y si sigue siendo lo bastante fiable para hacerlo. Eso es lo que construye Kunko.</small></p>
+  <small>A medida que la IA pasa de generar información a tomar decisiones y ejecutar acciones, las empresas necesitan un sistema que determine de forma continua qué tiene permitido hacer la IA — y si la evidencia sigue respaldándolo. Eso es lo que construye Kunko.</small></p>
 </section>
 
 <section id="faq">
@@ -707,7 +707,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </details>
     <details>
       <summary>¿Por qué no puede hacerlo el proveedor del modelo?</summary>
-      <p>El proveedor puede decirte cuánta confianza tiene su modelo. No puede decirte de forma independiente si esa confianza es fiable para <em>tus</em> decisiones de negocio. Kunko está fuera del modelo: medimos el sistema de decisión contra tu propia verdad fundamental, tus umbrales de riesgo y tus políticas — y seguimos ahí cuando cambias el modelo subyacente.</p>
+      <p>El proveedor puede decirte cuánta confianza tiene su modelo. No es independiente de su propio modelo, así que no es quien debe juzgar esa confianza en <em>tus</em> decisiones de negocio. Kunko está fuera del modelo: medimos la confianza con independencia del modelo y de su proveedor, sobre el sistema de decisión contra tu propia verdad fundamental, tus umbrales de riesgo y tus políticas — y seguimos ahí cuando cambias el modelo subyacente.</p>
     </details>
     <details>
       <summary>¿Es Judge Audit otro juez de IA?</summary>
@@ -727,7 +727,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="contact" class="contact">
   <div class="eyebrow">Contacto</div>
   <h2>Midamos lo que importa</h2>
-  <p class="body" style="margin:0 auto 26px;text-align:center">Auditorías, alianzas, pilotos enterprise — o 5.000 decisiones históricas y un umbral de error. Las condiciones (dónde se ejecuta, conservación, confidencialidad, NDA/DPA) se acuerdan por escrito antes de compartir ningún dato; el motor de auditoría es de código abierto y puede ejecutarse en tu entorno.</p>
+  <p class="body" style="margin:0 auto 26px;text-align:center">Auditorías, alianzas, una primera prueba con tus datos — o 5.000 decisiones históricas y un umbral de error. Las condiciones (dónde se ejecuta, conservación, confidencialidad, NDA/DPA) se acuerdan por escrito antes de compartir ningún dato; el motor de auditoría es de código abierto y puede ejecutarse en tu entorno.</p>
   <a class="mail" href="mailto:info@kunkoai.com">info@kunkoai.com</a>
 </section>
 </div>
@@ -735,7 +735,7 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
-    <span>© 2026 Kunko AI Labs · Madrid, España</span>
+    <span>© 2026 Madrid, España · Kunko AI Labs (sin sociedad constituida aún)</span>
     <span><a href="/es/privacidad.html">Privacidad</a> · <a href="https://github.com/kunko-ai-labs/judge-audit/security/policy">Seguridad</a> · <a href="#contact">Contacto</a></span>
     <span>El mérito, medido — no publicitado.</span>
   </div>

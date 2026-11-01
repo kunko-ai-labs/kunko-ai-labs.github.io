@@ -5,10 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0f1e" id="themeColor">
-<title>Kunko AI Labs — La plataforma de assurance para decisiones de IA en la empresa</title>
-<meta name="description" content="Kunko está construyendo la plataforma de assurance para decisiones de IA en la empresa. Ayudamos a las compañías a auditar y controlar sus sistemas de IA antes de permitirles tomar decisiones autónomas. Empezamos con Judge Audit, de código abierto: decimos a las empresas qué decisiones de la IA pueden automatizarse con el error que aceptan — medido sobre sus decisiones etiquetadas y validado sobre decisiones reservadas.">
-<meta name="keywords" content="AI assurance, AI decision assurance platform, safe automation rate, AI judge calibration, LLM-as-a-judge audit, selective prediction, model risk management, EU AI Act, AI governance, continuous assurance, trustworthy AI, agent guardrails">
-<link rel="icon" type="image/png" href="/assets/logo-mark.png">
+<title>Kunko AI Labs — Assurance de decisiones de IA en la empresa</title>
+<meta name="description" content="Kunko mide qué decisiones de IA puede automatizar una empresa con el error que acepta, validadas de forma aproximada en datos reservados. Código abierto.">
+<link rel="canonical" href="https://kunkoai.com/es/">
+<link rel="alternate" hreflang="en" href="https://kunkoai.com/">
+<link rel="alternate" hreflang="es" href="https://kunkoai.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://kunkoai.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kunko AI Labs">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Kunko AI Labs — Assurance de decisiones de IA en la empresa">
+<meta property="og:description" content="Kunko mide qué decisiones de IA puede automatizar una empresa con el error que acepta, validadas de forma aproximada en datos reservados. Código abierto.">
+<meta property="og:url" content="https://kunkoai.com/es/">
+<meta property="og:image" content="https://kunkoai.com/assets/logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <style>
 :root{
   --bg:#0a0f1e; --card:#0f1626; --ink:#eef2f9; --muted:#9aa7bd;
@@ -19,12 +31,13 @@
   --axline:rgba(255,255,255,.25); --headerbg:rgba(10,15,30,.82); --soft:rgba(255,255,255,.03);
 }
 [data-theme="light"]{
+  --g1:#047857; --g2:#1d4ed8; --g3:#6d28d9; --amber:#b45309; --red:#b91c1c;
   --bg:#f4f6fb; --card:#ffffff; --ink:#0b1226; --muted:#4d5b76;
   --line:rgba(11,18,38,.12);
   --axline:rgba(11,18,38,.22); --headerbg:rgba(244,246,251,.88); --soft:rgba(11,18,38,.035);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{background:radial-gradient(640px 440px at 5% -2%,rgba(139,92,246,.075),transparent 70%),radial-gradient(560px 560px at -5% 103%,rgba(139,92,246,.06),transparent 70%),radial-gradient(760px 540px at 105% 103%,rgba(52,211,153,.06),transparent 70%),radial-gradient(480px 360px at 88% 12%,rgba(59,130,246,.045),transparent 70%),var(--bg);background-attachment:fixed;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -134,7 +147,7 @@ table.compare td{color:var(--muted)}
 .pstep span{color:var(--muted);font-size:12.5px}
 .loop{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap;text-align:center}
 .lnode{border-radius:999px;padding:11px 24px;font-weight:700;font-size:13px;letter-spacing:.06em;border:1px solid;background:transparent}
-.lnode.hot{border-color:rgba(52,211,153,.55);color:#34d399;box-shadow:0 0 22px rgba(52,211,153,.22),inset 0 0 14px rgba(52,211,153,.06)}
+.lnode.hot{border-color:rgba(52,211,153,.55);color:var(--g1);box-shadow:0 0 22px rgba(52,211,153,.22),inset 0 0 14px rgba(52,211,153,.06)}
 .lnode.warn{border-color:rgba(245,181,68,.55);color:var(--amber);box-shadow:0 0 22px rgba(245,181,68,.2),inset 0 0 14px rgba(245,181,68,.06)}
 .lnode.bad{border-color:rgba(248,113,113,.55);color:var(--red);box-shadow:0 0 22px rgba(248,113,113,.22),inset 0 0 14px rgba(248,113,113,.06)}
 .larrow{color:var(--g2);font-weight:700}
@@ -144,7 +157,7 @@ table.compare td{color:var(--muted)}
 .step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;position:relative;overflow:hidden}
 .step::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.85}
 .step::before{counter-increment:step;content:"0" counter(step);font-weight:700;letter-spacing:.1em;font-size:13px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.step h4{margin:12px 0 8px;font-size:16.5px}
+.step h3{margin:12px 0 8px;font-size:16.5px}
 .step p{color:var(--muted);font-size:14.5px}
 .faq{margin-top:36px;display:grid;gap:12px}
 @media(min-width:721px){.faq{grid-template-columns:1fr 1fr}.faq details{align-self:start}}
@@ -159,11 +172,12 @@ code{background:rgba(52,211,153,.1);color:var(--g1);padding:3px 10px;border-radi
 a.inline{color:var(--g1);font-weight:600;text-decoration:none}
 .buyers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
 .buyer{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:22px}
-.buyer h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px}
+.buyer h3{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px}
 .buyer p{color:var(--muted);font-size:14px}
 .measure svg .ax{stroke:var(--axline);stroke-width:1}
 .measure svg .ax.dash{stroke-dasharray:5,5;opacity:.7}
 .measure svg text.axlab{fill:var(--muted)}
+.measure svg text.me{fill:var(--g1)}
 .themetoggle{margin-left:22px;background:var(--soft);border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:999px;cursor:pointer;font-size:17px;line-height:1;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s}
 .themetoggle:hover{transform:translateY(-1px)}
 .jcarousel{margin-top:36px}
@@ -173,9 +187,13 @@ a.inline{color:var(--g1);font-weight:600;text-decoration:none}
 .jnav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px}
 .jbtn{background:var(--soft);border:1px solid var(--line);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;font-size:16px;transition:border-color .2s,transform .15s}
 .jbtn:hover{border-color:var(--g2);transform:translateY(-1px)}
-.cdots{display:flex;gap:8px}
-.cdots i{width:8px;height:8px;border-radius:999px;background:var(--line);cursor:pointer;transition:background .2s}
-.cdots i.on{background:var(--g2)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--g2);outline-offset:3px}
+.tscroll{overflow-x:auto}.tscroll table{margin-top:0}
+footer a{color:var(--ink)}
+.cdots{display:flex;gap:0}
+.cdots button{width:24px;height:24px;padding:0;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+.cdots button::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--axline);transition:background .2s}
+.cdots button.on::before{background:var(--g2)}
 html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 html.js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
@@ -184,7 +202,7 @@ html.js .reveal.in{opacity:1;transform:none}
 .ghead b{font-size:15px}
 .ghead b .exp{color:var(--muted);font-weight:400;font-size:12px}
 .gdelta{font-size:13px;font-weight:700;color:var(--red);white-space:nowrap}
-.grow-row{display:grid;grid-template-columns:26px 1fr 128px;align-items:center;gap:12px;margin:7px 0}
+.grow-row{display:grid;grid-template-columns:26px 1fr 140px;align-items:center;gap:12px;margin:7px 0}
 .glab{font-size:12px;font-weight:700;color:var(--muted)}
 .gbar{background:var(--soft);border-radius:999px;height:10px;overflow:hidden}
 .gbar i{display:block;height:100%;border-radius:999px}
@@ -222,17 +240,6 @@ html.js .reveal.in{opacity:1;transform:none}
 .loopfig .ltit{fill:var(--ink);font-size:13px;font-weight:700;letter-spacing:.14em;text-anchor:middle}
 .loopfig .lnum{fill:var(--ink);font-weight:700;font-size:16px;text-anchor:middle}
 .lnode svg{width:16px;height:16px;vertical-align:-3px;margin-right:8px}
-.simsub{color:var(--muted);font-size:14.5px;margin:10px 0 22px;max-width:720px}
-.simgrid{display:grid;grid-template-columns:5fr 6fr;gap:28px;align-items:start}
-.simcontrols label{display:block;color:var(--muted);font-size:14px;margin-bottom:20px}
-.simcontrols label b{color:var(--ink);float:right;font-variant-numeric:tabular-nums}
-.simcontrols input[type=range]{width:100%;margin-top:10px;accent-color:var(--g2);cursor:pointer}
-.simout{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.sbox{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.sbox span{color:var(--muted);font-size:12.5px;display:block;margin-bottom:6px;line-height:1.5}
-.sbox b{font-size:19px;font-variant-numeric:tabular-nums}
-#oAuto{color:var(--g1)}#oSave{color:var(--g1)}#oBlock{color:var(--red)}
-@media(max-width:720px){.simgrid{grid-template-columns:1fr}}
 .loopfig .llab{fill:var(--muted);font-size:11px;letter-spacing:.22em;text-anchor:middle}
 .vdiag{display:grid;grid-template-columns:1fr 28px 1.55fr 28px 1fr;gap:14px;align-items:stretch;margin-top:44px}
 .vcol{display:grid;gap:14px;align-content:center}
@@ -262,7 +269,7 @@ html.js .reveal.in{opacity:1;transform:none}
 .chan.sel{border-color:var(--g2);box-shadow:0 0 0 1px var(--g2)}
 .chan b{display:block;font-size:15.5px;margin-bottom:10px}
 .chan .pill{padding:6px 14px;font-size:11.5px}
-.chan p{color:var(--muted);font-size:13px;margin-top:10px;line-height:1.6}
+.chan .cdesc{display:block;color:var(--muted);font-size:13px;margin-top:10px;line-height:1.6}
 .chan .cbody{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
 .chan.open .cbody{display:block}
 .chan .cbody i{display:block;font-style:normal;color:var(--muted);font-size:12.5px;padding:5px 0 5px 18px;position:relative;line-height:1.5}
@@ -276,87 +283,89 @@ html.js .reveal.in{opacity:1;transform:none}
 @media(max-width:900px){.chans{grid-template-columns:repeat(2,1fr)}.rmp{grid-template-columns:1fr 1fr}.rmp>div:nth-child(3){border-left:none}.rmp>div:nth-child(n+3){border-top:1px solid var(--line)}}
 .loopfig text{font-family:inherit}
 .loopcap{color:var(--muted);font-size:14px;margin-top:18px;max-width:640px;margin-left:auto;margin-right:auto}
-@media(max-width:720px){.nav a.link{margin-left:16px;font-size:13px}.hero{padding:70px 0 30px}.measure,.duo,.plat,.rgrid{grid-template-columns:1fr}section{padding:64px 0}.farrow{display:none}.themetoggle{margin-left:12px}}
+@media(max-width:720px){.nav{flex-wrap:wrap;gap:6px 12px}.nav nav{display:flex;flex-wrap:wrap;align-items:center;gap:2px 14px}.nav a.link{margin-left:0;font-size:13px}.hero{padding:70px 0 30px}.measure,.duo,.plat,.rgrid{grid-template-columns:1fr}section{padding:64px 0}.farrow{display:none}.themetoggle{margin-left:0}}
+@media(max-width:480px){.wrap{padding:0 16px}.chans,.rmp,.vpillars{grid-template-columns:1fr}.rmp>div{border-left:none;border-top:1px solid var(--line)}.rmp>div:first-child{border-top:none}.grow-row{grid-template-columns:26px 1fr}.gval{grid-column:1/-1;text-align:left}.finding,.usecase{padding:26px 20px}.card{padding:26px 22px}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#"><img src="/assets/logo-mark.png" alt="Kunko AI Labs mark">KUNKO <em>AI</em> LABS</a>
-    <nav>
+    <a class="brand" href="#"><img src="/assets/logo-mark.png" alt="">KUNKO <em>AI</em> LABS</a>
+    <nav aria-label="Principal">
       <a class="link" href="#platform">Plataforma</a>
       <a class="link" href="#how">Cómo funciona</a>
       <a class="link" href="#proof">Evidencia</a>
       <a class="link" href="#roadmap">Hoja de ruta</a>
       <a class="link" href="#contact">Contacto</a>
-      <a class="link" href="../" lang="en">EN</a>
+      <a class="link" href="../" lang="en" hreflang="en">EN</a>
       <button class="themetoggle" id="themeToggle" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false" title="Modo claro / oscuro">☾</button>
     </nav>
   </div>
 </header>
 
+<main id="main">
 <div class="wrap hero">
-  <h1>Kunko dice a las empresas<br>qué decisiones de la IA <span class="grad">pueden validarse para automatizarse</span> — y cuáles no.</h1>
+  <h1>Kunko dice a las empresas<br>qué decisiones de la IA <span class="grad">pueden validarse (de forma aproximada, en datos reservados) para automatizarse</span> — y cuáles no.</h1>
   <p class="lede"><strong>Kunko está construyendo la plataforma de assurance para decisiones de IA en la empresa.</strong> Ayudamos a las compañías a auditar y controlar sus sistemas de IA <strong>antes</strong> de permitirles tomar decisiones autónomas.</p>
   <p class="lede" style="margin-top:18px">Empezamos con <strong>Judge Audit</strong>, de código abierto, que mide si los jueces de IA son realmente fiables. Lo estamos expandiendo hacia una plataforma de assurance completa que cubre decisiones de IA, agentes, evidencia, políticas y monitorización continua. <strong>Disponible hoy:</strong> la auditoría de calibración, el umbral seguro, la comparativa Arena, la GitHub Action, el servidor MCP y el paquete de PyPI, y la comprobación de permisos de agentes de IA. <strong>En piloto:</strong> decisiones por segmento con contrato y recibo, y el informe ejecutivo. <strong>Previsto:</strong> vigilancia en vivo con un test secuencial, y una vista OWASP AIMA.</p>
   <div class="cta">
     <a class="btn solid" href="https://github.com/kunko-ai-labs/judge-audit">Explorar Judge Audit</a>
-    <a class="btn ghost" href="#demo">Solicitar la demo enterprise</a>
+    <a class="btn ghost" href="mailto:info@kunkoai.com?subject=Demo%20enterprise">Solicitar la demo enterprise</a>
   </div>
 </div>
 
 <div class="wrap">
 <section id="glance" style="padding-top:20px">
   <div class="eyebrow">Estudio v0.6 · Pre-registrado</div>
-  <h2>Automatización con un objetivo de error del 5%, en datos reservados.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
-  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma. De estos seis jueces, 5 superan el listón del 5% en inglés, 1 en español y 2 en catalán. Cada porcentaje corresponde a una partición de los casos y cambia con la partición:</p>
+  <h2>Automatización con un objetivo de error del 5 %, en datos reservados.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
+  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma. De estos seis jueces, 5 quedan dentro del 5 % en la partición del estudio en inglés, 1 en español y 2 en catalán. Cada porcentaje corresponde a una partición de los casos y cambia con la partición:</p>
   <div class="jcarousel reveal">
-    <div class="jtrack" id="jTrack">
+    <div class="jtrack" id="jTrack" tabindex="0" role="region" aria-label="Carrusel de jueces">
       <div class="grow">
         <div class="ghead"><b>jev-1.13.0</b></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29%;background:var(--muted);opacity:.45"></i></div><span class="gval">29,0%<small>no cumple · particiones 30,7–55,6%</small></span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--muted);opacity:.45"></i></div><span class="gval">25,3%<small>no cumple · particiones 0,0–23,6%</small></span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0,0%<small>ninguno · particiones 0,0–19,5%</small></span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29.0%;background:var(--muted);opacity:.45"></i></div><span class="gval">29,0 %<small>cota 5,8 % · fuera del objetivo · particiones 30,7–55,6 %</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--muted);opacity:.45"></i></div><span class="gval">25,3 %<small>cota 7,4 % · fuera del objetivo · particiones 0,0–23,6 %</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">ninguno<small>particiones 0,0–19,5 %</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>gpt-6-luna</b></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:18.2%;background:var(--g1)"></i></div><span class="gval">18,2%<small>cumple · particiones 21,8–39,4%</small></span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:0%;background:var(--g2)"></i></div><span class="gval">0,0%<small>ninguno · particiones 0,0–13,3%</small></span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:5.3%;background:var(--muted);opacity:.45"></i></div><span class="gval">5,3%<small>no cumple · particiones 0,0–0,0%</small></span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:18.2%;background:var(--g1)"></i></div><span class="gval">18,2 %<small>cota 4,6 % · dentro del objetivo · particiones 21,8–39,4 %</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:0%;background:var(--g2)"></i></div><span class="gval">ninguno<small>particiones 0,0–13,3 %</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:5.3%;background:var(--muted);opacity:.45"></i></div><span class="gval">5,3 %<small>cota 9,8 % · fuera del objetivo · particiones 0,0–0,0 %</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>claude-sonnet-4.5</b></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:21.5%;background:var(--g1)"></i></div><span class="gval">21,5%<small>cumple · particiones 21,5–21,5%</small></span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:8.5%;background:var(--muted);opacity:.45"></i></div><span class="gval">8,5%<small>no cumple · particiones 0,0–8,8%</small></span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">0,0%<small>ninguno · particiones 0,0–6,9%</small></span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:21.5%;background:var(--g1)"></i></div><span class="gval">21,5 %<small>cota 2,9 % · dentro del objetivo · particiones 21,5–21,5 %</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:8.5%;background:var(--muted);opacity:.45"></i></div><span class="gval">8,5 %<small>cota 5,7 % · fuera del objetivo · particiones 0,0–8,8 %</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">ninguno<small>particiones 0,0–6,9 %</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>clef-flash <span class="exp">*exploratorio</span></b></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:40.6%;background:var(--g1)"></i></div><span class="gval">40,6%<small>cumple · particiones 0,0–44,4%</small></span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:38.5%;background:var(--muted);opacity:.45"></i></div><span class="gval">38,5%<small>no cumple · particiones 4,0–44,2%</small></span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:39.0%;background:var(--g3)"></i></div><span class="gval">39,0%<small>cumple · particiones 18,0–60,0%</small></span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:40.6%;background:var(--g1)"></i></div><span class="gval">40,6 %<small>cota 5,0 % · dentro del objetivo · particiones 0,0–44,4 %</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:38.5%;background:var(--muted);opacity:.45"></i></div><span class="gval">38,5 %<small>cota 5,7 % · fuera del objetivo · particiones 4,0–44,2 %</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:39.0%;background:var(--g3)"></i></div><span class="gval">39,0 %<small>cota 4,2 % · dentro del objetivo · particiones 18,0–60,0 %</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>gemini-3.6-flash <span class="exp">*exploratorio</span></b></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:55.1%;background:var(--g1)"></i></div><span class="gval">55,1%<small>cumple · particiones 55,1–55,1%</small></span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:26.6%;background:var(--muted);opacity:.45"></i></div><span class="gval">26,6%<small>no cumple · particiones 26,0–52,8%</small></span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:27.1%;background:var(--muted);opacity:.45"></i></div><span class="gval">27,1%<small>no cumple · particiones 44,6–53,6%</small></span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:55.1%;background:var(--g1)"></i></div><span class="gval">55,1 %<small>cota 3,4 % · dentro del objetivo · particiones 55,1–55,1 %</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:26.6%;background:var(--muted);opacity:.45"></i></div><span class="gval">26,6 %<small>cota 5,3 % · fuera del objetivo · particiones 26,0–52,8 %</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:27.1%;background:var(--muted);opacity:.45"></i></div><span class="gval">27,1 %<small>cota 5,1 % · fuera del objetivo · particiones 44,6–53,6 %</small></span></div>
       </div>
       <div class="grow">
         <div class="ghead"><b>microsoft-decision-1 <span class="exp">*exploratorio</span></b></div>
-        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:80.7%;background:var(--g1)"></i></div><span class="gval">80,7%<small>cumple · particiones 80,2–82,7%</small></span></div>
-        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:72.3%;background:var(--g2)"></i></div><span class="gval">72,3%<small>cumple · particiones 40,5–73,7%</small></span></div>
-        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:30.1%;background:var(--g3)"></i></div><span class="gval">30,1%<small>cumple · particiones 31,5–60,6%</small></span></div>
+        <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:80.7%;background:var(--g1)"></i></div><span class="gval">80,7 %<small>cota 4,6 % · dentro del objetivo · particiones 80,2–82,7 %</small></span></div>
+        <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:72.3%;background:var(--g2)"></i></div><span class="gval">72,3 %<small>cota 4,6 % · dentro del objetivo · particiones 40,5–73,7 %</small></span></div>
+        <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:30.1%;background:var(--g3)"></i></div><span class="gval">30,1 %<small>cota 4,9 % · dentro del objetivo · particiones 31,5–60,6 %</small></span></div>
       </div>
     </div>
     <div class="jnav">
-      <button class="jbtn" id="jPrev" aria-label="Previous judges">←</button>
+      <button class="jbtn" id="jPrev" aria-label="Jueces anteriores">←</button>
       <div class="cdots" id="jDots"></div>
-      <button class="jbtn" id="jNext" aria-label="Next judges">→</button>
+      <button class="jbtn" id="jNext" aria-label="Jueces siguientes">→</button>
     </div>
   </div>
-  <p class="caveat">Seis de los doce jueces auditados — arrastra o usa las flechas. Porcentaje de casos automatizados en una mitad con un umbral elegido en la otra con un objetivo de error del 5%. <em>Cumple</em>: la cota unilateral al 95% de sus errores en datos reservados queda dentro del 5% (aproximada, mitades agregadas; calculada después del estudio, no pre-registrada) — solo esos porcentajes están validados. <em>No cumple</em>: la cota supera el 5%. Cumple o no cumple es para esta partición y puede cambiar en otra. Orden: primero los tres jueces pre-registrados y después los exploratorios por orden alfabético; no es una clasificación. Se muestran: los tres jueces pre-registrados, más los tres jueces exploratorios con al menos una celda que cumple; los otros seis jueces exploratorios no superan el listón del 5% en ningún idioma (<a href="https://github.com/kunko-ai-labs/judge-audit/tree/main/docs/v06">los 12 en los resultados completos</a>). Sobre los casos etiquetados del estudio, no una previsión del tráfico futuro. Bajo cada porcentaje, su rango en otras diez particiones (semillas 2027–2036): el porcentaje corresponde a una sola partición y cambia con ella, y puede quedar fuera de ese rango (gemini-3.6-flash en catalán: 27,1% aquí, 44,6–53,6% en otras diez particiones); ninguno de los seis tests de transferencia pre-registrados quedó resuelto. *exploratorio: en ningún test pre-registrado; microsoft-decision-1 puede haber visto estos datos en su entrenamiento (no documentado). Datos públicos traducidos (MASSIVE), probablemente vistos en el preentrenamiento. <a href="https://github.com/kunko-ai-labs/judge-audit">Estudio completo en el repo →</a></p>
-  <p class="caveat">Demostrado en nuestro estudio pre-registrado de 12 jueces (datos públicos traducidos): la confianza declarada no siempre coincide con el acierto. <a href="https://github.com/kunko-ai-labs/judge-audit/tree/main/docs/v06">Resultados del estudio →</a></p>
+  <p class="caveat">Seis de los doce jueces auditados — arrastra, desplaza o usa las flechas. Porcentaje de casos automatizados en una mitad con un umbral elegido en la otra con un objetivo de error del 5 %. <em>Dentro del objetivo</em>: la cota unilateral al 95 % de sus errores en datos reservados queda dentro del 5 % (aproximada, mitades agregadas; calculada después del estudio, no pre-registrada) — solo esos porcentajes están validados (de forma aproximada). <em>Fuera del objetivo</em>: la cota supera el 5 %. Cada celda dentro del objetivo es una afirmación separada al 95 % (aproximada); ninguna debe elegirse como la mejor. Estar dentro o fuera del objetivo es para esta partición y puede cambiar en otra. Orden: primero los tres jueces pre-registrados y después los exploratorios por orden alfabético; no es una clasificación. Se muestran: los tres jueces pre-registrados, más los tres jueces exploratorios con al menos una celda dentro del objetivo; los otros seis jueces exploratorios no quedan dentro del 5 % en ningún idioma en la partición del estudio (<a href="https://github.com/kunko-ai-labs/judge-audit/tree/v0.6.1/docs/v06">los 12 en los resultados completos</a>). Sobre los casos etiquetados del estudio, no una previsión del tráfico futuro. Bajo cada porcentaje: su cota en datos reservados, si queda dentro del objetivo y su rango en otras diez particiones (semillas 2027–2036); el porcentaje corresponde a una sola partición, cambia con ella y puede quedar fuera de ese rango (gemini-3.6-flash en catalán: 27,1 % aquí, 44,6–53,6 % en otras diez particiones); ninguno de los seis tests de transferencia pre-registrados quedó resuelto. *exploratorio: en ningún test pre-registrado; microsoft-decision-1 puede haber visto estos datos en su entrenamiento (no documentado). Datos públicos traducidos (MASSIVE), probablemente vistos en el preentrenamiento. <a href="https://github.com/kunko-ai-labs/judge-audit/tree/v0.6.1">Estudio completo en el repo →</a></p>
+  <p class="caveat">Demostrado en nuestro estudio pre-registrado de 12 jueces (datos públicos traducidos): la confianza declarada no siempre coincide con el acierto. <a href="https://github.com/kunko-ai-labs/judge-audit/tree/v0.6.1/docs/v06">Resultados del estudio →</a></p>
 </section>
 
 <section id="platform">
@@ -393,7 +402,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <p><b>Monitorizar → detectar el cambio → reevaluar → actuar (previsto).</b> Cuando cambien el modelo, el prompt, los datos o la política, Kunko volverá a generar la evidencia y degradará o bloqueará la autonomía. Hoy cada resultado dice para qué es válido y la fecha en que hay que revisarlo, y una comprobación de deriva en CI compara cada ejecución con su referencia. La confianza no es un sello puntual — es un flujo continuo.</p>
   </div>
   <div class="strip"><div class="k">CAPA DE EVIDENCIA</div>
-    <p>Evaluaciones · informes de calibración · trazas de auditoría · procedencia · registros de evidencia — cada decisión de la plataforma está respaldada por evidencia que un regulador, un auditor o tu consejo pueden inspeccionar.</p>
+    <p>Informes de calibración y procedencia: disponibles. Trazas de auditoría y registros de evidencia: piloto. En el piloto, cada decisión automatizada está respaldada por evidencia que un auditor puede inspeccionar.</p>
   </div>
 </section>
 
@@ -414,17 +423,18 @@ html.js .reveal.in{opacity:1;transform:none}
     <span class="pill review">REVIEW</span>
     <span class="pill block">BLOCK</span>
   </div>
+  <p class="caveat" style="text-align:center;margin-left:auto;margin-right:auto">AUTOMATE = automatizar, REVIEW = revisar por una persona, BLOCK = bloquear. Mantenemos estos tres términos en inglés porque son los del producto.</p>
 
   <div class="chansec">
     <div class="eyebrow">De la medición a la decisión · piloto</div>
     <h3>Automatizar, revisar o bloquear,<br><span class="grad">por canal, con recibo</span></h3>
     <p class="body">Una media esconde el segmento que falla. Kunko convierte la auditoría en una decisión por segmento, escribe un contrato para cada segmento que te permite automatizar y emite un recibo por cada decisión automatizada. Un segmento que su propia auditoría marca nunca se automatiza. <strong>Pulsa un canal para inspeccionar su contrato.</strong></p>
     <div class="chans">
-      <button class="chan"><b>Web</b><span class="pill auto">● AUTOMATE</span><p>Cota de error bajo el objetivo en suficientes decisiones auditadas. Se escribe un contrato para este segmento.</p><span class="cbody"><i>Umbral τ = 0,98</i><i>Cota de error dentro del objetivo del 5% (unilateral al 95%)</i><i>Automatización solo dentro del porcentaje validado</i><i>Recibo por decisión</i></span></button>
-      <button class="chan"><b>Teléfono</b><span class="pill review">● REVIEW</span><p>El juez sugiere, una persona decide.</p><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
-      <button class="chan"><b>Chat</b><span class="pill review">● REVIEW</span><p>El juez sugiere, una persona decide.</p><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
-      <button class="chan"><b>Email</b><span class="pill block">× BLOCK</span><p>La auditoría marca este segmento. Ninguna decisión de email se automatiza.</p><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
-      <button class="chan"><b>Tienda</b><span class="pill block">× BLOCK</span><p>La auditoría marca este segmento.</p><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
+      <button class="chan" aria-expanded="false"><b>Web</b><span class="pill auto">● AUTOMATE</span><span class="cdesc">Cota de error bajo el objetivo en suficientes decisiones auditadas. Se escribe un contrato para este segmento.</span><span class="cbody"><i>Umbral τ = 0,98</i><i>Cota de error dentro del objetivo del 5 % (unilateral al 95 %)</i><i>Automatización solo dentro del porcentaje validado (aproximado)</i><i>Recibo por decisión</i></span></button>
+      <button class="chan" aria-expanded="false"><b>Teléfono</b><span class="pill review">● REVIEW</span><span class="cdesc">El juez sugiere, una persona decide.</span><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
+      <button class="chan" aria-expanded="false"><b>Chat</b><span class="pill review">● REVIEW</span><span class="cdesc">El juez sugiere, una persona decide.</span><span class="cbody"><i>Sin contrato de automatización</i><i>Cada sugerencia se registra con su confianza</i><i>Los resultados realimentan la auditoría</i></span></button>
+      <button class="chan" aria-expanded="false"><b>Email</b><span class="pill block">× BLOCK</span><span class="cdesc">La auditoría marca este segmento. Ninguna decisión de email se automatiza.</span><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
+      <button class="chan" aria-expanded="false"><b>Tienda</b><span class="pill block">× BLOCK</span><span class="cdesc">La auditoría marca este segmento.</span><span class="cbody"><i>Automatización prohibida por contrato</i><i>Marcado: error sobre el objetivo a alta confianza</i><i>Todo derivado a revisión humana</i></span></button>
     </div>
     <p class="caveat">Ejemplo ilustrativo de cinco canales construido con un fixture sintético y calculable a mano. No son datos de clientes.</p>
   </div>
@@ -434,14 +444,14 @@ html.js .reveal.in{opacity:1;transform:none}
     <p>Elige una decisión bancaria entrante. <code>contract.decide()</code> lee el segmento, aplica el contrato aprobado en memoria — sin disco — y emite un recibo (recibos ilustrativos, identificadores acortados):</p>
     <div class="rgrid">
       <div class="rtickets">
-        <button class="rticket sel" data-t="0"><b>#1042 · «Transferir 50 € a mi cuenta de ahorro»</b><span>meta.length_band = «medium» (9–11 palabras) · conf = 0.99</span><i class="pill review">REVIEW</i></button>
-        <button class="rticket" data-t="1"><b>#1043 · «Hice una transferencia internacional el martes pasado y me cobraron una comisión doble…»</b><span>meta.length_band = «long» (12+ palabras) · conf = 0.99</span><i class="pill block">BLOCK</i></button>
-        <button class="rticket" data-t="2"><b>#1044 · «Saldo de la tarjeta»</b><span>meta.length_band = «short» (2–8 palabras) · conf = 0.99</span><i class="pill review">REVIEW</i></button>
-        <button class="rticket" data-t="3"><b>#1045 · Payload sin metadatos de segmento</b><span>meta: {} · cierre seguro · conf = 0.99</span><i class="pill review">FAIL-CLOSED</i></button>
+        <button class="rticket sel" data-t="0" aria-pressed="true"><b>#1042 · «Transferir 50 € a mi cuenta de ahorro»</b><span>meta.length_band = «medium» (9–11 palabras) · conf = 0,99</span><i class="pill review">REVIEW</i></button>
+        <button class="rticket" data-t="1" aria-pressed="false"><b>#1043 · «Hice una transferencia internacional el martes pasado y me cobraron una comisión doble…»</b><span>meta.length_band = «long» (12+ palabras) · conf = 0,99</span><i class="pill block">BLOCK</i></button>
+        <button class="rticket" data-t="2" aria-pressed="false"><b>#1044 · «Saldo de la tarjeta»</b><span>meta.length_band = «short» (2–8 palabras) · conf = 0,99</span><i class="pill review">REVIEW</i></button>
+        <button class="rticket" data-t="3" aria-pressed="false"><b>#1045 · Payload sin metadatos de segmento</b><span>meta: {} · cierre seguro · conf = 0,99</span><i class="pill review">FAIL-CLOSED</i></button>
       </div>
       <pre class="rreceipt"><code id="receiptJson"></code></pre>
     </div>
-    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo guarda un hash con clave (HMAC-SHA256, con la clave del cliente) de la entrada en lugar de su texto, no almacena datos personales y apunta, por su huella, al contrato que autorizó — o denegó — la decisión. Con los datos etiquetados, un auditor puede reconstruir lo que cita cada recibo. La aprobación del contrato es una conformidad nominal, no una firma electrónica.</p>
+    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo guarda un hash con clave (HMAC-SHA256, con la clave del cliente) de la entrada en lugar de su texto, no guarda el texto de entrada, solo un hash con clave (seudónimo); el resto depende de tus metadatos de segmento, y apunta, por su huella, al contrato que autorizó — o denegó — la decisión. Con los datos etiquetados, un auditor puede reconstruir lo que cita cada recibo. El visto bueno del contrato es una aprobación nominativa, no una firma electrónica.</p>
   </div>
 
   <div class="rmp">
@@ -450,42 +460,42 @@ html.js .reveal.in{opacity:1;transform:none}
     <div><div class="rk">DECIDIR</div><b>Una decisión por segmento</b><span>Automatizar, revisar o bloquear por segmento, con un contrato para cada uno automatizado. Piloto.</span></div>
     <div><div class="rk">REGISTRAR</div><b>Recibos, no promesas</b><span>Un recibo por decisión automatizada, con tu propia clave, que apunta a la auditoría. Piloto.</span></div>
   </div>
-  <p class="body" style="margin-top:36px"><strong>La tasa de automatización segura</strong> convierte la fiabilidad en economía: <em>¿cuánto trabajo humano puedes eliminar con seguridad?</em> El valor que creamos es directamente proporcional a la revisión humana — y al riesgo — que eliminamos de forma segura.</p>
+  <p class="body" style="margin-top:36px"><strong>La tasa de automatización segura</strong> convierte la fiabilidad en economía: <em>¿cuánta revisión humana se podría eliminar con el error que aceptas?</em> La medimos sobre tus decisiones etiquetadas, con su cota, en lugar de prometerla.</p>
   <p class="body" style="margin-top:16px"><code>pip install kunko-judge-audit</code> &nbsp;·&nbsp; <a class="inline" href="https://github.com/kunko-ai-labs/judge-audit">github.com/kunko-ai-labs/judge-audit →</a></p>
 </section>
 
 <section id="proof">
   <div class="eyebrow">Evidencia, no promesas</div>
   <h2>Lo que parece automatizable no es<br>lo que puedes <span class="grad">firmar.</span></h2>
-  <p class="body">Nuestro estudio v0.5 evaluó tres jueces sobre <strong>3.080 decisiones bancarias etiquetadas por humanos</strong> (BANKING77) — pre-registrado antes de la primera llamada al modelo, con todos los resultados publicados incluidos los poco favorecedores. Mismos datos, mismo objetivo de 5% de error:</p>
-  <table class="proof">
-    <tr><th>Juez</th><th>Porcentaje validado con un objetivo de error del 5% (datos reservados, aproximado)</th><th>Cota superior al 95% del error en datos reservados (aprox.)</th><th>Rango entre semillas</th></tr>
-    <tr><td>TypeSafe Jev, probabilidad nativa</td><td class="n">41,0%</td><td>3,9%<br><small>dentro del 5% en la partición del estudio; por encima del 5% en las particiones 2033 y 2036</small></td><td>27,0 – 45,1%</td></tr>
-    <tr><td>Gemini 3.6 Flash, verbalizado</td><td class="n">14,3%</td><td>2,7%</td><td>7,6 – 30,0%</td></tr>
-    <tr><td>Qwen3-8B, log-probabilidad de tokens</td><td class="n">ninguno validado</td><td>—</td><td>0,0 – 4,4%</td></tr>
-  </table>
-  <p class="caveat">Un 95% de confianza no significa acertar el 95% — la probabilidad de los tokens de Qwen3-8B no pudo validar ni una sola decisión con este listón. Que la cota quede dentro del objetivo depende de la partición: en la partición del estudio (semilla 2026) el 41,0% de Jev tiene una cota del 3,9%, dentro del 5%; en otra partición de los mismos checkpoints (semillas 2033 y 2036) el mismo juez con el mismo objetivo del 5% automatiza menos decisiones con una cota por encima del 5%, no cumple; el rango por semillas muestra cuánto se mueve el porcentaje. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide si se puede confiar en ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Salvedades publicadas: dataset público, probablemente visto en el preentrenamiento; ruido en etiquetas no medido. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/main/docs/results/v0.5.md">Estudio completo →</a> El plantel de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
+  <p class="body">Nuestro estudio v0.5 evaluó tres jueces sobre <strong>3.080 decisiones bancarias etiquetadas por humanos</strong> (BANKING77) — pre-registrado antes de la primera llamada al modelo, con todos los resultados publicados incluidos los poco favorecedores. Mismos datos, mismo objetivo de 5 % de error:</p>
+  <div class="tscroll" style="overflow-x:auto;margin-top:36px"><table class="proof">
+    <tr><th>Juez</th><th>Porcentaje validado con un objetivo de error del 5 % (datos reservados, aproximado)</th><th>Cota superior al 95 % del error en datos reservados (aprox.)</th><th>Rango entre semillas</th></tr>
+    <tr><td>TypeSafe Jev, probabilidad nativa</td><td class="n">41,0 %</td><td>3,9 %<br><small>dentro del 5 % en la partición del estudio; por encima del 5 % en las particiones 2033 y 2036</small></td><td>27,0 – 45,1 %</td></tr>
+    <tr><td>Gemini 3.6 Flash, verbalizado</td><td class="n">14,3 %</td><td>2,7 %</td><td>7,6 – 30,0 %</td></tr>
+    <tr><td>Qwen3-8B, log-probabilidad de tokens</td><td class="n">ninguno validado</td><td>—</td><td>0,0 – 4,4 %</td></tr>
+  </table></div>
+  <p class="caveat">Un 95 % de confianza no significa acertar el 95 % — la probabilidad de los tokens de Qwen3-8B no pudo validar ni una sola decisión con este objetivo. Que la cota quede dentro del objetivo depende de la partición: en la partición del estudio (semilla 2026) el 41,0 % de Jev tiene una cota del 3,9 %, dentro del 5 %; en otra partición de los mismos checkpoints (semillas 2033 y 2036) el mismo juez con el mismo objetivo del 5 % automatiza menos decisiones con una cota por encima del 5 %, fuera del objetivo; el rango por semillas muestra cuánto se mueve el porcentaje. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide si se puede confiar en ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Salvedades publicadas: dataset público, probablemente visto en el preentrenamiento; una sola ejecución cada uno, salvo Jev y Qwen3-8B verbalizado (3 ejecuciones); ruido en etiquetas no medido; la porción reservada no se ejecutó (<a href="https://github.com/kunko-ai-labs/judge-audit/issues/106">#106</a>), así que estas cifras son del conjunto de test público. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/v0.6.1/docs/results/v0.5.md">Estudio completo →</a> El plantel de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
 
   <div class="finding">
     <div class="tag">HALLAZGO</div>
     <h3>Una buena calibración <span class="grad">no basta</span> para automatizar</h3>
-    <p>Con 200 emails adversariales sintéticos (un conjunto pequeño construido), Gemini 3 Flash tuvo un <strong>97% de precisión</strong> con uno de los errores de calibración más bajos que hemos medido <strong>(ECE 0,015)</strong> — y aun así no pudo decidir ni un solo email solo y sin errores. Tenía la misma confianza cuando se equivocaba. Jev, algo menos preciso y peor calibrado en promedio (ECE 0,039), separó mejor sus errores y podría haber automatizado el <strong>73% de esos 200 emails sintéticos con cero errores observados</strong> (en muestra, intervalo al 95% 67–94%; sin comprobación en datos reservados). La precisión y la calibración media no te dicen lo que puedes delegar. <strong>Nosotros medimos lo que sí lo dice.</strong></p>
+    <p>Con 200 emails adversariales sintéticos (un conjunto pequeño construido), gemini-3-flash-preview tuvo un <strong>97 % de precisión</strong> con uno de los errores de calibración más bajos que hemos medido <strong>(ECE 0,015)</strong> — y aun así no pudo decidir ni un solo email solo y sin errores. Tenía la misma confianza cuando se equivocaba. Jev, algo menos preciso y peor calibrado en promedio (ECE 0,039), separó mejor sus errores y podría haber automatizado el <strong>73 % de esos 200 emails sintéticos con cero errores observados</strong> (en muestra, intervalo al 95 % 67–94 %; sin comprobación en datos reservados). La precisión y la calibración media no te dicen lo que puedes delegar. <strong>Nosotros medimos lo que sí lo dice.</strong></p>
   </div>
 
   <div class="finding">
     <div class="tag">POSICIONAMIENTO</div>
     <h3>Un leaderboard te dice qué modelo es más listo.<br>No te dice <span class="grad">cuánto puedes delegarle.</span></h3>
-    <table class="compare">
+    <div class="tscroll" style="overflow-x:auto;margin-top:28px"><table class="compare">
       <tr><th></th><th>Leaderboard de modelos</th><th>Auditoría Kunko</th></tr>
       <tr><td>La pregunta</td><td>¿Qué modelo es el más potente en general?</td><td>¿Cuánto de mis decisiones puede asumir este modelo solo, con el error que yo acepto?</td></tr>
       <tr><td>La unidad</td><td>Una puntuación por modelo, ordenada</td><td>Una tasa por tipo de decisión y segmento, con su cota estadística</td></tr>
       <tr><td>Las puntuaciones</td><td>Medias y mezclas ponderadas</td><td>Sin composites: cota de error, cobertura y coste por separado</td></tr>
       <tr><td>Los datos</td><td>Los ítems sellados del propio benchmark</td><td>Tus decisiones pasadas, reproducidas en modo sombra</td></tr>
       <tr><td>La salida</td><td>Un ranking</td><td>Automatizar, revisar o bloquear — por segmento, con recibos</td></tr>
-    </table>
+    </table></div>
   </div>
 
-  <p class="caveat" style="margin-top:28px">Cada cifra de estudio de esta página enlaza a evidencia publicada en el repo público judge-audit; las cifras por segmento de BANKING77 salen de nuestro módulo de decisión (piloto) sobre esos checkpoints públicos; las cifras en euros y el ejemplo de cinco canales son ilustrativos. v0.6 se congeló antes de su primera llamada al modelo: 12 jueces × 3 idiomas, 3 en los tests pre-registrados y 9 exploratorios, con 5 enmiendas fechadas publicadas. <a href="https://github.com/kunko-ai-labs/judge-audit">Resultados en el repo →</a></p>
+  <p class="caveat" style="margin-top:28px">Cada cifra de estudio de esta página enlaza a evidencia publicada en el repo público judge-audit; las cifras por segmento de BANKING77 salen de nuestro módulo de decisión (piloto) sobre esos checkpoints públicos y aún no son reproducibles desde el repositorio público; las cifras en euros y el ejemplo de cinco canales son ilustrativos. v0.6 se congeló antes de su primera llamada al modelo: 12 jueces × 3 idiomas, 3 en los tests pre-registrados y 9 exploratorios, con 5 enmiendas fechadas publicadas. <a href="https://github.com/kunko-ai-labs/judge-audit/tree/v0.6.1">Resultados en el repo →</a></p>
 
   <div class="prog">
     <div class="pstep"><b>Evaluación</b><span>¿funciona mi modelo?</span></div><div class="farrow">→</div>
@@ -493,7 +503,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="pstep"><b>Autonomía</b><span>automatizar / revisar / bloquear</span></div><div class="farrow">→</div>
     <div class="pstep"><b>Assurance continuo</b><span>comprobar que sigue dentro del objetivo · previsto</span></div>
   </div>
-  <p class="body" style="margin-top:28px"><strong>De la evaluación de la IA al assurance de la IA.</strong> El mercado está lleno de «¿funciona mi modelo?». Nosotros te llevamos a «¿puedo confiar con seguridad este sistema con esta decisión?» — y después, con la vigilancia en vivo (prevista), a «¿sigue dentro de mi objetivo?»</p>
+  <p class="body" style="margin-top:28px"><strong>De la evaluación de la IA al assurance de la IA.</strong> El mercado está lleno de «¿funciona mi modelo?». Nosotros te llevamos a «¿hasta qué punto puedo confiar en este sistema para esta decisión?» — y después, con la vigilancia en vivo (prevista), a «¿sigue dentro de mi objetivo?»</p>
 </section>
 
 <section>
@@ -512,7 +522,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <text class="axlab" x="150" y="307" font-size="12" text-anchor="middle">confianza declarada →</text>
       <text class="axlab" x="14" y="152" font-size="12" text-anchor="middle" transform="rotate(-90 14 152)">precisión real</text>
       <text class="axlab" x="252" y="53" font-size="11">perfecta</text>
-      <text x="196" y="197" fill="#34d399" font-size="11">este juez</text>
+      <text class="me" x="196" y="197" font-size="11">este juez</text>
     </svg>
     <figcaption>Un diagrama de fiabilidad: la diagonal es la calibración perfecta — la mayoría de los jueces no están en ella.</figcaption>
     </figure>
@@ -528,80 +538,82 @@ html.js .reveal.in{opacity:1;transform:none}
 </section>
 
 <section id="demo">
-  <div class="eyebrow">El caso de uso estrella</div>
-  <h2>De un 100% de revisión humana a la <span class="grad">autonomía medida</span></h2>
+  <div class="eyebrow">Escenario ilustrativo</div>
+  <h2>De un 100 % de revisión humana a la <span class="grad">autonomía medida</span></h2>
   <div class="usecase">
-    <div class="tag">ESCENARIO ILUSTRATIVO</div>
-    <p class="big">Un banco procesa <em>200.000</em> decisiones de atención al cliente al mes. Hoy el <em>100%</em> requiere revisión humana. La auditoría mide, sobre decisiones que el banco ya ha etiquetado, qué porcentaje podría tomar un juez solo con el error que el banco fija, validado sobre decisiones reservadas — una estimación para tráfico como esa muestra, no una promesa sobre el mes que viene.</p>
+    <div class="tag">EJEMPLO: UN BANCO</div>
+    <p class="big">Un banco procesa <em>200.000</em> decisiones de atención al cliente al mes. Hoy el <em>100 %</em> requiere revisión humana. La auditoría mide, sobre decisiones que el banco ya ha etiquetado, qué porcentaje podría tomar un juez solo con el error que el banco fija, validado (de forma aproximada) sobre decisiones reservadas — una estimación para tráfico como esa muestra, no una promesa sobre el mes que viene.</p>
     <p>O una aseguradora revisando siniestros: cuáles auto-aprobar, cuáles necesitan un humano y cuáles hay que bloquear. O una fintech haciendo triaje AML dentro de su umbral de riesgo. <strong>Un flujo, un número medido, una línea de presupuesto que se reduce.</strong></p>
     <div class="offer">
       <b>Demo de Kunko Enterprise Assurance</b>
-      <p>Danos 5.000 de tus decisiones históricas. Mediremos qué porcentaje de tu revisión humana actual podría validarse para automatizarse — con tu propio umbral de error, sobre tus decisiones etiquetadas.</p>
+      <p>Danos 5.000 de tus decisiones históricas. Mediremos qué porcentaje de tu revisión humana actual podría validarse (de forma aproximada, sobre decisiones reservadas) para automatizarse — con tu propio umbral de error, sobre tus decisiones etiquetadas.</p>
+      <p>Las condiciones (dónde se ejecuta, conservación, confidencialidad, NDA/DPA) se acuerdan por escrito antes de compartir ningún dato; el motor de auditoría es de código abierto y puede ejecutarse en tu entorno.</p>
       <p class="fine">Empieza en modo sombra. Sin riesgo en producción.</p>
     </div>
   </div>
 
   <div class="finding" style="margin-top:36px">
-    <div class="tag">LA PRUEBA DEFINITIVA · BANKING77 · GEMINI 3.6 FLASH</div>
+    <div class="tag">EJEMPLO POR SEGMENTO (PILOTO) · BANKING77 · GEMINI 3.6 FLASH</div>
     <h3>Un umbral global <span class="grad">oculta el segmento que falla</span></h3>
-    <p>Un corte global en 0,99 dice «automatiza el 14,3%». Segmentando por longitud de la consulta — un campo conocido <strong>antes</strong> de tomar la decisión — los segmentos cuentan otra historia muy distinta:</p>
+    <p>Un corte global en 0,99 dice «automatiza el 14,3 %». Segmentando por longitud de la consulta — un campo conocido <strong>antes</strong> de tomar la decisión — los segmentos cuentan otra historia muy distinta:</p>
     <div class="segs">
       <div class="seg">
         <div class="shead"><b>medium <span>9–11 palabras · n=854</span></b><i class="pill review">REVIEW</i></div>
         <div class="sbar"><i style="width:24%;background:var(--amber)"></i></div>
-        <p><strong style="color:var(--ink)">24,0% automatizado en mitades reservadas</strong> (8 errores en 205, 3,90%; cota superior aproximada al 95% del 6,93% &gt; 5%; rango en 10 particiones 0,0–25,8%) → se queda en REVIEW. Sin validar, no se automatiza.</p>
+        <p><strong style="color:var(--ink)">24,0 % automatizado en mitades reservadas</strong> (8 errores en 205, 3,90 %; cota superior aproximada al 95 % del 6,93 % &gt; 5 %; rango en 10 particiones 0,0–25,8 %) → se queda en REVIEW. Sin validar, no se automatiza.</p>
       </div>
       <div class="seg">
         <div class="shead"><b>short <span>2–8 palabras · n=1.303</span></b><i class="pill review">REVIEW</i></div>
         <div class="sbar"><i style="width:0%;background:var(--amber)"></i></div>
-        <p>Un umbral hallado sobre todas las filas parece automatizable (en muestra, no sirve de base para desplegar), pero la partición reservada automatiza <strong style="color:var(--ink)">0 decisiones</strong> (rango 0,0–21,57%) → se queda en REVIEW. Sin validar, no se automatiza.</p>
+        <p>Un umbral hallado sobre todas las filas parece automatizable (en muestra, no sirve de base para desplegar), pero la partición reservada automatiza <strong style="color:var(--ink)">0 decisiones</strong> (rango 0,0–21,6 %) → se queda en REVIEW. Sin validar, no se automatiza.</p>
       </div>
       <div class="seg">
         <div class="shead"><b>long <span>12+ palabras · n=923</span></b><i class="pill block">BLOCK</i></div>
-        <div class="sbar"><i style="width:100%;background:var(--red);opacity:.85"></i></div>
-        <p><strong style="color:var(--ink)">27 errores en 429 decisiones a máxima confianza = 6,29% de error observado</strong> (cota superior al 95%: 8,58% &gt; 5%). Bloqueado por contrato — antes de que cueste dinero.</p>
+        <div class="sbar"><i style="width:0%;background:var(--red);opacity:.85"></i></div>
+        <div class="caveat" style="margin:-4px 0 8px">long: ninguno (bloqueado)</div>
+        <p><strong style="color:var(--ink)">27 errores en 429 decisiones a máxima confianza = 6,29 % de error observado</strong> (cota superior al 95 %: 8,58 % &gt; 5 %). Bloqueado por contrato — antes de que cueste dinero.</p>
       </div>
     </div>
-    <p class="caveat">Salida de nuestro módulo de decisión (piloto) sobre los checkpoints públicos de BANKING77 v0.5, con la regla de decisión vigente: todavía no se automatiza ningún segmento y el segmento largo queda bloqueado. La barra muestra el porcentaje automatizado en mitades reservadas.</p>
+    <p class="caveat">Salida de nuestro módulo de decisión piloto sobre los checkpoints públicos de v0.5; aún no reproducible desde el repositorio público. BANKING77, con la regla de decisión vigente: todavía no se automatiza ningún segmento y el segmento largo queda bloqueado. La barra muestra el porcentaje automatizado en mitades reservadas.</p>
   </div>
 
   <div class="buyers">
-    <div class="buyer"><h4>Champion</h4><p>Head of AI / AI Platform / ML Engineering — responsable de los modelos que toman las decisiones.</p></div>
-    <div class="buyer"><h4>Comprador económico</h4><p>COO / Operaciones / Riesgos / Transformación — responsable del coste de la revisión humana.</p></div>
-    <div class="buyer"><h4>Comprador de seguridad</h4><p>CISO / Model Risk / Cumplimiento — responsable de lo que pasa cuando la IA se equivoca.</p></div>
+    <div class="buyer"><h3>Equipos de IA y ML</h3><p>Responsables de IA, de plataforma de IA y de ingeniería de ML — dueños de los modelos que toman las decisiones.</p></div>
+    <div class="buyer"><h3>Operaciones y riesgos</h3><p>Dirección de operaciones, riesgos y transformación — responsables del coste de la revisión humana.</p></div>
+    <div class="buyer"><h3>Seguridad y cumplimiento</h3><p>CISO, riesgo de modelos, cumplimiento — responsables de lo que pasa cuando la IA se equivoca.</p></div>
   </div>
-  <p class="body" style="margin-top:26px">Nuestro ICP inicial: <strong>equipos de IA en servicios financieros y otras empresas reguladas</strong> que llevan la IA a decisiones de alto volumen que aún requieren revisión humana — porque nadie mide cuándo es seguro fiarse de la IA.</p>
+  <p class="body" style="margin-top:26px">A quién va dirigido: <strong>equipos de IA en servicios financieros y otras empresas reguladas</strong> que llevan la IA a decisiones de alto volumen que aún requieren revisión humana, donde cuesta saber cuándo se puede confiar en la IA.</p>
 </section>
 
 <section>
   <div class="eyebrow">Modelo de negocio</div>
-  <h2>El código abierto es la cuña.<br><span class="grad">La plataforma es el negocio.</span></h2>
+  <h2>Primero el código abierto.<br><span class="grad">Una plataforma enterprise a su alrededor.</span></h2>
   <div class="duo">
     <div class="card"><div class="tier free">GRATIS · CÓDIGO ABIERTO</div>
       <h3>Judge Audit</h3>
-      <p>La capa de medición, abierta para todos. Lo publicamos como open source porque la industria necesita un estándar independiente para la fiabilidad de las decisiones de IA — y porque la credibilidad compone: cada auditoría pública convierte a Kunko en la autoridad sobre lo que significa «fiable».</p>
+      <p>La capa de medición, abierta para todos. Lo publicamos como open source porque la industria necesita un estándar independiente para la fiabilidad de las decisiones de IA — y porque cualquiera puede comprobar cómo medimos: cada auditoría pública se puede recalcular desde su evidencia.</p>
     </div>
     <div class="card"><div class="tier ent">ENTERPRISE</div>
       <h3>Kunko Assurance Platform</h3>
       <p>El producto comercial no es el auditor — el auditor es la puerta de entrada. Monetizamos la capa de assurance alrededor de las decisiones de IA en la empresa: contratos y recibos por decisión y el informe ejecutivo (en piloto); monitorización continua, políticas, integraciones y gobernanza (previstas).</p>
     </div>
   </div>
-  <p class="body" style="margin-top:28px">Empezamos deliberadamente con una cuña open source: Judge Audit construye credibilidad y adopción alrededor de un estándar independiente <strong>antes</strong> de pedir a las empresas que pongan decisiones sensibles de producción detrás de una plataforma comercial. Nuestro trabajo es seguir siendo <strong>independientes del modelo</strong> — la compañía cuyo modelo se beneficia de que confíen en él no debería ser la única que avala esa confianza.</p>
+  <p class="body" style="margin-top:28px">Empezamos deliberadamente con código abierto: Judge Audit construye confianza y adopción alrededor de un método independiente <strong>antes</strong> de pedir a las empresas que pongan decisiones sensibles de producción detrás de una plataforma comercial. Nuestro trabajo es seguir siendo <strong>independientes del modelo</strong> — la compañía cuyo modelo se beneficia de que confíen en él no debería ser la única que avala esa confianza.</p>
 </section>
 
 <section id="roadmap">
   <div class="eyebrow">Hoja de ruta</div>
-  <h2>Judge Audit es la puerta de entrada<br>a un <span class="grad">plano de control</span> mucho mayor.</h2>
-  <p class="body">Judge Audit no es la compañía — es la cuña. Cada capa compone sobre la anterior:</p>
+  <h2>De Judge Audit<br>a un <span class="grad">plano de control.</span></h2>
+  <p class="body">Judge Audit es donde empezamos. Cada capa se apoya en la anterior:</p>
   <div class="steps">
-    <div class="step"><h4>Judge Audit</h4><p>Auditorías de calibración open source. La capa de credibilidad — en vivo hoy.</p></div>
-    <div class="step"><h4>Decision Assurance</h4><p>Evidencia + riesgo + política por decisión: automatizar, revisar o bloquear. En piloto.</p></div>
-    <div class="step"><h4>Agent Assurance</h4><p>Control de capacidades para agentes: qué puede hacer, comprobado en cada edición, PR y release. Disponible.</p></div>
-    <div class="step"><h4>Enterprise Assurance</h4><p>El plano de control completo: inventario, riesgo, evidencia, política, monitorización. Previsto.</p></div>
+    <div class="step"><h3>Judge Audit</h3><p>Auditorías de calibración open source. La capa de credibilidad — en vivo hoy.</p></div>
+    <div class="step"><h3>Decision Assurance</h3><p>Evidencia + riesgo + política por decisión: automatizar, revisar o bloquear. En piloto.</p></div>
+    <div class="step"><h3>Agent Assurance</h3><p>Control de capacidades para agentes: qué puede hacer, comprobado en cada edición, PR y release. Disponible.</p></div>
+    <div class="step"><h3>Enterprise Assurance</h3><p>El plano de control completo: inventario, riesgo, evidencia, política, monitorización. Previsto.</p></div>
   </div>
       <figure class="loopfig">
     <div class="looplab">EL BUCLE DE ASSURANCE CONTINUO · PREVISTO</div>
-    <svg viewBox="0 0 680 470" role="img" aria-label="Bucle de assurance continuo (previsto): validado, cambio, análisis de impacto, revalidar">
+    <svg viewBox="0 0 680 470" role="img" aria-label="Bucle de assurance continuo (previsto): validado (aproximado), cambio, análisis de impacto, revalidar">
       <defs>
         <linearGradient id="loopg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/>
@@ -634,7 +646,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <circle cx="340" cy="115" r="32" fill="none" stroke="#34d399" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
       <circle class="ln" cx="340" cy="115" r="32" stroke="#34d399"/>
       <svg x="326" y="101" width="28" height="28" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.3 12l2 2 3.6-4.2" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <text class="ltit" x="340" y="56">VALIDADO</text>
+      <text class="ltit" x="340" y="56">VALIDADO (APROX.)</text>
       <circle cx="475" cy="250" r="32" fill="none" stroke="#f87171" stroke-width="7" opacity=".16" filter="url(#loopglow)"/>
       <circle class="ln" cx="475" cy="250" r="32" stroke="#f87171"/>
       <svg x="461" y="236" width="28" height="28" viewBox="0 0 24 24"><path d="M12 4.5L3.5 19.5h17L12 4.5z" fill="none" stroke="#f87171" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4.2" stroke="#f87171" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="#f87171"/></svg>
@@ -651,7 +663,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <text class="llab" x="340" y="262">CONTINUO</text>
     </svg>
     <div class="loop" style="margin-top:26px">
-      <span class="lnode hot"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>VALIDADO · sigue en vigor</span>
+      <span class="lnode hot"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>VALIDADO (aproximado) · sigue en vigor</span>
       <span class="lnode warn"><svg viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L3.5 19.5h17L12 4.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="#f5b544"/></svg>DEGRADADO · cobertura reducida</span>
       <span class="lnode bad"><svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>BLOQUEADO · vuelve a revisión humana</span>
     </div>
@@ -661,8 +673,8 @@ html.js .reveal.in{opacity:1;transform:none}
 </section>
 
 <section>
-  <div class="eyebrow">Por qué gana Kunko</div>
-  <h2>No decidimos si la IA es inteligente.<br><span class="grad">Determinamos si es lo bastante fiable para actuar.</span></h2>
+  <div class="eyebrow">Por qué Kunko</div>
+  <h2>No valoramos lo inteligente que es la IA.<br><span class="grad">Medimos hasta qué punto se puede confiar en ella para actuar.</span></h2>
   <div class="grid">
     <div class="card"><div class="tag">Independencia</div><h3>Fuera del modelo</h3><p>El proveedor te dice cuánta confianza tiene su modelo. Nosotros medimos de forma independiente si esa confianza es fiable para tus decisiones — y seguimos ahí cuando cambias de modelo.</p></div>
     <div class="card"><div class="tag">Economía</div><h3>Un número, no un panel</h3><p>La tasa de automatización segura convierte la fiabilidad en presupuesto: el porcentaje de revisión humana que puedes eliminar con tu objetivo de error, validado sobre decisiones etiquetadas reservadas (aproximado). Es el número que el despliegue necesita.</p></div>
@@ -687,11 +699,11 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="faq">
     <details>
       <summary>¿Qué significa «calibración», en lenguaje llano?</summary>
-      <p>Si un juez de IA dice tener un 90% de confianza en 100 decisiones, debería acertar unas 90 veces. Si acierta 60, está mal calibrado — es exceso de confianza. La calibración es la correspondencia entre la confianza declarada y la precisión real, y es lo que te dice qué decisiones de un juez puedes validar para automatizar.</p>
+      <p>Si un juez de IA dice tener un 90 % de confianza en 100 decisiones, debería acertar unas 90 veces. Si acierta 60, está mal calibrado — es exceso de confianza. La calibración es la correspondencia entre la confianza declarada y la precisión real, y es lo que te dice qué decisiones de un juez puedes validar para automatizar (de forma aproximada, en datos reservados).</p>
     </details>
     <details>
       <summary>¿No basta con la precisión?</summary>
-      <p>No. La precisión dice cuántas veces acierta el juez; la calibración dice si puedes creerle cuando importa. Un juez con un 95% de precisión que declara un 99,9% de confianza en sus errores es más peligroso que uno con un 80% que sabe cuándo duda. Las decisiones de automatización necesitan el segundo número.</p>
+      <p>No. La precisión dice cuántas veces acierta el juez; la calibración dice si puedes creerle cuando importa. Un juez con un 95 % de precisión que declara un 99,9 % de confianza en sus errores es más peligroso que uno con un 80 % que sabe cuándo duda. Las decisiones de automatización necesitan el segundo número.</p>
     </details>
     <details>
       <summary>¿Por qué no puede hacerlo el proveedor del modelo?</summary>
@@ -699,11 +711,11 @@ html.js .reveal.in{opacity:1;transform:none}
     </details>
     <details>
       <summary>¿Es Judge Audit otro juez de IA?</summary>
-      <p>No. Judge Audit no juzga nada — mide. Dado un juez y un dataset con respuestas correctas conocidas, calcula estadística. Eso es aritmética, no opinión, y cada número es reproducible desde los checkpoints en crudo del repo.</p>
+      <p>No. Judge Audit no juzga nada — mide. Dado un juez y un dataset con respuestas correctas conocidas, calcula estadística. Eso es aritmética, no opinión, y cada número de los estudios públicos se puede recalcular desde los checkpoints del repo.</p>
     </details>
     <details>
       <summary>¿Por qué importa esto para el AI Act europeo?</summary>
-      <p>Con el AI Act modificado por el Reglamento (UE) 2026/1744, las obligaciones de alto riesgo se aplican desde el 2 de diciembre de 2027 a los sistemas del anexo III (entre ellos, la evaluación de solvencia de personas físicas) y desde el 2 de agosto de 2028 a la IA integrada en productos del anexo I. Estos sistemas necesitan registro, supervisión humana y un nivel adecuado de precisión y robustez. La evidencia independiente de calibración — incluidas métricas del peor caso, no solo medias — puede apoyar la documentación que esas obligaciones requieren; no es una evaluación de conformidad.</p>
+      <p>Con el AI Act modificado por el Reglamento (UE) 2026/1744 (<a class="inline" href="https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force">en vigor desde el 27 de julio de 2026</a>), las obligaciones de alto riesgo se aplican desde el 2 de diciembre de 2027 a los sistemas del anexo III (entre ellos, la evaluación de solvencia de personas físicas) y desde el 2 de agosto de 2028 a la IA integrada en productos del anexo I. Estos sistemas necesitan registro, supervisión humana y un nivel adecuado de precisión y robustez. La evidencia independiente de calibración — incluidas métricas del peor caso, no solo medias — puede apoyar la documentación que esas obligaciones requieren; no es una evaluación de conformidad.</p>
     </details>
     <details>
       <summary>¿Cómo ejecuto una auditoría?</summary>
@@ -715,16 +727,19 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="contact" class="contact">
   <div class="eyebrow">Contacto</div>
   <h2>Midamos lo que importa</h2>
-  <p class="body" style="margin:0 auto 26px;text-align:center">Auditorías, alianzas, pilotos enterprise — o 5.000 decisiones históricas y un umbral de error.</p>
+  <p class="body" style="margin:0 auto 26px;text-align:center">Auditorías, alianzas, pilotos enterprise — o 5.000 decisiones históricas y un umbral de error. Las condiciones (dónde se ejecuta, conservación, confidencialidad, NDA/DPA) se acuerdan por escrito antes de compartir ningún dato; el motor de auditoría es de código abierto y puede ejecutarse en tu entorno.</p>
   <a class="mail" href="mailto:info@kunkoai.com">info@kunkoai.com</a>
 </section>
 </div>
+</main>
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
     <span>© 2026 Kunko AI Labs · Madrid, España</span>
+    <span><a href="/es/privacidad.html">Privacidad</a> · <a href="https://github.com/kunko-ai-labs/judge-audit/security/policy">Seguridad</a> · <a href="#contact">Contacto</a></span>
     <span>El mérito, medido — no publicitado.</span>
   </div>
+  <div class="wrap" style="margin-top:12px;font-size:12.5px">Los nombres de modelos y productos pertenecen a sus titulares; sin afiliación con ningún proveedor.</div>
 </footer>
 <script>
 (function(){
@@ -739,57 +754,39 @@ html.js .reveal.in{opacity:1;transform:none}
     paint();
   });
   var receipts=[
-   {id:'dec_1042',text:'"Transferir 50 € a mi cuenta de ahorro"',segment_field:'meta.length_band',segment:'"medium" (9–11 palabras)',conf:'0.99',action:'REVIEW',cls:'ra',reason:'"cota superior al 95% en datos reservados 6,93% > 5%; sin validar, no se automatiza"',contract:'contract v3 · sha 9f2c…a41d'},
-   {id:'dec_1043',thr:'null',text:'"Hice una transferencia internacional el martes pasado y me cobraron una comisión doble…"',segment_field:'meta.length_band',segment:'"long" (12+ palabras)',conf:'0.99',action:'BLOCK',cls:'rr',reason:'"6,29% de error observado a máxima confianza; cota superior al 95%: 8,58% > objetivo del 5%"',contract:'contract v3 · sha 9f2c…a41d'},
-   {id:'dec_1044',text:'"Saldo de la tarjeta"',segment_field:'meta.length_band',segment:'"short" (2–8 palabras)',conf:'0.99',action:'REVIEW',cls:'ra',reason:'"la partición reservada automatiza 0 decisiones; sin validar, no se automatiza"',contract:'contract v3 · sha 9f2c…a41d'},
-   {id:'dec_1045',thr:'null',text:'"[payload]"',segment_field:'meta.length_band',segment:'null (sin metadatos)',conf:'0.99',action:'FAIL-CLOSED',cls:'ra',reason:'"sin metadatos de segmento — denegado por contrato, derivado a revisión humana"',contract:'contract v3 · sha 9f2c…a41d'}];
+   {id:'dec_1042',text:'"Transferir 50 € a mi cuenta de ahorro"',segment_field:'meta.length_band',segment:'"medium" (9–11 palabras)',conf:'0,99',action:'REVIEW',cls:'ra',reason:'"cota superior al 95 % en datos reservados 6,93 % > 5 %; sin validar, no se automatiza"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1043',thr:'null',text:'"Hice una transferencia internacional el martes pasado y me cobraron una comisión doble…"',segment_field:'meta.length_band',segment:'"long" (12+ palabras)',conf:'0,99',action:'BLOCK',cls:'rr',reason:'"6,29 % de error observado a máxima confianza; cota superior al 95 %: 8,58 % > objetivo del 5 %"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1044',text:'"Saldo de la tarjeta"',segment_field:'meta.length_band',segment:'"short" (2–8 palabras)',conf:'0,99',action:'REVIEW',cls:'ra',reason:'"la partición reservada automatiza 0 decisiones; sin validar, no se automatiza"',contract:'contract v3 · sha 9f2c…a41d'},
+   {id:'dec_1045',thr:'null',text:'"[payload]"',segment_field:'meta.length_band',segment:'null (sin metadatos)',conf:'0,99',action:'FAIL-CLOSED',cls:'ra',reason:'"sin metadatos de segmento — denegado por contrato, derivado a revisión humana"',contract:'contract v3 · sha 9f2c…a41d'}];
   var pre=document.getElementById('receiptJson');
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
   function render(i){var r=receipts[i];
-    pre.innerHTML='<span class="rk">"id"</span>: <span class="rv">"'+r.id+'"</span>,\n<span class="rk">"input_hash"</span>: <span class="rv">"hmac-sha256 3a7c…e19b (text not stored)"</span>,\n<span class="rk">"segment_field"</span>: <span class="rv">"'+r.segment_field+'"</span>,\n<span class="rk">"segment"</span>: <span class="rv">'+r.segment+'</span>,\n<span class="rk">"declared_confidence"</span>: <span class="rv">'+r.conf+'</span>,\n<span class="rk">"threshold_applied"</span>: <span class="rv">'+(r.thr===undefined?'"τ = 0.98"':r.thr)+'</span>,\n<span class="rk">"target_risk"</span>: <span class="rv">"5% error target"</span>,\n<span class="rk">"action"</span>: <span class="'+r.cls+'">"'+r.action+'"</span>,\n<span class="rk">"reason"</span>: <span class="rv">'+esc(r.reason)+'</span>,\n<span class="rk">"contract"</span>: <span class="rv">"'+r.contract+'"</span>,\n<span class="rk">"pii_stored"</span>: <span class="rv">false</span>';}
+    pre.innerHTML='<span class="rk">"id"</span>: <span class="rv">"'+r.id+'"</span>,\n<span class="rk">"input_hash"</span>: <span class="rv">"hmac-sha256 3a7c…e19b (texto no almacenado)"</span>,\n<span class="rk">"segment_field"</span>: <span class="rv">"'+r.segment_field+'"</span>,\n<span class="rk">"segment"</span>: <span class="rv">'+r.segment+'</span>,\n<span class="rk">"declared_confidence"</span>: <span class="rv">'+r.conf+'</span>,\n<span class="rk">"threshold_applied"</span>: <span class="rv">'+(r.thr===undefined?'"τ = 0,98"':r.thr)+'</span>,\n<span class="rk">"target_risk"</span>: <span class="rv">"objetivo de error del 5 %"</span>,\n<span class="rk">"action"</span>: <span class="'+r.cls+'">"'+r.action+'"</span>,\n<span class="rk">"reason"</span>: <span class="rv">'+esc(r.reason)+'</span>,\n<span class="rk">"contract"</span>: <span class="rv">"'+r.contract+'"</span>';}
   var tickets=document.querySelectorAll('.rticket');
   tickets.forEach(function(t){t.addEventListener('click',function(){
-    tickets.forEach(function(x){x.classList.remove('sel');});t.classList.add('sel');render(parseInt(t.getAttribute('data-t'),10));});});
+    tickets.forEach(function(x){x.classList.remove('sel');x.setAttribute('aria-pressed','false');});t.classList.add('sel');t.setAttribute('aria-pressed','true');render(parseInt(t.getAttribute('data-t'),10));});});
   if(pre)render(0);
-  var sVol=document.getElementById('sVol'),sCost=document.getElementById('sCost'),sErr=document.getElementById('sErr');
-  if(sVol){
-    var SHARE=0.0666,ERRR=0.008746;
-    function fmt(n){return Math.round(n).toLocaleString('es-ES');}
-    function upd(){
-      var vol=+sVol.value,cost=+sCost.value,err=+sErr.value;
-      document.getElementById('vVol').textContent=fmt(vol)+' / mes';
-      document.getElementById('vCost').textContent=cost.toFixed(2).replace('.',',')+' €';
-      document.getElementById('vErr').textContent=fmt(err)+' €';
-      var auto=vol*SHARE,blocked=vol*ERRR;
-      document.getElementById('oAuto').textContent=fmt(auto)+' ('+(SHARE*100).toFixed(1).replace('.',',')+'%)';
-      document.getElementById('oSave').textContent=fmt(auto*cost)+' €';
-      document.getElementById('oBlock').textContent=fmt(blocked)+' ('+fmt(blocked*err)+' €)';
-    }
-    [sVol,sCost,sErr].forEach(function(s){s.addEventListener('input',upd);});
-    upd();
-  }
+  var smooth=(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth';
   document.documentElement.classList.add('js');
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1}):null;
-  document.querySelectorAll('.vcard,.vcore,.vpillar,.finding,.card,.step,.seg,.buyer,.strip,.jcarousel,.usecase,.rticket,.sbox,.chan,.rmp>div').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
+  document.querySelectorAll('.vcard,.vcore,.vpillar,.finding,.card,.step,.seg,.buyer,.strip,.jcarousel,.usecase,.rticket,.chan,.rmp>div').forEach(function(el){el.classList.add('reveal');if(io)io.observe(el);else el.classList.add('in');});
   document.querySelectorAll('.chan').forEach(function(c){c.addEventListener('click',function(){
     var was=c.classList.contains('open');
-    document.querySelectorAll('.chan.open').forEach(function(x){x.classList.remove('open');x.classList.remove('sel');});
-    if(!was){c.classList.add('open');c.classList.add('sel');}
+    document.querySelectorAll('.chan.open').forEach(function(x){x.classList.remove('open');x.classList.remove('sel');x.setAttribute('aria-expanded','false');});
+    if(!was){c.classList.add('open');c.classList.add('sel');c.setAttribute('aria-expanded','true');}
   });});
   var track=document.getElementById('jTrack');
   if(track){
     var dots=document.getElementById('jDots'),n=track.children.length;
-    for(var di=0;di<n;di++){var dd=document.createElement('i');dd.setAttribute('data-i',di);dots.appendChild(dd);}
+    for(var di=0;di<n;di++){var dd=document.createElement('button');dd.type='button';dd.setAttribute('data-i',di);dd.setAttribute('aria-label','Ir al grupo de jueces '+(di+1));dots.appendChild(dd);}
     var dotEls=dots.children;
     function cw(){return track.children[0].getBoundingClientRect().width+14;}
-    function go(d){track.scrollBy({left:d*cw(),behavior:'smooth'});}
+    function go(d){track.scrollBy({left:d*cw(),behavior:smooth});}
     document.getElementById('jPrev').addEventListener('click',function(){go(-1);});
     document.getElementById('jNext').addEventListener('click',function(){go(1);});
-    dots.addEventListener('click',function(e){var t=e.target;if(t.tagName==='I'){track.scrollTo({left:(+t.getAttribute('data-i'))*cw(),behavior:'smooth'});}});
-    function paintDots(){var idx=Math.min(n-1,Math.round(track.scrollLeft/cw()));for(var k=0;k<dotEls.length;k++){dotEls[k].className=idx===k?'on':'';}}
+    dots.addEventListener('click',function(e){var t=e.target.closest('button');if(t){track.scrollTo({left:(+t.getAttribute('data-i'))*cw(),behavior:smooth});}});
+    function paintDots(){var idx=Math.min(n-1,Math.round(track.scrollLeft/cw()));for(var k=0;k<dotEls.length;k++){dotEls[k].className=idx===k?'on':'';if(idx===k){dotEls[k].setAttribute('aria-current','true');}else{dotEls[k].removeAttribute('aria-current');}}}
     track.addEventListener('scroll',paintDots,{passive:true});paintDots();
-    var auto=setInterval(function(){if(document.hidden)return;if(track.scrollLeft>=track.scrollWidth-track.clientWidth-12){track.scrollTo({left:0,behavior:'smooth'});}else{go(1);}},6000);
-    track.addEventListener('pointerdown',function(){clearInterval(auto);},{once:true});
   }
 })();
 </script>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0f1e" id="themeColor">
-<title>Kunko AI Labs — Assurance de decisiones de IA en la empresa</title>
+<title>Kunko AI Labs — Qué decisiones de IA se pueden automatizar</title>
 <meta name="description" content="Kunko mide qué decisiones de IA puede automatizar una empresa con el error que acepta, validadas de forma aproximada en datos reservados. Código abierto.">
 <link rel="canonical" href="https://kunkoai.com/es/">
 <link rel="alternate" hreflang="en" href="https://kunkoai.com/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kunko AI Labs">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="Kunko AI Labs — Assurance de decisiones de IA en la empresa">
+<meta property="og:title" content="Kunko AI Labs — Qué decisiones de IA se pueden automatizar">
 <meta property="og:description" content="Kunko mide qué decisiones de IA puede automatizar una empresa con el error que acepta, validadas de forma aproximada en datos reservados. Código abierto.">
 <meta property="og:url" content="https://kunkoai.com/es/">
 <meta property="og:image" content="https://kunkoai.com/assets/logo.jpg">
@@ -31,7 +31,7 @@
   --axline:rgba(255,255,255,.25); --headerbg:rgba(10,15,30,.82); --soft:rgba(255,255,255,.03);
 }
 [data-theme="light"]{
-  --g1:#047857; --g2:#1d4ed8; --g3:#6d28d9; --amber:#b45309; --red:#b91c1c;
+  --g1:#047857; --g2:#1d4ed8; --g3:#6d28d9; --amber:#9a3f06; --red:#b91c1c;
   --bg:#f4f6fb; --card:#ffffff; --ink:#0b1226; --muted:#4d5b76;
   --line:rgba(11,18,38,.12);
   --axline:rgba(11,18,38,.22); --headerbg:rgba(244,246,251,.88); --soft:rgba(11,18,38,.035);
@@ -110,7 +110,7 @@ table.compare td:first-child{color:var(--ink);font-weight:600;white-space:nowrap
 table.compare td{color:var(--muted)}
 .caveat{color:var(--muted);font-size:13px;margin-top:14px;max-width:760px}
 .caveat a{color:var(--g1);text-decoration:none;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:44px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr));gap:22px;margin-top:44px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px;position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:.85}
 .card h3{font-size:20px;margin-bottom:10px;letter-spacing:-.01em}
@@ -371,7 +371,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="platform">
   <div class="eyebrow">La visión</div>
   <h2>El <span class="grad">plano de control</span> del assurance de IA</h2>
-  <p class="body">No es otro panel de gobernanza. Kunko es la capa que determina de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si sigue siendo lo bastante fiable para hacerlo. Todo lo que toca pasa por un solo bucle de assurance. <strong>Estado:</strong> Auditar está disponible; Decidir y Registrar, en piloto; Monitorizar, previsto.</p>
+  <p class="body">No es otro panel de gobernanza. Kunko está construyendo la capa que determinará de forma continua <strong>qué tiene permitido hacer la IA</strong> — y si sigue siendo lo bastante fiable para hacerlo. Todo lo que toca pasa por un solo bucle de assurance. <strong>Estado:</strong> Auditar está disponible; Decidir y Registrar, en piloto; Monitorizar, previsto.</p>
   <div class="vdiag">
     <div class="vcol vin">
       <div class="vcard"><div class="vk">ENTRADA</div><b>Modelos, agentes, jueces</b><span>los sistemas que usas</span></div>
@@ -409,7 +409,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="how">
   <div class="eyebrow">Cómo funciona</div>
   <h2>De la decisión de IA a la <span class="grad">autonomía controlada</span></h2>
-  <p class="body">Judge Audit, nuestro motor de código abierto, ejecuta los jueces de IA en <strong>modo sombra</strong> contra decisiones que ya tomaron humanos. Sin migraciones traumáticas ni confianza ciega — solo medición:</p>
+  <p class="body">Judge Audit, nuestro motor de código abierto, ejecuta los jueces de IA en <strong>modo sombra</strong> contra decisiones que ya tomaron humanos (disponible). Sin migraciones traumáticas ni confianza ciega — solo medición:</p>
   <div class="flow">
     <div class="fnode"><b>La IA decide</b><span>salida del juez o agente</span></div><div class="farrow">→</div>
     <div class="fnode"><b>¿Confianza?</b><span>lo que declara</span></div><div class="farrow">→</div>
@@ -451,7 +451,7 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <pre class="rreceipt"><code id="receiptJson"></code></pre>
     </div>
-    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo guarda un hash con clave (HMAC-SHA256, con la clave del cliente) de la entrada en lugar de su texto, no guarda el texto de entrada, solo un hash con clave (seudónimo); el resto depende de tus metadatos de segmento, y apunta, por su huella, al contrato que autorizó — o denegó — la decisión. Con los datos etiquetados, un auditor puede reconstruir lo que cita cada recibo. El visto bueno del contrato es una aprobación nominativa, no una firma electrónica.</p>
+    <p class="caveat"><strong style="color:var(--ink)">Trust Passport.</strong> Cada recibo no guarda el texto de entrada, solo un hash con clave (HMAC-SHA256, con la clave del cliente; seudónimo); el resto depende de tus metadatos de segmento. Apunta, por su huella, al contrato que autorizó — o denegó — la decisión. Con los datos etiquetados, un auditor puede reconstruir lo que cita cada recibo. El visto bueno del contrato es una aprobación nominativa, no una firma electrónica.</p>
   </div>
 
   <div class="rmp">
@@ -474,12 +474,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <tr><td>Gemini 3.6 Flash, verbalizado</td><td class="n">14,3 %</td><td>2,7 %</td><td>7,6 – 30,0 %</td></tr>
     <tr><td>Qwen3-8B, log-probabilidad de tokens</td><td class="n">ninguno validado</td><td>—</td><td>0,0 – 4,4 %</td></tr>
   </table></div>
-  <p class="caveat">Un 95 % de confianza no significa acertar el 95 % — la probabilidad de los tokens de Qwen3-8B no pudo validar ni una sola decisión con este objetivo. Que la cota quede dentro del objetivo depende de la partición: en la partición del estudio (semilla 2026) el 41,0 % de Jev tiene una cota del 3,9 %, dentro del 5 %; en otra partición de los mismos checkpoints (semillas 2033 y 2036) el mismo juez con el mismo objetivo del 5 % automatiza menos decisiones con una cota por encima del 5 %, fuera del objetivo; el rango por semillas muestra cuánto se mueve el porcentaje. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide si se puede confiar en ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Salvedades publicadas: dataset público, probablemente visto en el preentrenamiento; una sola ejecución cada uno, salvo Jev y Qwen3-8B verbalizado (3 ejecuciones); ruido en etiquetas no medido; la porción reservada no se ejecutó (<a href="https://github.com/kunko-ai-labs/judge-audit/issues/106">#106</a>), así que estas cifras son del conjunto de test público. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/v0.6.1/docs/results/v0.5.md">Estudio completo →</a> El plantel de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
+  <p class="caveat">Orden como en el README de judge-audit; no es una clasificación. Un 95 % de confianza no significa acertar el 95 % — la probabilidad de los tokens de Qwen3-8B no pudo validar ni una sola decisión con este objetivo. Que la cota quede dentro del objetivo depende de la partición: en la partición del estudio (semilla 2026) el 41,0 % de Jev tiene una cota del 3,9 %, dentro del 5 %; en otra partición de los mismos checkpoints (semillas 2033 y 2036) el mismo juez con el mismo objetivo del 5 % automatiza menos decisiones con una cota por encima del 5 %, fuera del objetivo; el rango por semillas muestra cuánto se mueve el porcentaje. Ese es el punto: <strong style="color:var(--ink)">la confianza significa cosas distintas en cada juez, y Kunko mide si se puede confiar en ella.</strong> Publicamos el rango en diez particiones de datos, no solo el titular. Salvedades publicadas: dataset público, probablemente visto en el preentrenamiento; una sola ejecución cada uno, salvo Jev y Qwen3-8B verbalizado (3 ejecuciones); ruido en etiquetas no medido; la porción reservada no se ejecutó (<a href="https://github.com/kunko-ai-labs/judge-audit/issues/106">#106</a>), así que estas cifras son del conjunto de test público. <a href="https://github.com/kunko-ai-labs/judge-audit/blob/v0.6.1/docs/results/v0.5.md">Estudio completo →</a> El plantel de v0.5 es el principio — Judge Arena sigue llevando la cuenta a medida que crece.</p>
 
   <div class="finding">
     <div class="tag">HALLAZGO</div>
     <h3>Una buena calibración <span class="grad">no basta</span> para automatizar</h3>
-    <p>Con 200 emails adversariales sintéticos (un conjunto pequeño construido), gemini-3-flash-preview tuvo un <strong>97 % de precisión</strong> con uno de los errores de calibración más bajos que hemos medido <strong>(ECE 0,015)</strong> — y aun así no pudo decidir ni un solo email solo y sin errores. Tenía la misma confianza cuando se equivocaba. Jev, algo menos preciso y peor calibrado en promedio (ECE 0,039), separó mejor sus errores y podría haber automatizado el <strong>73 % de esos 200 emails sintéticos con cero errores observados</strong> (en muestra, intervalo al 95 % 67–94 %; sin comprobación en datos reservados). La precisión y la calibración media no te dicen lo que puedes delegar. <strong>Nosotros medimos lo que sí lo dice.</strong></p>
+    <p>Con 200 emails adversariales sintéticos (un conjunto pequeño construido), gemini-3-flash-preview tuvo un <strong>97 % de precisión</strong> con uno de los errores de calibración más bajos que hemos medido <strong>(ECE 0,015)</strong> — y aun así no pudo decidir ni un solo email solo y sin errores. Tenía la misma confianza cuando se equivocaba. Jev, algo menos preciso y peor calibrado en promedio (ECE 0,039), separó mejor sus errores y podría haber automatizado el <strong>73 % de esos 200 emails sintéticos con cero errores observados</strong> (en muestra, intervalo al 95 % 67–94 %; sin comprobación en datos reservados). La precisión y la calibración media no te dicen lo que puedes delegar. <strong>Nosotros medimos lo que sí lo dice.</strong> <a class="inline" href="https://github.com/kunko-ai-labs/judge-audit/blob/v0.6.1/docs/arena-2026-09.md">Datos del Arena →</a></p>
   </div>
 
   <div class="finding">
@@ -511,7 +511,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <h2>Medimos lo que la <span class="grad">precisión no puede decirte</span></h2>
   <div class="measure">
     <figure>
-    <svg viewBox="0 0 300 320" role="img" aria-label="Reliability diagram: a miscalibrated judge curve against the perfect-calibration diagonal">
+    <svg viewBox="0 0 300 320" role="img" aria-label="Diagrama de fiabilidad: la curva de un juez mal calibrado frente a la diagonal de calibración perfecta">
       <defs><linearGradient id="jg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset=".55" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
       <line class="ax" x1="40" y1="270" x2="280" y2="270"/>
       <line class="ax" x1="40" y1="270" x2="40" y2="20"/>
@@ -527,12 +527,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <figcaption>Un diagrama de fiabilidad: la diagonal es la calibración perfecta — la mayoría de los jueces no están en ella.</figcaption>
     </figure>
     <ul class="metrics">
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4.5-4.5"/><circle cx="12" cy="15" r="1.4" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>Tasa de automatización segura</i></b><span>Qué porcentaje de decisiones puede automatizarse con tu objetivo de error, validado sobre decisiones etiquetadas reservadas (aproximado). El número del ROI.</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 4-6"/><path d="M18 4v5M15.5 6.5h5"/></svg></span><div><b><i>ECE</i> con intervalos de confianza</b><span>Cuánto se desvía la confianza de la realidad — como intervalo, nunca como una estimación puntual solitaria.</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5L2.5 20h19L12 3.5z"/><path d="M12 9.5v4.5"/><circle cx="12" cy="17" r="1.1" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>MCE</i> — error del peor segmento</b><span>La pregunta del regulador, no el caso medio: ¿dónde se equivoca <em>más</em> este juez?</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9.8 9l1.6 1.6 3-3.2"/><path d="M8.6 13.4L7 21l5-2.6L17 21l-1.6-7.6"/></svg></span><div><b>Predicción selectiva, con cotas</b><span>Cotas de riesgo con muestras finitas (Clopper–Pearson) sobre tus decisiones etiquetadas: un umbral que puedes revisar antes de firmar.</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z"/><path d="M9.3 12l2 2 3.6-4.2"/></svg></span><div><b>Robustez adversarial</b><span>Prompt injection, homoglifos, ingeniería social — ¿sobrevive la calibración al ataque?</span></div></li>
-      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2.2"/></svg></span><div><b>Coste, latencia y deriva</b><span>Coste y latencia junto a la calibración, nunca mezclados en una puntuación, y una comprobación de deriva frente a una referencia en CI. La monitorización continua está prevista.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4.5-4.5"/><circle cx="12" cy="15" r="1.4" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>Tasa de automatización segura</i></b><span>Disponible. Qué porcentaje de decisiones puede automatizarse con tu objetivo de error, validado sobre decisiones etiquetadas reservadas (aproximado). El número del ROI.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 4-6"/><path d="M18 4v5M15.5 6.5h5"/></svg></span><div><b><i>ECE</i> con intervalos de confianza</b><span>Disponible. Cuánto se desvía la confianza de la realidad — como intervalo, nunca como una estimación puntual solitaria.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5L2.5 20h19L12 3.5z"/><path d="M12 9.5v4.5"/><circle cx="12" cy="17" r="1.1" fill="url(#jg)" stroke="none"/></svg></span><div><b><i>MCE</i> — error del peor segmento</b><span>Disponible como métrica; en el informe por ejecución: previsto. La pregunta del regulador, no el caso medio: ¿dónde se equivoca <em>más</em> este juez?</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9.8 9l1.6 1.6 3-3.2"/><path d="M8.6 13.4L7 21l5-2.6L17 21l-1.6-7.6"/></svg></span><div><b>Predicción selectiva, con cotas</b><span>Disponible. Cotas de riesgo con muestras finitas (Clopper–Pearson) sobre tus decisiones etiquetadas: un umbral que puedes revisar antes de firmar.</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.8-7 8.8-3.6-1-7-4-7-8.8V5.8L12 3z"/><path d="M9.3 12l2 2 3.6-4.2"/></svg></span><div><b>Robustez adversarial</b><span>Disponible en nuestros conjuntos sintéticos de emails adversariales; pruebas más amplias: previstas. Prompt injection, homoglifos, ingeniería social — ¿sobrevive la calibración al ataque?</span></div></li>
+      <li><span class="mico"><svg viewBox="0 0 24 24" stroke="url(#jg)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.5 2.2"/></svg></span><div><b>Coste, latencia y deriva</b><span>Disponible. Coste y latencia junto a la calibración, nunca mezclados en una puntuación, y una comprobación de deriva frente a una referencia en CI. La monitorización continua está prevista.</span></div></li>
     </ul>
   </div>
 </section>
@@ -589,11 +589,11 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="eyebrow">Modelo de negocio</div>
   <h2>Primero el código abierto.<br><span class="grad">Una plataforma enterprise a su alrededor.</span></h2>
   <div class="duo">
-    <div class="card"><div class="tier free">GRATIS · CÓDIGO ABIERTO</div>
+    <div class="card"><div class="tier free">GRATIS · CÓDIGO ABIERTO · DISPONIBLE</div>
       <h3>Judge Audit</h3>
       <p>La capa de medición, abierta para todos. Lo publicamos como open source porque la industria necesita un estándar independiente para la fiabilidad de las decisiones de IA — y porque cualquiera puede comprobar cómo medimos: cada auditoría pública se puede recalcular desde su evidencia.</p>
     </div>
-    <div class="card"><div class="tier ent">ENTERPRISE</div>
+    <div class="card"><div class="tier ent">ENTERPRISE · PILOTO Y PREVISTO</div>
       <h3>Kunko Assurance Platform</h3>
       <p>El producto comercial no es el auditor — el auditor es la puerta de entrada. Monetizamos la capa de assurance alrededor de las decisiones de IA en la empresa: contratos y recibos por decisión y el informe ejecutivo (en piloto); monitorización continua, políticas, integraciones y gobernanza (previstas).</p>
     </div>
@@ -676,8 +676,8 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="eyebrow">Por qué Kunko</div>
   <h2>No valoramos lo inteligente que es la IA.<br><span class="grad">Medimos hasta qué punto se puede confiar en ella para actuar.</span></h2>
   <div class="grid">
-    <div class="card"><div class="tag">Independencia</div><h3>Fuera del modelo</h3><p>El proveedor te dice cuánta confianza tiene su modelo. Nosotros medimos de forma independiente si esa confianza es fiable para tus decisiones — y seguimos ahí cuando cambias de modelo.</p></div>
-    <div class="card"><div class="tag">Economía</div><h3>Un número, no un panel</h3><p>La tasa de automatización segura convierte la fiabilidad en presupuesto: el porcentaje de revisión humana que puedes eliminar con tu objetivo de error, validado sobre decisiones etiquetadas reservadas (aproximado). Es el número que el despliegue necesita.</p></div>
+    <div class="card"><div class="tag">Independencia · disponible</div><h3>Fuera del modelo</h3><p>El proveedor te dice cuánta confianza tiene su modelo. Nosotros medimos de forma independiente si esa confianza es fiable para tus decisiones — y seguimos ahí cuando cambias de modelo.</p></div>
+    <div class="card"><div class="tag">Economía · disponible</div><h3>Un número, no un panel</h3><p>La tasa de automatización segura convierte la fiabilidad en presupuesto: el porcentaje de revisión humana que puedes eliminar con tu objetivo de error, validado sobre decisiones etiquetadas reservadas (aproximado). Es el número que el despliegue necesita.</p></div>
   </div>
 </section>
 
@@ -690,7 +690,7 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <section>
   <p class="quote">"No queremos que la IA tenga más confianza.<br><span class="grad">Queremos que la autonomía sea medible.</span>"
-  <small>A medida que la IA pasa de generar información a tomar decisiones y ejecutar acciones, las empresas necesitan un sistema que determine de forma continua qué tiene permitido hacer la IA — y si sigue siendo lo bastante fiable para hacerlo. Eso es Kunko.</small></p>
+  <small>A medida que la IA pasa de generar información a tomar decisiones y ejecutar acciones, las empresas necesitan un sistema que determine de forma continua qué tiene permitido hacer la IA — y si sigue siendo lo bastante fiable para hacerlo. Eso es lo que construye Kunko.</small></p>
 </section>
 
 <section id="faq">

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0a0f1e" id="themeColor">
+<title>Privacy and security — Kunko AI Labs</title>
+<meta name="description" content="How kunkoai.com handles visitor data: a static site with no cookies set by us, no analytics and no tracking. Contact and security details.">
+<link rel="canonical" href="https://kunkoai.com/privacy.html">
+<link rel="alternate" hreflang="en" href="https://kunkoai.com/privacy.html">
+<link rel="alternate" hreflang="es" href="https://kunkoai.com/es/privacidad.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kunko AI Labs">
+<meta property="og:title" content="Privacy and security — Kunko AI Labs">
+<meta property="og:description" content="How kunkoai.com handles visitor data: a static site with no cookies set by us, no analytics and no tracking. Contact and security details.">
+<meta property="og:url" content="https://kunkoai.com/privacy.html">
+<meta property="og:image" content="https://kunkoai.com/assets/logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+:root{
+  --bg:#0a0f1e; --card:#0f1626; --ink:#eef2f9; --muted:#9aa7bd;
+  --line:rgba(255,255,255,.09);
+  --g1:#34d399; --g2:#3b82f6; --g3:#8b5cf6;
+  --grad:linear-gradient(92deg,var(--g1),var(--g2) 55%,var(--g3));
+  --amber:#f5b544; --red:#f87171;
+  --axline:rgba(255,255,255,.25); --headerbg:rgba(10,15,30,.82); --soft:rgba(255,255,255,.03);
+}
+[data-theme="light"]{
+  --g1:#047857; --g2:#1d4ed8; --g3:#6d28d9; --amber:#9a3f06; --red:#b91c1c;
+  --bg:#f4f6fb; --card:#ffffff; --ink:#0b1226; --muted:#4d5b76;
+  --line:rgba(11,18,38,.12);
+  --axline:rgba(11,18,38,.22); --headerbg:rgba(244,246,251,.88); --soft:rgba(11,18,38,.035);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:radial-gradient(640px 440px at 5% -2%,rgba(139,92,246,.075),transparent 70%),radial-gradient(560px 560px at -5% 103%,rgba(139,92,246,.06),transparent 70%),radial-gradient(760px 540px at 105% 103%,rgba(52,211,153,.06),transparent 70%),radial-gradient(480px 360px at 88% 12%,rgba(59,130,246,.045),transparent 70%),var(--bg);background-attachment:fixed;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+header{background:var(--headerbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.12em;font-size:14px;text-decoration:none;color:var(--ink)}
+.brand img{height:38px;width:auto;display:block}
+.brand em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.link{color:var(--muted);text-decoration:none;font-size:14.5px;margin-left:28px;transition:color .2s}
+.nav a.link:hover{color:var(--ink)}
+h1{font-size:clamp(38px,5.6vw,66px);line-height:1.12;letter-spacing:-.03em;font-weight:700}
+h2{font-size:clamp(28px,3.8vw,42px);letter-spacing:-.02em;font-weight:700;margin-bottom:16px;line-height:1.22}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:13.5px;margin-top:20px}
+code{background:rgba(52,211,153,.1);color:var(--g1);padding:3px 10px;border-radius:8px;font-size:.92em;font-weight:500}
+a.inline{color:var(--g1);font-weight:600;text-decoration:none}
+.themetoggle{margin-left:22px;background:var(--soft);border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:999px;cursor:pointer;font-size:17px;line-height:1;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s}
+.themetoggle:hover{transform:translateY(-1px)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--g2);outline-offset:3px}
+footer a{color:var(--ink)}
+main.legal{padding:72px 28px 40px}
+.legal h1{font-size:clamp(30px,4.6vw,46px);margin-bottom:8px}
+.legal .upd{color:var(--muted);font-size:14px;margin-bottom:34px}
+.legal h2{font-size:clamp(20px,2.4vw,24px);margin:34px 0 10px}
+.legal p,.legal li{color:var(--muted);font-size:16px;max-width:760px}
+.legal p+p{margin-top:12px}
+.legal ul{margin:10px 0 0 22px;display:grid;gap:8px}
+.legal a{color:var(--g1);font-weight:600;text-decoration:none}
+.legal strong{color:var(--ink)}
+@media(max-width:720px){.nav{flex-wrap:wrap;gap:6px 12px}.nav nav{display:flex;flex-wrap:wrap;align-items:center;gap:2px 14px}.nav a.link{margin-left:0;font-size:13px}.themetoggle{margin-left:0}}
+@media(max-width:480px){.wrap{padding:0 16px}main.legal{padding:56px 16px 32px}}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="/assets/logo-mark.png" alt="">KUNKO <em>AI</em> LABS</a>
+    <nav aria-label="Main">
+      <a class="link" href="/#platform">Platform</a>
+      <a class="link" href="/#proof">Evidence</a>
+      <a class="link" href="/#contact">Contact</a>
+      <a class="link" href="/es/privacidad.html" lang="es" hreflang="es">ES</a>
+      <button class="themetoggle" id="themeToggle" aria-label="Toggle light and dark mode" aria-pressed="false" title="Light / dark mode">☾</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap legal" id="main">
+<h1>Privacy and security</h1>
+<p class="upd">Last updated: 1 November 2026</p>
+
+<h2>What this site is</h2>
+<p>kunkoai.com is a static website. It has no forms, no accounts, no login and no database of our own. It is hosted on <strong>GitHub Pages</strong> and served through <strong>Cloudflare</strong>.</p>
+<h2>What our hosting providers process</h2>
+<p>To deliver the pages and keep them secure, GitHub and Cloudflare process visitors' IP addresses and basic request data. Their handling is described in their own notices:</p>
+<ul>
+<li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a></li>
+<li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a></li>
+</ul>
+<p>These providers may also set technical cookies of their own as part of delivery or security. We do not control them.</p>
+<h2>What is stored in your browser</h2>
+<p>The only thing the site stores is one entry in your browser's <code>localStorage</code>, named <code>kunko-theme</code>, which remembers whether you chose the light or the dark theme. It stays on your device and is never sent to us. We set no cookies, and the site uses no analytics, no tracking and no third-party scripts, fonts or embeds.</p>
+<h2>Who runs this site</h2>
+<p>This site is operated by the Kunko AI Labs project. For anything about your personal data, write to <a href="mailto:info@kunkoai.com">info@kunkoai.com</a>.</p>
+<h2>Contact</h2>
+<p>If you write to <a href="mailto:info@kunkoai.com">info@kunkoai.com</a>, we receive your email address and whatever you send us, and we use it only to answer you.</p>
+<h2>Your rights</h2>
+<p>Under data protection law (GDPR) you can ask us, in plain terms, to:</p>
+<ul>
+<li>tell you what personal data we hold about you (access);</li>
+<li>correct it if it is wrong (rectification);</li>
+<li>delete it (erasure);</li>
+<li>stop using it (objection).</li>
+</ul>
+<p>Write to <a href="mailto:info@kunkoai.com">info@kunkoai.com</a> and we will answer. If you think we have handled your data badly, you can complain to your national data protection authority. In Spain that is the <a href="https://www.aepd.es">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+<h2>Pilot data</h2>
+<p><strong>Pilot data is never sent through this website.</strong> The terms (where it runs, retention, confidentiality, NDA/DPA) are agreed in writing before any data is shared. The audit engine, <a href="https://github.com/kunko-ai-labs/judge-audit">Judge Audit</a>, is open source and can run in your environment.</p>
+<h2 id="security">Security</h2>
+<p>To report a vulnerability in our open-source projects, follow the <a href="https://github.com/kunko-ai-labs/judge-audit/security/policy">security policy</a>.</p>
+
+<p style="margin-top:34px"><a href="/">← Back to the home page</a></p>
+</main>
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
+    <span>© 2026 Kunko AI Labs · Madrid, Spain</span>
+  </div>
+  <div class="wrap" style="margin-top:12px;font-size:12.5px">Model and product names belong to their owners; no affiliation with any vendor.</div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeToggle'),tc=document.getElementById('themeColor');
+  function paint(){var light=root.getAttribute('data-theme')==='light';btn.textContent=light?'☀':'☾';btn.setAttribute('aria-pressed',String(light));if(tc)tc.setAttribute('content',light?'#f4f6fb':'#0a0f1e');}
+  try{var s=localStorage.getItem('kunko-theme');if(s==='light'){root.setAttribute('data-theme','light');}else if(s==='dark'){root.removeAttribute('data-theme');}}catch(e){}
+  paint();
+  btn.addEventListener('click',function(){
+    var light=root.getAttribute('data-theme')!=='light';
+    if(light){root.setAttribute('data-theme','light');}else{root.removeAttribute('data-theme');}
+    try{localStorage.setItem('kunko-theme',light?'light':'dark');}catch(e){}
+    paint();
+  });
+})();
+</script>
+</body>
+</html>

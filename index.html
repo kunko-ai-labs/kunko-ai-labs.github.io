@@ -318,11 +318,11 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="glance" style="padding-top:20px">
   <div class="eyebrow">Study v0.6 · Pre-registered</div>
   <h2>Automation at a 5% error target, held out.<br><span class="grad">Same cases, three languages.</span></h2>
-  <p class="body">The same <strong>2,974 cases</strong> in English, Spanish and Catalan. Only the language changes. 5 of the 6 displayed judges meet the approximate held-out criterion on the English study split, 1 on Spanish, 2 on Catalan; the six shown are a selection of the twelve audited. Each share is for one split of the cases and moves with the split:</p>
+  <p class="body">The same <strong>2,974 cases</strong> in English, Spanish and Catalan. Only the language changes. 5 of the 6 displayed judges meet the approximate held-out criterion on the English study split, 1 on Spanish, 2 on Catalan; the six shown are a selection of the twelve audited. Each share is for one split of the cases and moves with the split. The Jev figures are for Jev 1.13.0, the version that served every case; a newer Jev version needs its own audit:</p>
   <div class="jcarousel reveal">
     <div class="jtrack" id="jTrack" tabindex="0" role="region" aria-label="Judges carousel">
       <div class="grow">
-        <div class="ghead"><b>jev-1.13.0</b></div>
+        <div class="ghead"><b>Jev 1.13.0</b></div>
         <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29.0%;background:var(--muted);opacity:.45"></i></div><span class="gval">29.0%<small>bound 5.8% · not met · splits 30.7–55.6%</small></span></div>
         <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--muted);opacity:.45"></i></div><span class="gval">25.3%<small>bound 7.4% · not met · splits 0.0–23.6%</small></span></div>
         <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">none<small>splits 0.0–19.5%</small></span></div>
@@ -469,7 +469,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <p class="body">Our v0.5 study ran three judges over <strong>3,080 human-labelled banking decisions</strong> (BANKING77) — pre-registered before the first model call, every result published including the unflattering ones. Same data, same 5% error target:</p>
   <div class="tscroll" style="overflow-x:auto;margin-top:36px"><table class="proof">
     <tr><th>Judge</th><th>Validated share at a 5% error target (held-out, approximate)</th><th>95% upper bound on held-out error (approx.)</th><th>Range over seeds</th></tr>
-    <tr><td>TypeSafe Jev, native probability</td><td class="n">41.0%</td><td>3.9%<br><small>within 5% on the study's split; above 5% on splits 2033 and 2036</small></td><td>27.0 – 45.1%</td></tr>
+    <tr><td>TypeSafe Jev 1.13.0, native probability</td><td class="n">41.0%</td><td>3.9%<br><small>within 5% on the study's split; above 5% on splits 2033 and 2036</small></td><td>27.0 – 45.1%</td></tr>
     <tr><td>Gemini 3.6 Flash, verbalized</td><td class="n">14.3%</td><td>2.7%</td><td>7.6 – 30.0%</td></tr>
     <tr><td>Qwen3-8B, token log-probability</td><td class="n">none validated</td><td>—</td><td>0.0 – 4.4%</td></tr>
   </table></div>

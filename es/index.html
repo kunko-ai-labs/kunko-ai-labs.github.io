@@ -318,11 +318,11 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="glance" style="padding-top:20px">
   <div class="eyebrow">Estudio v0.6 · Pre-registrado</div>
   <h2>Automatización con un objetivo de error del 5 %, en datos reservados.<br><span class="grad">Los mismos casos, en tres idiomas.</span></h2>
-  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma. 5 de los 6 jueces mostrados quedan dentro del criterio aproximado en datos reservados en la partición del estudio en inglés, 1 en español y 2 en catalán; los seis mostrados son una selección de los doce auditados. Cada porcentaje corresponde a una partición de los casos y cambia con la partición:</p>
+  <p class="body">Los mismos <strong>2.974 casos</strong> en inglés, español y catalán. Solo cambia el idioma. 5 de los 6 jueces mostrados quedan dentro del criterio aproximado en datos reservados en la partición del estudio en inglés, 1 en español y 2 en catalán; los seis mostrados son una selección de los doce auditados. Cada porcentaje corresponde a una partición de los casos y cambia con la partición. Las cifras de Jev son de Jev 1.13.0, la versión que respondió a todos los casos; una versión más reciente de Jev necesita su propia auditoría:</p>
   <div class="jcarousel reveal">
     <div class="jtrack" id="jTrack" tabindex="0" role="region" aria-label="Carrusel de jueces">
       <div class="grow">
-        <div class="ghead"><b>jev-1.13.0</b></div>
+        <div class="ghead"><b>Jev 1.13.0</b></div>
         <div class="grow-row"><span class="glab">EN</span><div class="gbar"><i style="width:29.0%;background:var(--muted);opacity:.45"></i></div><span class="gval">29,0 %<small>cota 5,8 % · fuera del objetivo · particiones 30,7–55,6 %</small></span></div>
         <div class="grow-row"><span class="glab">ES</span><div class="gbar"><i style="width:25.3%;background:var(--muted);opacity:.45"></i></div><span class="gval">25,3 %<small>cota 7,4 % · fuera del objetivo · particiones 0,0–23,6 %</small></span></div>
         <div class="grow-row"><span class="glab">CA</span><div class="gbar"><i style="width:0%;background:var(--g3)"></i></div><span class="gval">ninguno<small>particiones 0,0–19,5 %</small></span></div>
@@ -470,7 +470,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <p class="body">Nuestro estudio v0.5 evaluó tres jueces sobre <strong>3.080 decisiones bancarias etiquetadas por humanos</strong> (BANKING77) — pre-registrado antes de la primera llamada al modelo, con todos los resultados publicados incluidos los poco favorecedores. Mismos datos, mismo objetivo de 5 % de error:</p>
   <div class="tscroll" style="overflow-x:auto;margin-top:36px"><table class="proof">
     <tr><th>Juez</th><th>Porcentaje validado con un objetivo de error del 5 % (datos reservados, aproximado)</th><th>Cota superior al 95 % del error en datos reservados (aprox.)</th><th>Rango entre semillas</th></tr>
-    <tr><td>TypeSafe Jev, probabilidad nativa</td><td class="n">41,0 %</td><td>3,9 %<br><small>dentro del 5 % en la partición del estudio; por encima del 5 % en las particiones 2033 y 2036</small></td><td>27,0 – 45,1 %</td></tr>
+    <tr><td>TypeSafe Jev 1.13.0, probabilidad nativa</td><td class="n">41,0 %</td><td>3,9 %<br><small>dentro del 5 % en la partición del estudio; por encima del 5 % en las particiones 2033 y 2036</small></td><td>27,0 – 45,1 %</td></tr>
     <tr><td>Gemini 3.6 Flash, verbalizado</td><td class="n">14,3 %</td><td>2,7 %</td><td>7,6 – 30,0 %</td></tr>
     <tr><td>Qwen3-8B, log-probabilidad de tokens</td><td class="n">ninguno validado</td><td>—</td><td>0,0 – 4,4 %</td></tr>
   </table></div>
